@@ -50,43 +50,40 @@
 
     \chapter{Introducción}
 
-    Los problemas de minimización aparecen en muchas ramas de las
-    matemáticas y no solo aquí sino en muchas otras ciencias; pues
-    teoría de gráficas no es la excepción. Dentro de ella existe un
-    problema muy conocido por quienes se dedican a esto, la búsqueda
-    de jaulas, el cual consiste en encontrar gráficas regulares, con
-    cuello dado, pero con la menor cantidad de vértices posibles.
+    En matem\'aticas, los problemas de minimización son muy comunes.
+    En teor\'ia de gráficas, la búsqueda de jaulas es un ejemplo de
+    ello: consiste en encontrar gráficas regulares, con cuello dado,
+    pero con la menor cantidad de vértices posibles.
 
 
-    La presente tesis aborda el problema de las jaulas 3$-$regulares
-    de cuello dado. Primero se hace un recorrido por dichas jaulas
-    pero de cuellos pequeños, de las cuales ya se ha demostrado la
+    La presente tesis aborda el problema de jaulas 3-regulares de
+    cuello dado. Primero presenta una construcción de dichas jaulas de
+    cuello menor o igual a doce, de las cuales se sabe la
     cantidad de vértices que tienen y si son únicas o no. Si el cuello
-    es mayor o igual a trece, lo que se tiene, son solo cotas
-    inferiores y superiores, pero aun no se ha podido demostrar si las
-    gráficas existentes son jaulas y mucho menos si son únicas.  La
-    segunda parte de la tesis, presenta un método computacional para
-    dibujar gráficas de cuello par, a partir de un listado de grupos,
-    para finalmente identificar si alguna reduce la cota superior.
+    es mayor, se conocen cotas inferiores y superiores; pero todavía
+    no se sabe si las gráficas son jaulas, y mucho menos si son
+    únicas.  La segunda parte, presenta un método computacional; el
+    cual dibuja gráficas $3$-regulares de cuello par, a partir de un
+    listado de grupos; e identifica si alguna iguala o reduce la cota
+    superior.
 
 
-    El método que se sigue, en la segunda parte, tiene dos niveles; el
-    primero, es construir gráficas de Cayley localmente $3K_2$,
-    $\Cay(G,T)$, las cuales son vértice-transitivas, y basta con hacer
-    un análisis al rededor de la identidad para saber como se comporta
-    en el resto de los vértices. El segundo paso consiste en construir
-    la gráfica bipartita clanica $\Gamma$, a partir de $\Cay(G,T)$; en
-    dicha gráfica, por cada vértice y por cada clan de $\Cay(G,T)$,
-    existe un vértice en $\Gamma$ asociado a \'el, en donde los
-    vértices $x,y$ son adyacentes si y solo si $x$ es un vértice de
-    $\Cay(G,T)$ y $y$ un clan que contenga a $x$ o viceversa.
+    El método que se sigue, en la segunda parte, tiene dos niveles. El
+    primero, construye gráficas de Cayley localmente $3K_2$, las
+    cuales son vértice-transitivas, y basta con hacer un análisis al
+    rededor de la identidad para saber como se comporta en el resto de
+    los vértices. El segundo nivel, dibuja la bipartita clánica,
+    asociada a cada una de las gráficas de Cayley localmente $3K_2$,
+    construidas en el paso anterior. En dicha gráfica, por cada
+    vértice y por cada clan, de la gráfica original; existe un vértice
+    asociado a \'el: en donde los vértices $x,y$ son adyacentes si y
+    solo si $x$ es un vértice de la gráfica de Cayley y $y$ un clan
+    que contenga a $x$ o viceversa.
 
     Para construir gráficas de Cayley es necesario trabajar con
-    grupos, y dado que $GAP$ es un software libre que contiene una
-    amplia lista de ellos, se utiliza para hacer el programa que
-    construya las gráficas de Cayley y a partir de estas construya las
-    bipartitas clánicas, para finalmente reportar el cuello y el
-    numero de vértices de estas.
+    grupos, y dado que $GAP$ es un software libre especializado; que
+    contiene una amplia lista de ellos, se utiliza para hacer el
+    programa antes mencionado.
 
 
 
@@ -151,7 +148,7 @@ concluyendo la demostración.  \newline
 
 Se puede demostrar que tanto el elemento neutro, como el inverso son
 únicos, además
-$$eg=ge=e  \textit{     y     }  g^{-1}g=gg^{-1}=e$$ para todo $g \in G$. Si se desea, se puede consultar la demostración en $\cite{Barrera}$.
+$$eg=ge=e  \textit{ y }  g^{-1}g=gg^{-1}=e$$ para todo $g \in G$. Si se desea, se puede consultar la demostración en $\cite{Barrera}$.
 
 \begin{example}\textbf{Grupo simétrico}\\\index{Grupo simétrico}
   Sea $S_n$\index{$S_n$} el conjunto formado por todas las funciones
@@ -211,7 +208,7 @@ cuales se les conoce como grupos finitos.\index{Grupos finitos}
 
 \begin{definition}\textbf{Orden de un elemento}\\\index{Orden de un elemento del grupo}
   Sean $G$ un grupo y $g\in G$, el orden de $G$ es el menor entero
-  positivo $n$ tal que $g^n=e$ y se denotara por $|g|=n$.
+  positivo $n$ tal que $g^n=e$ y se denotar\'a por $|g|=n$.
 \end{definition}
 
 
