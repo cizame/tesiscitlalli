@@ -365,12 +365,12 @@ este resultado no ser\'a demostrado.
 \section{Gráficas}
 
 En la sección anterior se habl\'o acerca de grupos, una rama de las
-matemáticas bastante mas común que la presente sección. Seguramente
+matemáticas bastante m\'as común que la presente sección. Seguramente
 algunas de las definiciones aquí presentadas serán conocidas, pero tal
 vez otras no.
 
 Aquí se encuentran las definiciones necesarias de teoría de gráficas,
-así como resultados previos y sus demostraciones. Si el lector se
+así como algunos resultados y sus demostraciones. Si el lector se
 interesa en conocer m\'as acerca de teoría de gráficas puede consultar
 $\cite{Harary}$.
 
@@ -389,12 +389,10 @@ $\cite{Harary}$.
 A los elementos de $E(\Gamma)$ se les conoce como
 aristas\index{Arista}.
 
-La definición general de una gráfica no es esta, pues en ella no se
-requiere que $V(\Gamma)$ sea finito, y $E(\Gamma)$ es definido de otra
-forma de tal manera que sus elementos pueden ser
-dirigidos\index{Arista dirigida}, incluso pueden existir
-lazos\index{Lazos}, los cuales son aristas que van de un vértice a si
-mismo; pero para fines de esta tesis es suficiente definirla así:
+La definición general de una gráfica permite que $V(\Gamma)$ sea infinito, y $E(\Gamma)$ es definido de tal forma que sus elementos pueden ser
+dirigidos\index{Arista dirigida}; incluso pueden existir
+lazos\index{Lazos}: aristas que van de un vértice en s\'i
+mismo. Pero para fines de esta tesis es suficiente definirla con
 vértices finitos, aristas no dirigidas y sin lazos.
 
 \begin{definition}\textbf{Complemento de una gráfica}\\\index{Complemento de una gráfica}
@@ -428,13 +426,11 @@ también se dice que $x$ es vecino o amigo de $y$.\index{Amigos de un
   vértice}\index{Vecinos de un vértice}
 
 
-Las gráficas se representan frecuentemente en forma de un dibujo, pero
+Las gráficas se representan frecuentemente como un dibujo, pero
 dos dibujos a pesar de ser aparentemente distintos pueden estar
-representando la misma gráfica, incluso si dos gráficas están siendo
+representando la misma gráfica. Incluso si dos gráficas están siendo
 representadas por conjuntos, y estos son diferentes, se puede estar
-hablando de la misma gráfica; para detectarlo, se dan las siguientes
-definiciones.
-
+hablando de la misma gráfica.
 
 \begin{definition}\textbf{Isomorfismo}\\\index{Isomorfismo}
   Sean $\Gamma_1,\Gamma_2$ dos gráficas, un isomorfismo de
@@ -459,13 +455,13 @@ definiciones.
 
 
 \begin{proposition}\textbf{Grupo de Automorfismo de una gráfica}\\\index{Grupo de automorfismos}
-  Si $|\Gamma|=n$ entonces, el conjunto de todos los automorfismos de
+  Sea $n$ el orden de una gráfica, $|\Gamma|=n$. Entonces, el conjunto de todos los automorfismos de
   $\Gamma$, es un subgrupo de $S_n$, denotado $\Aut(\Gamma)$, llamado
   grupo de automorfismos de $\Gamma$.
 \end{proposition}
 
-Demostración: Los automorfismos de $\Gamma$ pertenecen a $S_n$ y la
-identidad es un automorfismo. Sean $\phi$ y $\psi$ automorfismos de
+\begin{demostration} Los automorfismos de $\Gamma$ pertenecen a $S_n$ y la
+identidad es un automorfismo, por lo que el conjunto de automorfismos de $\Gamma$ no es vac\'io. Sean $\phi$ y $\psi$ automorfismos de
 $\Gamma$ y sean $x,y\in V(\Gamma)$ tales que $x\sim y$ entonces
 $\phi(x)\sim \phi(y)$ y ambos están en $V(\Gamma)$, aplicando $\psi$:
 \begin{equation*}
@@ -474,10 +470,9 @@ $\phi(x)\sim \phi(y)$ y ambos están en $V(\Gamma)$, aplicando $\psi$:
   (\psi \circ \phi) (x)\sim (\psi \circ \phi)(y)
 \end{equation*}
 
-por lo que $(\psi \circ \phi)$ es también un automorfismo de $\Gamma$,
-por lo tanto el grupo de automorfismos de $\Gamma$ es un subgrupo de
+por lo que $(\psi \circ \phi)$ es también un automorfismo de $\Gamma$. Por lo tanto el grupo de automorfismos de $\Gamma$ es un subgrupo de
 $S_n$.
-
+\end{demostration}
 
 
 
@@ -492,14 +487,14 @@ clasificaciones.
   gráfica completa y se denota $K_n$\index{$K_n$} con $n\geq 1$.
 \end{definition}
 
-\begin{definition}\textbf{Grafica $P_n$}\\\index{$P_n$}
-  Los vertices de la grafica $P_n$ son $V(P_n):=\{v_1,v_2,...,v_n\}$ y
+\begin{definition}\textbf{Gráfica $P_n$}\\\index{$P_n$}
+  Los vértices de la gráfica $P_n$ son $V(P_n):=\{v_1,v_2,...,v_n\}$ y
   las aristas $E(P_n):=\{v_i \sim v_{i+1} \mid i<n\}$. La
-  figura~\ref{P5} es la grafica $P_5$.
+  figura~\ref{P5} es la gráfica $P_5$.
 \end{definition}
 
 
-\begin{figure}[htb]
+\begin{figure}
   \centering
   \begin{tikzpicture}
     \SetVertexNoLabel
@@ -524,8 +519,8 @@ clasificaciones.
 $$V(G\cup H)=V(G)\dot{\cup}V(H)$$ $$E(G\cup H)=E(G)\dot{\cup}E(H)$$
 \end{definition}
 
-La union de $G$ con $G$ se denota por $2G$. En general la union
-disjunta de $G$, n veces, se denota $nG$. \index{nG}
+La unión de $G$ con $G$ se denota por $2G$. En general la unión
+disjunta de $G$, $n$ veces, es denotada por $nG$. \index{nG}
 
 El símbolo $\dot{\cup}$ representa la unión de conjuntos, pero de
 forma disjunta; esto es, si $|V(G)|=n$ y $|V(H)|=m$ entonces
@@ -559,11 +554,7 @@ hagan que la nueva gráfica sea completa.
   isomorfos a $K_3$.
 
 
-
-
-
-
-\begin{figure}
+\begin{figure}[htb]
   \centering
   \begin{tikzpicture}
     \SetVertexNoLabel
@@ -580,8 +571,6 @@ hagan que la nueva gráfica sea completa.
 
 
 
-
-
 \begin{figure}
   \centering
   \begin{tikzpicture}
@@ -591,15 +580,8 @@ hagan que la nueva gráfica sea completa.
     \grEmptyPath*[x=1,y=2,RA=4,prefix=w]{,,}
     \grEmptyPath*[x=0,y=3,RA=2,prefix=x]{,,,}
     \grEmptyPath*[x=0,y=5,RA=2,prefix=y]{,} \Vertex[x=5,y=5]{z0}
-
-
-
-    % \AssignVertexLabel {v}{$v_1$,$v_2$} \Edges(v0,v1)
-    % \Edges[color=Brown](a3;0,v0,a3;4)
-
     \Edges(v0,v1,w0,v0) \Edges(v2,v3,w1,v2) \Edges(x0,x1,y1,x0,y0,x1)
     \Edges(y0,y1) \Edges(x2,x3,z0,x2) \Edges(v4,v5,w2,v4)
-    % \Edges[style={bend left=30},color=blue](a3;4,a3;8)
 
     \draw (v0) node [below]{$f$}; \draw (v1) node[below right]{$d$};
     \draw (w0) node[below right]{$e$}; \draw (v2) node[below
@@ -610,22 +592,10 @@ hagan que la nueva gráfica sea completa.
     right]{$h$}; \draw (y0) node[below right]{$d$}; \draw (y1)
     node[below right]{$b$}; \draw (z0) node[below right]{$c$}; \draw
     (x2) node[below right]{$d$}; \draw (x3) node[below right]{$b$};
-
-
-
-
   \end{tikzpicture}
   \caption{Clanes de la figura~\ref{grafclan}.}\label{clanes}
 \end{figure}
-
-
 \end{example}
-
-
-
-
-
-
 
 
 \begin{definition}\textbf{Bipartita}\\\index{Bipartita}
@@ -656,20 +626,17 @@ deseado, pues no existe arista entre dos elementos del mismo conjunto.
 \begin{definition}\textbf{Bipartita clánica}\\\index{Bipartita clánica}
   Sea $Cl_G:=\{H \mid H$ es un clan de una gráfica $G \}$. Se define
   la gráfica bipartita clánica $BC_G$, de una gráfica $G$,
-  como $$V(BC_G) = V(G) \dot{\cup} Cl_G$$ donde $x,y\in V(BC_G)$ son
-  adyacentes si y solo si $x\in V(G)$ y $y$ es un clan de $G$ tales
+  como $$V(BC_G) = V(G) \dot{\cup} Cl_G$$ Donde $x,y\in V(BC_G)$ son
+  adyacentes si y solo si $x\in V(G)$ y $y$ es un clan de $G$, tales
   que $x\in y$ o viceversa.
 \end{definition}
 
-En otras palabras, la gráfica bipartita clánica es aquella cuyos
+Es decir, la gráfica bipartita clánica es aquella cuyos
 vértices están asociados a los elementos de $V(G)$ y a los clanes de
 $G$, de manera disjunta. Donde las aristas que existen se dan solo
 entre un elemento asociado a un vértices y otro asociado a un clan. La
 figura~\ref{BCG} es la gráfica bipartita clánica de la
 gráfica~\ref{grafclan}.
-
-
-
 
 
 \begin{figure}
@@ -680,8 +647,6 @@ gráfica~\ref{grafclan}.
     \grEmptyPath*[x=0,y=3,RA=2,prefix=v]{,,,,,,,}
     \grEmptyPath*[x=1,y=0,RA=3,prefix=w]{,,,,}
 
-
-
     { \foreach \y in {0,1,...,7} { \setcounter{in}{\y}
         \stepcounter{in} \draw (v\y) node[above right]{$\alph{in}$};
       }}
@@ -691,11 +656,9 @@ gráfica~\ref{grafclan}.
     \Edges(v1,w2,v3,w2,v5,w2,v7) \draw(1,-.5) node {$K_3$};
     \draw(4,-.5) node {$K_3$}; \draw(7,-.5) node {$K_4$};
     \draw(10,-.5) node {$K_3$}; \draw(13,-.5) node {$K_3$};
-
   \end{tikzpicture}
   \caption{Gráfica bipartita clánica de ~\ref{grafclan}}\label{BCG}
 \end{figure}
-
 
 
 
@@ -711,21 +674,22 @@ denota por $G[X]$.
 
 \begin{proposition}\textbf{}\\
   Si $G$ y $H$ son gráficas isomorfas, y la gráfica $L$ es subgráfica
-  de $G$ entonces $H$ tiene una subgráfica isomorfa a $L$.
+  de $G$; entonces $H$ tiene una subgráfica isomorfa a $L$.
 \end{proposition}
 
-Demostración: Sea $\varphi : G \rightarrow H$ un isomorfismo entre G y
+\begin{demostration}
+ Sea $\varphi : G \rightarrow H$ un isomorfismo entre G y
 H, una subgráfica de $H$ isomorfa a $L$ es la gráfica inducida por
 $\varphi (V(L))$, si $x\sim y$ en $L\subset G$ entonces $\varphi
 (x)\sim \varphi (y)$ en H.
-
+\end{demostration}
 
 \subsection{Caminos y Ciclos}
 
 
 
 \begin{definition}\textbf{Camino de longitud $n$}\\\index{Camino de longitud $n$}
-  Un camino de longitud $n$, en $G$, es una sucesión de vértices de
+  Un camino de longitud $n$, en una gráfica $G$, es una sucesión de vértices de
   $G$, todos distintos entre sí, tal que $v_i\sim v_{i+1}$ para
   $i=0,1,...,n-1$. Se dice que es un
   ``$v_0v_n$-camino''.\index{$v_0v_n$-camino}
@@ -1179,9 +1143,9 @@ a esta interrogante no es conocida.
 
 Con $m=3$ y $n=3,4,...,12$, las jaulas ya son conocidas y la
 descripción de estas se presentan adelante en otra sección. Para
-$n\geq 13$ las graficas aun no son conocidas, lo que se tiene son solo
+$n\geq 13$ las gráficas aun no son conocidas, lo que se tiene son solo
 $(3,n)$-gráficas, que sirven como cotas superiores para la cantidad de
-vertices.
+vértices.
 
 
 
@@ -1344,7 +1308,7 @@ $\phi_{g_2g_1^{-1}}$.  \newline
 
 Demostración:
 
-$\Rightarrow$) Como hipotesis se tiene $G=\Cay(H,T)$. Sea $A$ el grupo
+$\Rightarrow$) Como hipótesis se tiene $G=\Cay(H,T)$. Sea $A$ el grupo
 de automorfismos de $G$.  Para cada $w \in H$ defínase $$A_s:=\{
 \sigma_{v} \in A \mid \sigma_{v} (w)=vw, v\in V(G)\}$$
 
@@ -3207,14 +3171,14 @@ para decidir si es o no localmente $3K_2$.
 
 
 \begin{lemma}\label{bamnocayley}
-  Sean $a,b\in T$ tales que $a\sim b$ en la grafica $Cay(G,T)$;
+  Sean $a,b\in T$ tales que $a\sim b$ en la gráfica $Cay(G,T)$;
   si \begin{equation*}b\in <a>\backslash \{a^{-1}\}\end{equation*}
   entonces $Cay(G,T)$ no es localmente $3K_2$.
 \end{lemma}
 
-Demostracion: Primero, como $b\nsim a^{-1}$ entonces cayley no puede
-ser del tipo uno. Despues, $b$ se puede escribir de la forma $b=a^n$
-para algun $n$, entonces
+Demostracion: Primero, como $b\nsim a^{-1}$ entonces Cayley no puede
+ser del tipo uno. Después, $b$ se puede escribir de la forma $b=a^n$
+para algún $n$, entonces
 
 \begin{equation*}
   \begin{split}
@@ -3590,7 +3554,7 @@ del tipo dos y el n\'umero de vértices que tienen es cuarenta, pero la
 jaulita tiene treinta vértices.
 
 La primera gráfica de cuello ocho, generadas por $Cay(G,T)$ del tipo
-uno, se genera en el grupo uno, con veintiun elementos, es decir
+uno, se genera en el grupo uno, con veintiún elementos, es decir
 tienen cuarenta y dos vértices.
 
 El siguiente caso son las gráficas con cuello diez, pues al ser
@@ -3601,7 +3565,7 @@ jaulas, pues la $(3,10)-jaula$ tiene setenta vértices, diez menos que
 la construida por este método.
   
 La primer gráfica encontrada a partir de $Cay(G,T)$ del tipo uno, con
-cuello diez, tiene ciento catorce vertices y se generó en el grupo
+cuello diez, tiene ciento catorce vértices y se generó en el grupo
 uno, con cincuenta y siete elementos.
 
 
@@ -3622,9 +3586,9 @@ La gráfica cinco del primer grupo de 203 elementos, genera
 la primer gráfica de cuello catorce a partir de $Cay(G,T)$ del tipo
 dos. Tiene cuatrocientos seis vértices, pero la gráfica mas pequeña,
 hasta ahora encontrada, de cuello catorce tiene trecientos ochenta y
-cuatro vértices. Aunque la grafica encontrada es mayor a la cota
-actual; est\'a si iguala la cantidad de vertices, que hasta antes del
-2003 existia, pues tambien tenia cuatrocientos seis vertices.
+cuatro vértices. Aunque la gráfica encontrada es mayor a la cota
+actual; est\'a si iguala la cantidad de vértices, que hasta antes del
+2003 existía, pues también tenia cuatrocientos seis vértices.
 
 La primer gráfica encontrada a partir de una gráfica de Cayley del
 tipo uno, tiene seiscientos doces vértices, se genera con el grupo
@@ -3644,7 +3608,7 @@ chica encontrada por este método, hasta el momento, tienen 1008
 vértices y se encontraron en el grupo 157, de orden 508. Son dos
 gráficas encontradas con la condición uno y dos con la condición dos;
 menciono nuevamente, estas son las m\'as chicas, hasta el momento,
-encontradas por este metodo, existe la posibilidad de que existan
+encontradas por este método, existe la posibilidad de que existan
 otras pues la revisión para las gráficas de cuello dieciséis no fue
 exhaustiva.
 
@@ -3659,7 +3623,7 @@ y cinco elementos.
 
 
 
-\begin{thebibliography}{0}
+\begin{thebibliography}{}
 
 \bibitem{Ehrlich}{book}{ author={Ehrlich, Gertrude},
     title={Fundamental Concepts of Abstract Algebra}, publisher={
