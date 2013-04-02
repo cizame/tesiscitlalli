@@ -638,10 +638,9 @@ entre un elemento asociado a un vértices y otro asociado a un clan. La
 figura~\ref{BCG} es la gráfica bipartita clánica de la
 gráfica~\ref{grafclan}.
 
-
 \begin{figure}
   \centering
-  \begin{tikzpicture}
+  \begin{tikzpicture}[scale=0.85]
     \SetVertexNoLabel \SetUpVertex[MinSize=1.5pt]
 
     \grEmptyPath*[x=0,y=3,RA=2,prefix=v]{,,,,,,,}
@@ -657,11 +656,8 @@ gráfica~\ref{grafclan}.
     \draw(4,-.5) node {$K_3$}; \draw(7,-.5) node {$K_4$};
     \draw(10,-.5) node {$K_3$}; \draw(13,-.5) node {$K_3$};
   \end{tikzpicture}
-  \caption{Gráfica bipartita clánica de ~\ref{grafclan}}\label{BCG}
+  \caption{Gráfica bipartita clánica de~\ref{grafclan}}\label{BCG}
 \end{figure}
-
-
-
 
 \begin{definition}\textbf{Subgráfica inducida}\\\index{Subgráfica inducida}
   La subgráfica $H$ de $G$ se dice inducida si $\{x,y\}\in
