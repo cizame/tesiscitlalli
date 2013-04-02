@@ -1654,7 +1654,7 @@ falta dos aristas, $c$ y $d$. Ver la figura~\ref{arbol(3,6)}.
 
 \begin{figure}
   \centering
-  \begin{tikzpicture}
+  \begin{tikzpicture}[scale=1.2]
     \SetVertexNoLabel
 
     \SetUpVertex[MinSize=2pt] \grSubtreeOfCage[RA=5,RB=.8]{3}{6}
@@ -1677,14 +1677,14 @@ $f$, $g$ y $h$; note que no importa a quien se seleccione pues
 reordenando adecuadamente se puede llevar uno de ellos a cualquier
 otro, suponga que unimos $c$ con $e$. En el caso de la segunda arista,
 se puede escoger entre los vértices $g$ y $h$, pues ambas no pueden ir
-a la misma rama a la ves porque se formarían ciclos menores,
+a la misma rama a la vez porque se formarían ciclos menores,
 nuevamente no importa a cual de los dos se elija, así que sera a
 $g$. Después de esto, solo resta unir $d$ con los vértices restantes,
 figura~\ref{jaula(3,6)}.
 
 \begin{figure}
   \centering
-  \begin{tikzpicture}
+  \begin{tikzpicture}[scale=1.2]
     \SetVertexNoLabel \SetUpVertex[MinSize=2pt]
     \grSubtreeOfCage[RA=5,RB=.8]{3}{6}
 
@@ -1705,11 +1705,11 @@ figura~\ref{heawood}. Es una jaulita pues también alcanza su cota
 ingenua, y es la representación de la gráfica de puntos y líneas del
 plano proyectivo de orden dos, el plano de Fano.
 
-\begin{figure}[htb]
+\begin{figure}%[htb]
   \centering
   \begin{tikzpicture}
     \SetVertexNoLabel \SetUpVertex[MinSize=1pt]
-    \grMobiusKantor[RA=1.9]
+    \grHeawood[RA=2.5]
 
   \end{tikzpicture}
   \caption{Gráfica Heawood.} \label{heawood}
