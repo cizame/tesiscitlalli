@@ -3213,57 +3213,53 @@ bebe mostrar que existe $\Psi$, tal que $x,y\in Cay(G,T)$ son
 adyacentes si y solo si $\Psi(x)\sim \Psi(y)$ en $Cay(G,\Phi(T))$ y
 esto ocurre si y solo si
 
- \begin{equation*}
-   (\Psi(y))^{-1}(\Psi(x))\in \Phi(T)
- \end{equation*}
+\begin{equation*}
+  (\Psi(y))^{-1}(\Psi(x))\in \Phi(T)
+\end{equation*}
 
+Como $x\sim y$ entonces $y^{-1}x\in T$, entonces $\Phi(y^{-1}x) \in
+\Phi(T)$. Sea $\Psi=\Phi$, como $\Phi$ está en la orbita de $\phi$
+entonces $\Phi=\Phi_1\circ\phi$, para algún $\Phi_1$.
 
+\begin{equation*}
+  \begin{split}
+    \Phi(y^{-1}x)&=\Phi_1(\phi(y^{-1}x))\\
+    &=\Phi_1(\phi(y^{-1})\phi(x))\\
+    &=\Phi_1({\phi(y)}^{-1}\phi(x))\\
+    &=\Phi_1({\phi(y)}^{-1})\Phi_1(\phi(x))\\
+    &=({\Phi_1\circ \phi(y)})^{-1}(\Phi_1\circ
+    \phi)(x)=(\Phi(y))^{-1}(\Phi(x))
+  \end{split}
+\end{equation*}
 
- Como $x\sim y$ entonces $y^{-1}x\in T$, entonces $\Phi(y^{-1}x) \in
- \Phi(T)$. Sea $\Psi=\Phi$, como $\Phi$ está en la orbita de $\phi$
- entonces $\Phi=\Phi_1\circ\phi$, para algún $\Phi_1$.
+por lo tanto $(\Phi(y))^{-1}(\Phi(x))\in \Phi(T)$. 
 
- \begin{equation*}
-   \begin{split}
-     \Phi(y^{-1}x)&=\Phi_1(\phi(y^{-1}x))\\
-     &=\Phi_1(\phi(y^{-1})\phi(x))\\
-     &=\Phi_1({\phi(y)}^{-1}\phi(x))\\
-     &=\Phi_1({\phi(y)}^{-1})\Phi_1(\phi(x))\\
-     &=({\Phi_1\circ \phi(y)})^{-1}(\Phi_1\circ
-     \phi)(x)=(\Phi(y))^{-1}(\Phi(x))
-   \end{split}
- \end{equation*}
+Hay que recordar que un automorfismo es un función que manda vértices
+en vértices; y como la gráfica es de Cayley los vértices son
+precisamente los elementos del grupo $G$. Por lo que, teniendo una
+lista de conjuntos con seis elementos, dado un grupo $G$, gracias al
+teorema~\ref{orbitas}, basta calcular las órbitas del grupo de
+automorfismos de $G$, que manden un elemento a otro, y tomar un
+representante de estas, para eliminar algunas posibles $T$ que darían
+origen a la misma gráfica.
 
- por lo tanto $(\Phi(y))^{-1}(\Phi(x))\in \Phi(T)$.  \newline
+Sin embargo, computacionalmente el calcular órbitas es muy caro, pues
+ocupa mucha memoria y el proceso es lento. Por ello es necesario
+reducir el numero de elementos antes de pedir que se calculen las
+orbitas.
 
- Hay que recordar que un automorfismo es un función que manda vértices
- en vértices; y como la gráfica es de Cayley los vértices son
- precisamente los elementos del grupo $G$. Por lo que, teniendo una
- lista de conjuntos con seis elementos, dado un grupo $G$, gracias al
- teorema~\ref{orbitas}, basta calcular las orbitas del grupo de
- automorfismos de $G$, que manden un elemento a otro, y tomar un
- representante de estas, para eliminar algunas posibles $T$ que darían
- origen a la misma gráfica.
+Para construir todas las gráficas de Cayley localmente $3K_2$ del tipo
+uno, dado un grupo $G$, es conveniente tener una lista de elementos
+cuyo orden es tres, para poder hacer todas las combinaciones de tres
+elementos, generar $T$ y verificar que no cumpla las condiciones
+malas. Si esto ocurre diremos que dichas combinaciones generan una $T$
+buena.\index{T buena}
 
- Sin embargo, computacionalmente el calcular orbitas es muy caro, pues
- ocupa mucha memoria y el proceso es lento. Por ello es necesario
- reducir el numero de elementos antes de pedir que se calculen las
- orbitas.
-
-
- Para construir todas las gráficas de Cayley localmente $3K_2$ del
- tipo uno, dado un grupo $G$, es conveniente tener una lista de
- elementos cuyo orden es tres, para poder hacer todas las
- combinaciones de tres elementos, generar $T$ y verificar que no
- cumpla las condiciones malas. Si esto ocurre diremos que dichas
- combinaciones generan una $T$ buena.\index{T buena}
-
- Al hacerlo tan burdamente, se podría estar generando la misma $T$
- repetidas veces, lo que generaría un retraso en el tiempo al calcular
- sus orbitas. Para que esto no ocurra es conveniente notar que en la
- lista $L$, de elementos cuyo orden es tres, si $x\in L$ entonces
- $x^{-1}$ también esta en $L$.
-
+Al hacerlo tan burdamente, se podría estar generando la misma $T$
+repetidas veces, lo que generaría un retraso en el tiempo al calcular
+sus órbitas. Para que esto no ocurra es conveniente notar que en la
+lista $L$, de elementos cuyo orden es tres, si $x\in L$ entonces
+$x^{-1}$ también esta en $L$.
 
 \begin{proposition}\label{generanaT}
   Sea $L:=\{ g\in G \mid g^3=e\}$, si $a,b,c\in L$ generan una $T$
