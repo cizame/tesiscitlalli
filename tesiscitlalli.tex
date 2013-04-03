@@ -638,10 +638,9 @@ entre un elemento asociado a un vértices y otro asociado a un clan. La
 figura~\ref{BCG} es la gráfica bipartita clánica de la
 gráfica~\ref{grafclan}.
 
-
 \begin{figure}
   \centering
-  \begin{tikzpicture}
+  \begin{tikzpicture}[scale=0.85]
     \SetVertexNoLabel \SetUpVertex[MinSize=1.5pt]
 
     \grEmptyPath*[x=0,y=3,RA=2,prefix=v]{,,,,,,,}
@@ -657,11 +656,8 @@ gráfica~\ref{grafclan}.
     \draw(4,-.5) node {$K_3$}; \draw(7,-.5) node {$K_4$};
     \draw(10,-.5) node {$K_3$}; \draw(13,-.5) node {$K_3$};
   \end{tikzpicture}
-  \caption{Gráfica bipartita clánica de ~\ref{grafclan}}\label{BCG}
+  \caption{Gráfica bipartita clánica de~\ref{grafclan}}\label{BCG}
 \end{figure}
-
-
-
 
 \begin{definition}\textbf{Subgráfica inducida}\\\index{Subgráfica inducida}
   La subgráfica $H$ de $G$ se dice inducida si $\{x,y\}\in
@@ -1176,8 +1172,8 @@ Note que si $g_1 \sim g_2$ entonces $g_2^{-1}g_1 \in T$ por
 definición, entonces en $T$ también esta su inverso, es decir
 $(g_2^{-1}g_1)^{-1} = g_1^{-1}g_2\in T$ entonces $g_2 \sim g_1$, es
 decir $\{g_1,g_2\}\in E(\Cay(G,T))$ si y solo si
-$g_2^{-1}g_1 \in T$.\\
-\newline
+$g_2^{-1}g_1 \in T$.
+
 \begin{example}\textbf{}\\
   Sean $G=S_3= \{(1),(12),(13),(23),(123),(132)\}$ y $T=\{(12)\}$
   entonces $\Cay(G,T)\cong 3K_2$. Figura~\ref{3 veces k2}.
@@ -1227,7 +1223,8 @@ $\Cay(G,T)$, son $gt_1,gt_2,...,gt_n$, pues si $x$ es vecino de $g$,
 entonces $g^{-1}x\in T$ entonces existe $t_i$ tal que $g^{-1}x=t_i$
 entonces $x=gt_i$. Por otro lado, considerando $gt_i$, $g$ es vecino
 de $gt_i$ si y solo si $g^{-1}(gt_i)\in T$, si y solo si $t_i \in T$.
-\newline De lo anterior es evidente que en $\Cay(G,T)$, los vecinos de
+
+De lo anterior es evidente que en $\Cay(G,T)$, los vecinos de
 $I \in G$ son exactamente los elementos de $T$. Hecho que es de suma
 importancia para dar condiciones a los elementos de $T$, que hagan que
 la gráfica sea localmente $3K_2$.
@@ -1297,9 +1294,7 @@ Por otro lado, observe que si $x=g_2g_1^{-1}$ se tiene
 
 En otras palabras, si $g_1$ y $g_2$ son cualesquiera dos vértices,
 entonces un automorfismo que manda a uno en el otro es
-$\phi_{g_2g_1^{-1}}$.  \newline
-
-
+$\phi_{g_2g_1^{-1}}$.  
 
 \begin{theorem}\textbf{}\\
   G es gráfica de Cayley si y solo si existe un subgrupo de $\Aut(G)$
@@ -1312,9 +1307,9 @@ $\Rightarrow$) Como hipótesis se tiene $G=\Cay(H,T)$. Sea $A$ el grupo
 de automorfismos de $G$.  Para cada $w \in H$ defínase $$A_s:=\{
 \sigma_{v} \in A \mid \sigma_{v} (w)=vw, v\in V(G)\}$$
 
-A continuación se probara que $A_s$ es un subgrupo de $A$.
+A continuación se probará que $A_s$ es un subgrupo de $A$.
 
-La identidad esta en $A_s$, pues al ser gráfica de Cayley, sus
+La identidad está en $A_s$, pues al ser gráfica de Cayley, sus
 vértices son elementos del grupo $H$, $\sigma_e(w)=ew=w$.
 
 Ahora, si $\sigma_{v_1}, \sigma_{v_2} \in A_s$ entonces
@@ -1343,7 +1338,9 @@ $$\sigma_v(v_1)=\sigma_{v_2v_1^{-1}}(v_1)=v_2v_1^{-1}v_1=v_2$$
 \item $|A_s|=|H|$ por definición.
 \end{enumerate}
 
-Por $1)$, $2)$ y $3)$ $A_s$ actúa regularmente en $H$.  \newline
+Por $1)$, $2)$ y $3)$ $A_s$ actúa regularmente en $H$. 
+
+\smallskip
 
 $\Leftarrow$) Sea $A_s$ el subgrupo del grupo de automorfismos de $G$
 que actúa regularmente en $V(G)$. Sea $x \in V(G)$, se define $T:=\{
@@ -1425,27 +1422,22 @@ automorfismo que envía la arista $e_1$ a $e_2$.
 
 Observación: Si $\Gamma$ es distancia-transitiva, entonces es
 vértice-transitiva. Pues si $u,v \in V(\Gamma)$, entonces
-$d(u,u)=d(v,v)=0$ entonces por ser distancia-transitiva existe
-$\phi\in Aut(\Gamma)$ tal que $\phi(u)=v$.  \newline Observación: Si
-$\Gamma$ es distancia-transitiva entonces es 1-arco-transitiva. Pues
-si $u\sim v$ y $x\sim y$ entonces $d(u,v)=d(x,y)=1$ entonces existe
-$\phi \in Aut(\Gamma)$ tal que $\phi(u)=x$ y $\phi(v)=y$.
+$d(u,u)=d(v,v)=0$, y por ser $\Gamma$ distancia-transitiva existe
+$\phi\in Aut(\Gamma)$ tal que $\phi(u)=v$.
 
-
-
-
-
+Observación: Si $\Gamma$ es distancia-transitiva entonces es
+1-arco-transitiva. Pues si $u\sim v$ y $x\sim y$ entonces
+$d(u,v)=d(x,y)=1$ entonces existe $\phi \in Aut(\Gamma)$ tal que
+$\phi(u)=x$ y $\phi(v)=y$.
 
 \chapter{Jaulas 3-regular de cuello pequeño}
 
-
-
-En generar aun no se conoce la forma exacta de las $(m,n)$-jaulas, si
+En general aun no se conoce la forma exacta de las $(m,n)$-jaulas, si
 son únicas o la cantidad de vértices que tienen. Las jaulas que a esta
 tesis interesan son las $(3,n)$-jaulas y uno de los objetivos
 principales es llegar a las $(3,g)$-gráficas de cuello par mayor o
-igual a catorce, pero para ello primero se dará un recorrido por las
-gráficas $3-regular$ de cuello menor.  \newline
+igual a~14, pero para ello primero se dará un recorrido por las
+gráficas $3-regular$ de cuello menor. 
 
 Al momento dibujar gráficas regulares de cuello dado, es conveniente
 comenzar con un árbol. Para que lo que se a dicho quede mas claro he
@@ -1453,10 +1445,6 @@ aquí un ejemplo; si se quiere una gráfica tres regular de cuello cinco
 el árbol es el de la figura~\ref{arbol}, el cual tiene tres niveles
 como mínimo, pues si las aristas se unen antes de formar estos tres
 niveles, aparece un ciclo de longitud menor.
-
-
-
-
 
 \begin{figure}[htb]
   \centering
@@ -1466,7 +1454,6 @@ niveles, aparece un ciclo de longitud menor.
   \end{tikzpicture}
   \caption{} \label{arbol}
 \end{figure}
-
 
 La construcción de estos arboles siempre es posible para
 $(k,g)$-gráficas, lo cual resulta muy conveniente para poder dar una
@@ -1659,23 +1646,15 @@ en la figura \ref{petersen}.
     Petersen}
 \end{figure}
 
-
-
-
-
-
-
-
 \section{(3,6)-jaula}
 
-El árbol tiene como base dos vértices y tres pisos.Se dibujan las
+El árbol tiene como base dos vértices y tres pisos. Se dibujan las
 aristas de $a$ y $b$, ahora existen otros dos vértices a los que les
-falta dos aristas, $c$ y $d$, figura~\ref{arbol(3,6)}.
-
+falta dos aristas, $c$ y $d$. Ver la figura~\ref{arbol(3,6)}.
 
 \begin{figure}
   \centering
-  \begin{tikzpicture}
+  \begin{tikzpicture}[scale=1.2]
     \SetVertexNoLabel
 
     \SetUpVertex[MinSize=2pt] \grSubtreeOfCage[RA=5,RB=.8]{3}{6}
@@ -1692,22 +1671,20 @@ falta dos aristas, $c$ y $d$, figura~\ref{arbol(3,6)}.
   \caption{} \label{arbol(3,6)}
 \end{figure}
 
-
-
-Sin perdida de generalidad, se puede comenzar a completar $c$. Para la
+Sin pérdida de generalidad, se puede comenzar a completar $c$. Para la
 primera arista, existen cuatro vértices a los cuales podría ir $e$,
 $f$, $g$ y $h$; note que no importa a quien se seleccione pues
 reordenando adecuadamente se puede llevar uno de ellos a cualquier
 otro, suponga que unimos $c$ con $e$. En el caso de la segunda arista,
 se puede escoger entre los vértices $g$ y $h$, pues ambas no pueden ir
-a la misma rama a la ves porque se formarían ciclos menores,
+a la misma rama a la vez porque se formarían ciclos menores,
 nuevamente no importa a cual de los dos se elija, así que sera a
 $g$. Después de esto, solo resta unir $d$ con los vértices restantes,
 figura~\ref{jaula(3,6)}.
 
 \begin{figure}
   \centering
-  \begin{tikzpicture}
+  \begin{tikzpicture}[scale=1.2]
     \SetVertexNoLabel \SetUpVertex[MinSize=2pt]
     \grSubtreeOfCage[RA=5,RB=.8]{3}{6}
 
@@ -1723,29 +1700,26 @@ figura~\ref{jaula(3,6)}.
   \caption{} \label{jaula(3,6)}
 \end{figure}
 
-Esta es la gráfica de Heawood y su representación m\'as común es la
-figura~\ref{heawood}, es una jaulita pues también alcanza su cota
-ingenua, y es la representación de la gráfica de puntos y lineas del
+Esta es la gráfica de Heawood y su representación más común es la
+figura~\ref{heawood}. Es una jaulita pues también alcanza su cota
+ingenua, y es la representación de la gráfica de puntos y líneas del
 plano proyectivo de orden dos, el plano de Fano.
 
-\begin{figure}[htb]
+\begin{figure}%[htb]
   \centering
   \begin{tikzpicture}
     \SetVertexNoLabel \SetUpVertex[MinSize=1pt]
-    \grMobiusKantor[RA=1.9]
+    \grHeawood[RA=2.5]
 
   \end{tikzpicture}
   \caption{Gráfica Heawood.} \label{heawood}
 \end{figure}
 
-
-
 \section{(3,7)-jaula}
 
-
-Hasta este momento el análisis a sido relativamente sencillo, pues al
-ir descartando posibilidades se a podido decidir que forma tiene la
-jaula y al mismo tiempo se demuestra que es única, mas aun parecería
+Hasta este momento el análisis ha sido relativamente sencillo, pues al
+ir descartando posibilidades se ha podido decidir que forma tiene la
+jaula y al mismo tiempo se demuestra que es única. Más aún parecería
 que una jaula siempre va a alcanzar la cota mínima sugerida, pero
 veamos que pasa en el siguiente caso.
 
@@ -2615,29 +2589,55 @@ hecho es $5$-arco-transitiva.
 
 \section{Jaulas 3-regular de cuello 9, 10, 11, 12 y 13 }
 
-Si el análisis prosiguiera como hasta ahora, se complicaría cada ves mas, pues el numero de vértices aumenta conforme el cuello se hace mas grande;  por ello, la forma de construir las jaulas con cuellos mayores, se a dado computacionalmente.\\
-\newline
-En un principio se hubiera podido suponer que las jaulas siempre alcanzaban la cota ingenua, pero la $(3-7)$-jaula derrumbo esta hipótesis pues necesito dos vértices m\'as, para poder formarse. Después de ver esto y analizar el caso de cuello igual a ocho, una nueva hipótesis surge, las jaulas no siempre alcanzan la cota inferior pero tal vez sean únicas.\\
-\newline
-La $(3,9)$-jaula es la primera que resulta no ser única, la primera fue encontrada por Biggs y Hoare y no cumplía con la cota ingenua, pues dicha gráfica contaba con cincuenta y ocho vértices. Posteriormente Brendan McKay probó que en efecto, $58$ era el n\'umero de vértices que debería tener una $(3,9)$-jaula; y finalmente en $1995$, Brinkmann y Saager, de manera computacional demostraron que existían dieciocho jaulas de $58$ vértices cada una, no isomorfas entre si. En \cite{9jaula} se encuentran dos métodos de construcción, para estas dieciocho $(3,9)$-jaulas.\\
-\newline
-Existen tres jaulas, 3-regular de  cuello diez, no isomorfas, encontradas por M. O'Keefe y P.K. Wong, con setenta vértices cada una, ocho mas que su cota inferior. \\
-\newline
-Brendan McKay y Wendy Myrvold demostraron, que la jaula de cuello once, tenia cinto doce vértices; es decir dieciocho vértices m\'as, que la cantidad necesaria para construir su árbol. Tiempo antes ya se había construido una $(3,11)$-gráfica con 112 vértices, pero fue hasta $2003$ que se pudo probar que esta gráfica era única.\\
-\newline
-Al parecer, la cantidad de vértices que las jaulas necesitan se va separando cada ves mas de la cota inferior arrojada por la construcción del árbol. Para que el cuello de una $(3,g)$-gráfica sea doce, es necesario un árbol con ciento veintiséis vértices; la $(3,12)$-jaula tiene precisamente 126 vértices, es decir cumple con la cota ingenua.\\
-\newline
-La $(3,13)$-jaula aun no es conocida; sin embargo, McKay y Myrvold elevaron la cota ingenua en doce vértices, es decir, demostraron que dicha jaula necesita al menos doscientos dos vértices para ser construida. La $(3,13)$-gráfica mas pequeña conocida tiene $272$ vértices y fue encontrada por Miles Whitehead.\\
-\newline Si se desea saber mas sobre jaulas se puede consultar
+Si el análisis prosiguiera como hasta ahora, se complicaría cada ves
+mas, pues el numero de vértices aumenta conforme el cuello se hace mas
+grande; por ello, la forma de construir las jaulas con cuellos
+mayores, se a dado computacionalmente.
+
+En un principio se hubiera podido suponer que las jaulas siempre
+alcanzaban la cota ingenua, pero la $(3-7)$-jaula derrumbo esta
+hipótesis pues necesito dos vértices m\'as, para poder
+formarse. Después de ver esto y analizar el caso de cuello igual a
+ocho, una nueva hipótesis surge, las jaulas no siempre alcanzan la
+cota inferior pero tal vez sean únicas.
+
+La $(3,9)$-jaula es la primera que resulta no ser única, la primera
+fue encontrada por Biggs y Hoare y no cumplía con la cota ingenua,
+pues dicha gráfica contaba con cincuenta y ocho
+vértices. Posteriormente Brendan McKay probó que en efecto, $58$ era
+el n\'umero de vértices que debería tener una $(3,9)$-jaula; y
+finalmente en $1995$, Brinkmann y Saager, de manera computacional
+demostraron que existían dieciocho jaulas de $58$ vértices cada una,
+no isomorfas entre si. En \cite{9jaula} se encuentran dos métodos de
+construcción, para estas dieciocho $(3,9)$-jaulas.
+
+Existen tres jaulas, 3-regular de cuello diez, no isomorfas,
+encontradas por M. O'Keefe y P.K. Wong, con setenta vértices cada una,
+ocho mas que su cota inferior.
+
+Brendan McKay y Wendy Myrvold demostraron, que la jaula de cuello
+once, tenia cinto doce vértices; es decir dieciocho vértices m\'as,
+que la cantidad necesaria para construir su árbol. Tiempo antes ya se
+había construido una $(3,11)$-gráfica con 112 vértices, pero fue hasta
+$2003$ que se pudo probar que esta gráfica era única.
+
+Al parecer, la cantidad de vértices que las jaulas necesitan se va
+separando cada ves mas de la cota inferior arrojada por la
+construcción del árbol. Para que el cuello de una $(3,g)$-gráfica sea
+doce, es necesario un árbol con ciento veintiséis vértices; la
+$(3,12)$-jaula tiene precisamente 126 vértices, es decir cumple con la
+cota ingenua.
+
+La $(3,13)$-jaula aun no es conocida; sin embargo, McKay y Myrvold
+elevaron la cota ingenua en doce vértices, es decir, demostraron que
+dicha jaula necesita al menos doscientos dos vértices para ser
+construida. La $(3,13)$-gráfica mas pequeña conocida tiene $272$
+vértices y fue encontrada por Miles Whitehead.
+
+Si se desea saber mas sobre jaulas se puede consultar
 \cite{cuellogrande} y \cite{survey}.
 
-
-
-
-
 \chapter{Gráficas 3-regular de cuello par $\geq$ 14}
-
-
 
 El método que se sigue para construir gráficas 3-regular, se conforma
 de dos partes; la primera, consiste en construir gráficas de Cayley
@@ -2893,21 +2893,17 @@ $$T=\{a,a^{-1},b,b^{-1},c, c^{-1}\}$$ con $b^3=I$ y $c^{3}=I$.
   \caption{}\label{b=c,a^3}
 \end{figure}
 
-
-
 Si en este momento se construye la gráfica de Cayley a partir de
 alguno de los conjuntos que se mencionan, sin ninguna otra
-restricción, la gráfica podría no ser localmente $3K_2$; para que esto
+restricción, la gráfica podría no ser localmente $3K_2$. Para que esto
 no ocurra, por el teorema~\ref{CayVT}, que dice que las gráficas de
 Cayley son vértice transitivas, es suficiente verificar el
-comportamiento de $a$ al multiplicarla por los elementos de $T$, ya que las vecindades de los elementos, en una gráfica vértice-transitiva, son isomorfas.\\
-\newline
-
+comportamiento de $a$ al multiplicarla por los elementos de $T$, ya
+que las vecindades de los vértices, en una gráfica
+vértice-transitiva, son isomorfas.
 
 Primer caso $T=\{a, a^{-1},b,b^{-1},c,c^{-1}\}$,
 figura~\ref{localmnt3K_2,a^3}.
-
-
 
 \begin{figure}[htb]
   \centering
@@ -3217,57 +3213,53 @@ bebe mostrar que existe $\Psi$, tal que $x,y\in Cay(G,T)$ son
 adyacentes si y solo si $\Psi(x)\sim \Psi(y)$ en $Cay(G,\Phi(T))$ y
 esto ocurre si y solo si
 
- \begin{equation*}
-   (\Psi(y))^{-1}(\Psi(x))\in \Phi(T)
- \end{equation*}
+\begin{equation*}
+  (\Psi(y))^{-1}(\Psi(x))\in \Phi(T)
+\end{equation*}
 
+Como $x\sim y$ entonces $y^{-1}x\in T$, entonces $\Phi(y^{-1}x) \in
+\Phi(T)$. Sea $\Psi=\Phi$, como $\Phi$ está en la orbita de $\phi$
+entonces $\Phi=\Phi_1\circ\phi$, para algún $\Phi_1$.
 
+\begin{equation*}
+  \begin{split}
+    \Phi(y^{-1}x)&=\Phi_1(\phi(y^{-1}x))\\
+    &=\Phi_1(\phi(y^{-1})\phi(x))\\
+    &=\Phi_1({\phi(y)}^{-1}\phi(x))\\
+    &=\Phi_1({\phi(y)}^{-1})\Phi_1(\phi(x))\\
+    &=({\Phi_1\circ \phi(y)})^{-1}(\Phi_1\circ
+    \phi)(x)=(\Phi(y))^{-1}(\Phi(x))
+  \end{split}
+\end{equation*}
 
- Como $x\sim y$ entonces $y^{-1}x\in T$, entonces $\Phi(y^{-1}x) \in
- \Phi(T)$. Sea $\Psi=\Phi$, como $\Phi$ está en la orbita de $\phi$
- entonces $\Phi=\Phi_1\circ\phi$, para algún $\Phi_1$.
+por lo tanto $(\Phi(y))^{-1}(\Phi(x))\in \Phi(T)$. 
 
- \begin{equation*}
-   \begin{split}
-     \Phi(y^{-1}x)&=\Phi_1(\phi(y^{-1}x))\\
-     &=\Phi_1(\phi(y^{-1})\phi(x))\\
-     &=\Phi_1({\phi(y)}^{-1}\phi(x))\\
-     &=\Phi_1({\phi(y)}^{-1})\Phi_1(\phi(x))\\
-     &=({\Phi_1\circ \phi(y)})^{-1}(\Phi_1\circ
-     \phi)(x)=(\Phi(y))^{-1}(\Phi(x))
-   \end{split}
- \end{equation*}
+Hay que recordar que un automorfismo es un función que manda vértices
+en vértices; y como la gráfica es de Cayley los vértices son
+precisamente los elementos del grupo $G$. Por lo que, teniendo una
+lista de conjuntos con seis elementos, dado un grupo $G$, gracias al
+teorema~\ref{orbitas}, basta calcular las órbitas del grupo de
+automorfismos de $G$, que manden un elemento a otro, y tomar un
+representante de estas, para eliminar algunas posibles $T$ que darían
+origen a la misma gráfica.
 
- por lo tanto $(\Phi(y))^{-1}(\Phi(x))\in \Phi(T)$.  \newline
+Sin embargo, computacionalmente el calcular órbitas es muy caro, pues
+ocupa mucha memoria y el proceso es lento. Por ello es necesario
+reducir el numero de elementos antes de pedir que se calculen las
+orbitas.
 
- Hay que recordar que un automorfismo es un función que manda vértices
- en vértices; y como la gráfica es de Cayley los vértices son
- precisamente los elementos del grupo $G$. Por lo que, teniendo una
- lista de conjuntos con seis elementos, dado un grupo $G$, gracias al
- teorema~\ref{orbitas}, basta calcular las orbitas del grupo de
- automorfismos de $G$, que manden un elemento a otro, y tomar un
- representante de estas, para eliminar algunas posibles $T$ que darían
- origen a la misma gráfica.
+Para construir todas las gráficas de Cayley localmente $3K_2$ del tipo
+uno, dado un grupo $G$, es conveniente tener una lista de elementos
+cuyo orden es tres, para poder hacer todas las combinaciones de tres
+elementos, generar $T$ y verificar que no cumpla las condiciones
+malas. Si esto ocurre diremos que dichas combinaciones generan una $T$
+buena.\index{T buena}
 
- Sin embargo, computacionalmente el calcular orbitas es muy caro, pues
- ocupa mucha memoria y el proceso es lento. Por ello es necesario
- reducir el numero de elementos antes de pedir que se calculen las
- orbitas.
-
-
- Para construir todas las gráficas de Cayley localmente $3K_2$ del
- tipo uno, dado un grupo $G$, es conveniente tener una lista de
- elementos cuyo orden es tres, para poder hacer todas las
- combinaciones de tres elementos, generar $T$ y verificar que no
- cumpla las condiciones malas. Si esto ocurre diremos que dichas
- combinaciones generan una $T$ buena.\index{T buena}
-
- Al hacerlo tan burdamente, se podría estar generando la misma $T$
- repetidas veces, lo que generaría un retraso en el tiempo al calcular
- sus orbitas. Para que esto no ocurra es conveniente notar que en la
- lista $L$, de elementos cuyo orden es tres, si $x\in L$ entonces
- $x^{-1}$ también esta en $L$.
-
+Al hacerlo tan burdamente, se podría estar generando la misma $T$
+repetidas veces, lo que generaría un retraso en el tiempo al calcular
+sus órbitas. Para que esto no ocurra es conveniente notar que en la
+lista $L$, de elementos cuyo orden es tres, si $x\in L$ entonces
+$x^{-1}$ también esta en $L$.
 
 \begin{proposition}\label{generanaT}
   Sea $L:=\{ g\in G \mid g^3=e\}$, si $a,b,c\in L$ generan una $T$
@@ -3280,12 +3272,8 @@ generado por $a,b,c$. El conjunto generado por $x,y,z$ es
 $T_2=\{x,x^1\}\cup \{y,y^{-1}\}\cup \{z,z^{-1}\}$, es claro que
 $T_1=T_2$.
 
-
-
-
-
-\section{Condiciones para minimizar el tiempo de ejecución}
-
+\section[Minimizar el tiempo de ejecución]%
+{Condiciones para minimizar el tiempo de ejecución}
 
 Existe una cantidad muy grande de grupos, y entre mas grande sea el
 numero de elementos que tienen, el tiempo de ejecución del proceso
@@ -3338,9 +3326,8 @@ del tipo dos, entonces $x\nsim x^{-1}$ pero si existe el $C_n$ ciclo
   x\sim x^1\sim ...\sim x^{n-1}=x^{-1} \sim x^{n}=e \sim x
 \end{equation*} 
 
-El cual al construir la bipartita clánica se vuelve un ciclo de
-longitud $2n$.  \newline
-   
+El cual al construir la bipartita clánica induce un ciclo de longitud
+$2n$.
 
 Una condición bastante importante y que hasta el momento no ha sido
 mencionada es que si lo que se pretende es construir gráficas
@@ -3377,12 +3364,11 @@ T$, es decir:
 
 Como $g$ es arbitrario entonces $T$ genera a $G$, pero como $Cay(G,T)$
 es del tipo dos, entonces $T$ es generado por dos elementos, $a$ y
-$b$; lo que trae como consecuencia que $G$ se pueda generar a partir
-de dos elementos, contradiciendo el hecho de que el n\'umero m\'inimo
-de generadores es mayor o igual a tres.
+$b$. Esto trae como consecuencia que $G$ se pueda generar a partir de
+dos elementos, contradiciendo el hecho de que el número mínimo de
+generadores es mayor o igual a tres.
 
-Por lo tanto $Cay(G,T)$ no es conexa.  \newline
-
+Por lo tanto $Cay(G,T)$ no es conexa. 
 
 \begin{theorem}\label{Cayconexa1}
   Si el numero mínimo de generadores de $G$ es mayor o igual a cuatro,
@@ -3394,16 +3380,10 @@ Demostración: La demostración es similar a la del
 teorema~\ref{Cayconexa2}, pero en esta ocasión $T$ es generado por
 tres elementos, lo que lleva a la contradicción.
 
-
-
-
-
-
 \section{Algoritmo}
 
- \begin{verbatim}
-
-
+\begin{small}
+\begin{verbatim}
 RECIBE EL INTERVALO A REVISAR y EL CUELLO MÍNIMO DESEADO
  
 for i desde a a b
@@ -3477,7 +3457,7 @@ for i desde a a b
 
      for desde uno hasta el número total de representantes
        genera T a partir de la pareja
-          si T no cumple las condiciones malas, para ser del tipo dos
+          si T no cumple las condiciones malas para ser del tipo dos
              agrega T a una lista de T's buenas
           fin si 
      fin for 
@@ -3500,7 +3480,7 @@ fin for
 FIN DEL PROGRAMA.
 
 \end{verbatim}
-
+\end{small}
 
 \chapter{Conclusiones}
 
