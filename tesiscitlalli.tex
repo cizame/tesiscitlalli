@@ -509,10 +509,6 @@ clasificaciones.
 
 
 
-
-
-
-
 \begin{definition}\textbf{Unión disjunta}\\\index{Unión disjunta}
   Dadas dos gráficas $G$ y $H$, se define la unión disjunta $G\cup H$
   como
@@ -693,11 +689,9 @@ $\varphi (V(L))$, si $x\sim y$ en $L\subset G$ entonces $\varphi
 \end{definition}
 
 
-
-
 \begin{definition}\textbf{Gráfica conexa}\\\index{Gráfica conexa}
   Una gráfica $G$ es conexa si para todos $ u,v\in V(G)$ con $u\neq
-  v$, existe un uv-camino de longitud $n$.
+  v$, existe un $uv$-camino de longitud $n$.
 \end{definition}
 
 \begin{proposition}\textbf{}\\
@@ -705,8 +699,7 @@ $\varphi (V(L))$, si $x\sim y$ en $L\subset G$ entonces $\varphi
   relación $\simeq$ en $V(G)$ dada por $u\simeq v$ si y solo si existe
   un $uv$-camino en $G$, es una relación de equivalencia.
 \end{proposition}
-
-Demostración: Sea $\{u=t_0,t_1,t_2,...,t_n=v \}$ un $uv$-camino
+\begin{demostration} Sea $\{u=t_0,t_1,t_2,...,t_n=v \}$ un $uv$-camino
 entonces $\{v=t_n,...,t_1,t_0=u \}$ es un $vu$-camino. Ahora se
 demostrar\'a que es una relación de equivalencia.
 
@@ -728,7 +721,7 @@ demostrar\'a que es una relación de equivalencia.
 \end{enumerate}
 
 Por lo tanto $\simeq$ es una relación de equivalencia.
-
+\end{demostration}
 
 \begin{definition}\textbf{Distancia}\\\index{Distancia}
   Sean $u,v\in V(G)$, la distancia $d(u,v)$ entre $u$ y $v$, si existe
@@ -780,11 +773,10 @@ que no tienen cuello.
 \end{definition}
 
 \begin{proposition}\textbf{}\\
-  No existe una gráfica $G$ tal que $N_G(x)\cong P_2$ para todo $ x\in
+  No existe una gráfica $G$ tal que la vecindad de $x$ sea isomorfa a $P_2$ para todo $ x\in
   V(G)$.
 \end{proposition}
-
-Demostración: Se tratar\'a de dibujar la gráfica, para mostrar en que
+\begin{demostration} Para demostrar que no existe $G$ tal que $N_G(x)\simeq P_2$, se tratar\'a de dibujar ua gráfica con esta propiedad, para identificar en que
 punto es imposible continuar.
 
 Sea $x\in V(G)$ y $a,b,c$ los vecinos de $x$ tales que $a\sim b\sim c$
@@ -812,7 +804,7 @@ Por lo tanto no existe dicha gráfica.
   \end{tikzpicture}
   \caption{}\label{isomorfp2}
 \end{figure}
-
+\end{demostration}
 
 
 
