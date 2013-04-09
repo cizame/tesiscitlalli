@@ -697,7 +697,7 @@ $\varphi (V(L))$, si $x\sim y$ en $L\subset G$ entonces $\varphi
 
 \begin{definition}\textbf{Gráfica conexa}\\\index{Gráfica conexa}
   Una gráfica $G$ es conexa si para todos $ u,v\in V(G)$ con $u\neq
-  v$, existe un uv-camino de longitud $n$.
+  v$, existe un $uv$-camino de longitud $n$.
 \end{definition}
 
 \begin{proposition}\textbf{}\\
@@ -705,8 +705,7 @@ $\varphi (V(L))$, si $x\sim y$ en $L\subset G$ entonces $\varphi
   relación $\simeq$ en $V(G)$ dada por $u\simeq v$ si y solo si existe
   un $uv$-camino en $G$, es una relación de equivalencia.
 \end{proposition}
-
-Demostración: Sea $\{u=t_0,t_1,t_2,...,t_n=v \}$ un $uv$-camino
+\begin{demostration} Sea $\{u=t_0,t_1,t_2,...,t_n=v \}$ un $uv$-camino
 entonces $\{v=t_n,...,t_1,t_0=u \}$ es un $vu$-camino. Ahora se
 demostrar\'a que es una relación de equivalencia.
 
@@ -728,7 +727,7 @@ demostrar\'a que es una relación de equivalencia.
 \end{enumerate}
 
 Por lo tanto $\simeq$ es una relación de equivalencia.
-
+\end{demostration}
 
 \begin{definition}\textbf{Distancia}\\\index{Distancia}
   Sean $u,v\in V(G)$, la distancia $d(u,v)$ entre $u$ y $v$, si existe
@@ -771,8 +770,6 @@ que no tienen cuello.
   \end{equation*}
 \end{definition}
 
-
-
 \begin{definition}\textbf{Vecindad de $x$}\\\index{Vecindad de $x$}
   Sean $G$ una gráfica y $x\in V(G)$, la vecindad de $x$,
   $N_G(x)$\index{$N_G(x)$}, es la subgráfica de $G$ inducida por
@@ -780,25 +777,17 @@ que no tienen cuello.
 \end{definition}
 
 \begin{proposition}\textbf{}\\
-  No existe una gráfica $G$ tal que $N_G(x)\cong P_2$ para todo $ x\in
-  V(G)$.
+  No existe una gráfica $G$ tal que la vecindad de $x$ sea isomorfa al camino de longitud dos, para todo $ x\in  V(G)$.
 \end{proposition}
 
-Demostración: Se tratar\'a de dibujar la gráfica, para mostrar en que
-punto es imposible continuar.
+\begin{demostration} Se demostrar\'a por contradicción. Suponga que existe una gráfica $G$, tal que la vecindad de cualquiera de sus vértices es isomorfa a $P_2$. 
 
-Sea $x\in V(G)$ y $a,b,c$ los vecinos de $x$ tales que $a\sim b\sim c$
-para que la vecindad de $x$ sea isomorfa a $P_2$, al hacer esto,
-automáticamente la vecindad de $b$ también es $P_2$.
+Sea $x\in V(G)$ y sean $a$, $b$ y $c$ los vértices adyacentes a $x$. Entonces $a\sim b\sim c$ y $a\nsim c$, por hipótesis.
 
-Sin perdida de generalidad se elige $a$ para tratar de completar su
-vecindad, para ello $a$ tiene que tener otro amigo, nótese que dicho
-amigo no puede ser $c$, pues esto arruinaría la vecindad de $x$;
-entonces debe ser un nuevo vértice $d$, que a su vez debe estar unido
-a $b$ para que la vecindad sea $P_2$, pero eso ahora arruina la
-vecindad de $b$, figura~\ref{isomorfp2}.
+Por otro lado, como la vecindad de $a$ también es isomorfa a $P_2$ entonces existe $d\in V(G)$, distinto a $b$, $c$ y $x$, tal que $a$ es adyacente a \'el. Nuevamente, por hipótesis $d\sim b\sim x$, v\'ease figura~\ref{isomorfp2}.
 
-Por lo tanto no existe dicha gráfica.
+Finalmente, $a$, $c$, $d$ y $x$ son adyacentes a $b$, haciendo imposible que su vecindad sea isomorfa a $P_2$, contradiciendo el supuesto de que existe dicha gráfica.   
+
 
 \begin{figure}\centering
   \begin{tikzpicture}
@@ -807,12 +796,12 @@ Por lo tanto no existe dicha gráfica.
     \grEmptyPath*[x=-2,y=0,RA=2,prefix=a]{,,} \AssignVertexLabel{x}{x}
     \AssignVertexLabel{d}{d} \AssignVertexLabel{a}{a,b,c}
     \Edges(a1,a0,x0,a2,a1,x0) \Edges(a0,d0)
-    \Edge[style={dashed}](d0)(a1)
+    \Edge(d0)(a1)
     % \draw(0,-2.8) node {$T_3$};
   \end{tikzpicture}
   \caption{}\label{isomorfp2}
 \end{figure}
-
+\end{demostration}
 
 
 
