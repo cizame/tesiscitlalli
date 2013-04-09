@@ -7,7 +7,6 @@
 
 \usepackage{makeidx}
 
-
 \newtheorem{theorem}{Teorema} \newtheorem{corollary}{Corolario}
 \newtheorem{proposition}{Proposición}
 
@@ -20,115 +19,115 @@
 \newcommand{\beao}{\begin{eqnarray*}} %Para centrar y no enumerar ecuaciones
 \newcommand{\eeao}{\end{eqnarray*}}
 \newcommand{\bea}{\begin{eqnarray}} %Para centrar y enumerar ecuaciones
-  \newcommand{\eea}{\begin{eqnarray}} \newcommand\N{{\mathbb N}}
-    \newtheorem{lemma}{Lema} \newcounter{in} \newcounter{ini}
+\newcommand{\eea}{\begin{eqnarray}} \newcommand\N{{\mathbb N}}
+\newtheorem{lemma}{Lema} \newcounter{in} \newcounter{ini}
 
-    \DeclareMathOperator{\Cay}{Cay}
-    \DeclareMathOperator{\diam}{diam}
-    \DeclareMathOperator{\Stab}{Stab}
-    \DeclareMathOperator{\Aut}{Aut}
-    \DeclareMathOperator{\orb}{Orb}
+\DeclareMathOperator{\Cay}{Cay}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\orb}{Orb}
 
-    \makeindex
+\makeindex
 
-    \begin{document}
+\begin{document}
 
-    \title{Buscando jaulas} \author{Zamora Mejía Citlalli} \date{}
-    \maketitle
-
-
-    \newpage \thispagestyle{empty}
-    \chapter*{Agradecimientos}
-    Aquí van los agradecimientos
+\title{Buscando jaulas} \author{Zamora Mejía Citlalli} \date{}
+\maketitle
 
 
-
-    \newpage \thispagestyle{empty}
+\newpage \thispagestyle{empty}
+\chapter*{Agradecimientos}
+Aquí van los agradecimientos
 
 
 
-
-    \chapter{Introducción}
-
-    En matem\'aticas, los problemas de minimización son muy comunes.
-    En teor\'ia de gráficas, la búsqueda de jaulas es un ejemplo de
-    ello: consiste en encontrar gráficas regulares, con cuello dado,
-    pero con la menor cantidad de vértices posibles.
-
-
-    La presente tesis aborda el problema de jaulas 3-regulares de
-    cuello dado. Primero presenta una construcción de dichas jaulas de
-    cuello menor o igual a doce, de las cuales se sabe la
-    cantidad de vértices que tienen y si son únicas o no. Si el cuello
-    es mayor, se conocen cotas inferiores y superiores; pero todavía
-    no se sabe si las gráficas son jaulas, y mucho menos si son
-    únicas.  La segunda parte, presenta un método computacional; el
-    cual dibuja gráficas $3$-regulares de cuello par, a partir de un
-    listado de grupos; e identifica si alguna iguala o reduce la cota
-    superior.
-
-
-    El método que se sigue, en la segunda parte, tiene dos niveles. El
-    primero, construye gráficas de Cayley localmente $3K_2$, las
-    cuales son vértice-transitivas, y basta con hacer un análisis al
-    rededor de la identidad para saber como se comporta en el resto de
-    los vértices. El segundo nivel, dibuja la bipartita clánica,
-    asociada a cada una de las gráficas de Cayley localmente $3K_2$,
-    construidas en el paso anterior. En dicha gráfica, por cada
-    vértice y por cada clan, de la gráfica original; existe un vértice
-    asociado a \'el: en donde los vértices $x,y$ son adyacentes si y
-    solo si $x$ es un vértice de la gráfica de Cayley y $y$ un clan
-    que contenga a $x$ o viceversa.
-
-    Para construir gráficas de Cayley es necesario trabajar con
-    grupos, y dado que $GAP$ es un software libre especializado; que
-    contiene una amplia lista de ellos, se utiliza para hacer el
-    programa antes mencionado.
-
-
-
-    \tableofcontents
+\newpage \thispagestyle{empty}
 
 
 
 
-    \chapter{Conceptos básicos}
+\chapter{Introducción}
 
-    Antes de comenzar con el tema principal del presente trabajo, es
-    necesario introducir algunos conceptos, unos mas básicos y comunes
-    que otros, pero necesarios para facilitar la comprensión del
-    lenguaje que aquí se maneja; así como resultados ya existentes que
-    serven de ayuda en la justificación del análisis que se hace a las
-    gráficas de Cayley 3-regulares.
+En matem\'aticas, los problemas de minimización son muy comunes.
+En teor\'ia de gráficas, la búsqueda de jaulas es un ejemplo de
+ello: consiste en encontrar gráficas regulares, con cuello dado,
+pero con la menor cantidad de vértices posibles.
 
- 
-    \section{Grupos}
 
-    En esta sección se encuentran definiciones básicas de grupos y
-    algunos resultados elementales que no serán demostrados. Si
-    el lector se interesa puede consultar m\'as acerca del tema en
-   $\cite{Barrera}$, $\cite{Ehrlich}$, $\cite{Hall}$ y $\cite{Zaldivar}$.
+La presente tesis aborda el problema de jaulas 3-regulares de
+cuello dado. Primero presenta una construcción de dichas jaulas de
+cuello menor o igual a doce, de las cuales se sabe la
+cantidad de vértices que tienen y si son únicas o no. Si el cuello
+es mayor, se conocen cotas inferiores y superiores; pero todavía
+no se sabe si las gráficas son jaulas, y mucho menos si son
+únicas.  La segunda parte, presenta un método computacional; el
+cual dibuja gráficas $3$-regulares de cuello par, a partir de un
+listado de grupos; e identifica si alguna iguala o reduce la cota
+superior.
 
-    \begin{definition}{\textbf{Grupo}}\\\index{Grupo} Un grupo es una
-      pareja ($G$,$\circ$), con $G$ un conjunto no vacío, $\circ$ una
-      función de $G\times G \rightarrow G$ llamada operación binaria y
-      denotada por $\circ (x,y):=x\circ y$, la cual satisface:
 
-      \begin{enumerate}
-      \item La operación $\circ$ es asociativa, es decir, $g_1\circ
-        (g_2\circ G_3)=(g_1 \circ g_2)\circ g_3$ para todos
-        $g_1,g_2,g_3\in G$.
-      \item Existe $e\in G$ tal que $e\circ g_1=g_1$, para todo
-        $g_1\in G$, llamado neutro por la izquierda.
-      \item Dado $g_1\in G$, existe $g_1'\in G$ tal que $g_1'\circ g_1
-        = e$, a dicho elemento se le conoce como inverso por la
-        izquierda y se denota por $g_1^{-1}$.
-      \end{enumerate}
-    \end{definition}
+El método que se sigue, en la segunda parte, tiene dos niveles. El
+primero, construye gráficas de Cayley localmente $3K_2$, las
+cuales son vértice-transitivas, y basta con hacer un análisis al
+rededor de la identidad para saber como se comporta en el resto de
+los vértices. El segundo nivel, dibuja la bipartita clánica,
+asociada a cada una de las gráficas de Cayley localmente $3K_2$,
+construidas en el paso anterior. En dicha gráfica, por cada
+vértice y por cada clan, de la gráfica original; existe un vértice
+asociado a \'el: en donde los vértices $x,y$ son adyacentes si y
+solo si $x$ es un vértice de la gráfica de Cayley y $y$ un clan
+que contenga a $x$ o viceversa.
 
-    Apartir de este momento, la notación $g_1\circ g_2$ ser\'a
-    sustituida por $g_1g_2$ pues es m\'as cómodo dejar de escribir
-    $\circ$.
+Para construir gráficas de Cayley es necesario trabajar con
+grupos, y dado que $GAP$ es un software libre especializado; que
+contiene una amplia lista de ellos, se utiliza para hacer el
+programa antes mencionado.
+
+
+
+\tableofcontents
+
+
+
+
+\chapter{Conceptos básicos}
+
+Antes de comenzar con el tema principal del presente trabajo, es
+necesario introducir algunos conceptos, unos mas básicos y comunes
+que otros, pero necesarios para facilitar la comprensión del
+lenguaje que aquí se maneja; así como resultados ya existentes que
+serven de ayuda en la justificación del análisis que se hace a las
+gráficas de Cayley 3-regulares.
+
+
+\section{Grupos}
+
+En esta sección se encuentran definiciones básicas de grupos y
+algunos resultados elementales que no serán demostrados. Si
+el lector se interesa puede consultar m\'as acerca del tema en
+$\cite{Barrera}$, $\cite{Ehrlich}$, $\cite{Hall}$ y $\cite{Zaldivar}$.
+
+\begin{definition}{\textbf{Grupo}}\\\index{Grupo} Un grupo es una
+pareja ($G$,$\circ$), con $G$ un conjunto no vacío, $\circ$ una
+función de $G\times G \rightarrow G$ llamada operación binaria y
+denotada por $\circ (x,y):=x\circ y$, la cual satisface:
+
+\begin{enumerate}
+\item La operación $\circ$ es asociativa, es decir, $g_1\circ
+  (g_2\circ G_3)=(g_1 \circ g_2)\circ g_3$ para todos
+  $g_1,g_2,g_3\in G$.
+\item Existe $e\in G$ tal que $e\circ g_1=g_1$, para todo
+  $g_1\in G$, llamado neutro por la izquierda.
+\item Dado $g_1\in G$, existe $g_1'\in G$ tal que $g_1'\circ g_1
+  = e$, a dicho elemento se le conoce como inverso por la
+  izquierda y se denota por $g_1^{-1}$.
+\end{enumerate}
+\end{definition}
+
+Apartir de este momento, la notación $g_1\circ g_2$ ser\'a
+sustituida por $g_1g_2$ pues es m\'as cómodo dejar de escribir
+$\circ$.
 
 
 \begin{theorem}\label{gg=g}
@@ -149,7 +148,9 @@ concluyendo la demostración.
 
 Se puede demostrar que tanto el elemento neutro, como el inverso son
 únicos, además
-$$eg=ge=e  \textit{    y   }  g^{-1}g=gg^{-1}=e$$ para todo $g \in G$. Si se desea, se puede consultar la demostración en $\cite{Barrera}$.
+$$eg=ge=e  \textit{    y   }  g^{-1}g=gg^{-1}=e$$
+para todo $g \in G$. Si se desea, se puede consultar la demostración
+en $\cite{Barrera}$.
 
 \begin{example}\textbf{Grupo simétrico}\\\index{Grupo simétrico}
   Sea $S_n$\index{$S_n$} el conjunto formado por todas las funciones
@@ -196,7 +197,8 @@ manda $i_j$ a $i_{j+1}$ e $i_k$ a $i_1$.
   \end{enumerate}\label{teonodemos}
 \end{theorem}
 \begin{demostration}
-La demostración del teorema~\ref{teonodemos} se encuentra en \cite{Barrera}, p\'agina 24; o en \cite{Ehrlich}, p\'agina 44.
+  La demostración del teorema~\ref{teonodemos} se encuentra en
+  \cite{Barrera}, p\'agina 24; o en \cite{Ehrlich}, p\'agina 44.
 \end{demostration}
 
 \begin{theorem}
@@ -206,13 +208,18 @@ Sea $G$ un grupo. La intersecci\'on de subgrupos de $G$ es también un subgrupo.
 \begin{demostration}
 Sea $I$ un conjunto de subgrupos de $G$. 
 
-Primero; cada $H\in I$ contiene la identidad, $e$, de $G$. Se tiene $e\in \bigcap_{H\in I}H$, entonces $\bigcap_{H\in I}H\neq \phi$.
+Primero; cada $H\in I$ contiene la identidad, $e$, de $G$. Se tiene
+$e\in \bigcap_{H\in I}H$, entonces $\bigcap_{H\in I}H\neq \phi$.
 
-Ahora suponga que $a,b\in \bigcap_{H\in I}H$. Entonces $a,b\in H$, para cada $H\in I$. Por el teorema~\ref{teonodemos} se tiene $ab^{-1}\in H$, para cada $H\in I$, de lo que se sigue $ab^{-1}\in \bigcap_{H\in I}H$. Por lo tanto $\bigcap_{H\in I}H\le G$.
+Ahora suponga que $a,b\in \bigcap_{H\in I}H$. Entonces $a,b\in H$,
+para cada $H\in I$. Por el teorema~\ref{teonodemos} se tiene
+$ab^{-1}\in H$, para cada $H\in I$, de lo que se sigue $ab^{-1}\in
+\bigcap_{H\in I}H$. Por lo tanto $\bigcap_{H\in I}H\le G$.
 \end{demostration}
 
 \begin{definition}\textbf{Subgrupo generado por un conjunto}\\\index{Subgrupo generado}
-Sean $G$ un grupo y $S$ un conjunto no vacío de $G$. Entonces el subgrupo de $G$ generado por $S$ es:
+  Sean $G$ un grupo y $S$ un conjunto no vacío de $G$. Entonces el
+  subgrupo de $G$ generado por $S$ es:
 \begin{equation*}
 \langle S \rangle := \bigcap_{\text{$H\le G$ tal que $S \subset H$}}H
 \end{equation*}\index{$\langle S \rangle$}
@@ -231,8 +238,6 @@ cuales se les conoce como grupos finitos.\index{Grupos finitos}
   Sean $G$ un grupo y $g\in G$, el orden de $G$ es el menor entero
   positivo $n$ tal que $g^n=e$ y se denotar\'a por $|g|=n$.\index{$|g|$}
 \end{definition}
-
-
 
 \begin{definition}{\textbf{Homomorfismo}}\\\index{Homomorfismo de
     grupos} Sean $(G,\circ)$ y ($G_1, \ast$) dos grupos. A $f : G
@@ -374,8 +379,6 @@ así como algunos resultados y sus demostraciones. Si el lector se
 interesa en conocer m\'as acerca de teoría de gráficas puede consultar
 $\cite{Harary}$.
 
-
-
 \begin{definition}\textbf{Gráfica}\\\index{Gráfica}
   Una gráfica $\Gamma$ es un par ordenado de conjuntos,
   $\Gamma=\{V(\Gamma),E(\Gamma)\}$, donde $V(\Gamma)$ es finito,
@@ -389,11 +392,12 @@ $\cite{Harary}$.
 A los elementos de $E(\Gamma)$ se les conoce como
 aristas\index{Arista}.
 
-La definición general de una gráfica permite que $V(\Gamma)$ sea infinito, y $E(\Gamma)$ es definido de tal forma que sus elementos pueden ser
-dirigidos\index{Arista dirigida}; incluso pueden existir
-lazos\index{Lazos}: aristas que van de un vértice en s\'i
-mismo. Pero para fines de esta tesis es suficiente definirla con
-vértices finitos, aristas no dirigidas y sin lazos.
+La definición general de una gráfica permite que $V(\Gamma)$ sea
+infinito, y $E(\Gamma)$ es definido de tal forma que sus elementos
+pueden ser dirigidos\index{Arista dirigida}; incluso pueden existir
+lazos\index{Lazos}: aristas que van de un vértice en s\'i mismo. Pero
+para fines de esta tesis es suficiente definirla con vértices finitos,
+aristas no dirigidas y sin lazos.
 
 \begin{definition}\textbf{Complemento de una gráfica}\\\index{Complemento de una gráfica}
   Si $G$ es una gráfica, se define $\overline{G}$, el complemento de
@@ -455,26 +459,27 @@ hablando de la misma gráfica.
 
 
 \begin{proposition}\textbf{Grupo de Automorfismo de una gráfica}\\\index{Grupo de automorfismos}
-  Sea $n$ el orden de una gráfica, $|\Gamma|=n$. Entonces, el conjunto de todos los automorfismos de
-  $\Gamma$, es un subgrupo de $S_n$, denotado $\Aut(\Gamma)$, llamado
-  grupo de automorfismos de $\Gamma$.
+  Sea $n$ el orden de una gráfica, $|\Gamma|=n$. Entonces, el conjunto
+  de todos los automorfismos de $\Gamma$, es un subgrupo de $S_n$,
+  denotado $\Aut(\Gamma)$, llamado grupo de automorfismos de $\Gamma$.
 \end{proposition}
 
-\begin{demostration} Los automorfismos de $\Gamma$ pertenecen a $S_n$ y la
-identidad es un automorfismo, por lo que el conjunto de automorfismos de $\Gamma$ no es vac\'io. Sean $\phi$ y $\psi$ automorfismos de
-$\Gamma$ y sean $x,y\in V(\Gamma)$ tales que $x\sim y$ entonces
-$\phi(x)\sim \phi(y)$ y ambos están en $V(\Gamma)$, aplicando $\psi$:
+\begin{demostration} Los automorfismos de $\Gamma$ pertenecen a $S_n$
+  y la identidad es un automorfismo, por lo que el conjunto de
+  automorfismos de $\Gamma$ no es vac\'io. Sean $\phi$ y $\psi$
+  automorfismos de $\Gamma$ y sean $x,y\in V(\Gamma)$ tales que $x\sim
+  y$ entonces $\phi(x)\sim \phi(y)$ y ambos están en $V(\Gamma)$,
+  aplicando $\psi$:
 \begin{equation*}
   \psi(\phi(x))\sim \psi(\phi(y))
   \mbox{ es decir } 
   (\psi \circ \phi) (x)\sim (\psi \circ \phi)(y)
 \end{equation*}
 
-por lo que $(\psi \circ \phi)$ es también un automorfismo de $\Gamma$. Por lo tanto el grupo de automorfismos de $\Gamma$ es un subgrupo de
-$S_n$.
+Por lo que $(\psi \circ \phi)$ es también un automorfismo de
+$\Gamma$. Por lo tanto el grupo de automorfismos de $\Gamma$ es un
+subgrupo de $S_n$.
 \end{demostration}
-
-
 
 \subsection{Familias de gráficas}
 
