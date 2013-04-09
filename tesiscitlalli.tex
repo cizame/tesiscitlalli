@@ -764,8 +764,6 @@ que no tienen cuello.
   \end{equation*}
 \end{definition}
 
-
-
 \begin{definition}\textbf{Vecindad de $x$}\\\index{Vecindad de $x$}
   Sean $G$ una gráfica y $x\in V(G)$, la vecindad de $x$,
   $N_G(x)$\index{$N_G(x)$}, es la subgráfica de $G$ inducida por
@@ -773,24 +771,17 @@ que no tienen cuello.
 \end{definition}
 
 \begin{proposition}\textbf{}\\
-  No existe una gráfica $G$ tal que la vecindad de $x$ sea isomorfa a $P_2$ para todo $ x\in
-  V(G)$.
+  No existe una gráfica $G$ tal que la vecindad de $x$ sea isomorfa al camino de longitud dos, para todo $ x\in  V(G)$.
 \end{proposition}
-\begin{demostration} Para demostrar que no existe $G$ tal que $N_G(x)\simeq P_2$, se tratar\'a de dibujar ua gráfica con esta propiedad, para identificar en que
-punto es imposible continuar.
 
-Sea $x\in V(G)$ y $a,b,c$ los vecinos de $x$ tales que $a\sim b\sim c$
-para que la vecindad de $x$ sea isomorfa a $P_2$, al hacer esto,
-automáticamente la vecindad de $b$ también es $P_2$.
+\begin{demostration} Se demostrar\'a por contradicción. Suponga que existe una gráfica $G$, tal que la vecindad de cualquiera de sus vértices es isomorfa a $P_2$. 
 
-Sin perdida de generalidad se elige $a$ para tratar de completar su
-vecindad, para ello $a$ tiene que tener otro amigo, nótese que dicho
-amigo no puede ser $c$, pues esto arruinaría la vecindad de $x$;
-entonces debe ser un nuevo vértice $d$, que a su vez debe estar unido
-a $b$ para que la vecindad sea $P_2$, pero eso ahora arruina la
-vecindad de $b$, figura~\ref{isomorfp2}.
+Sea $x\in V(G)$ y sean $a$, $b$ y $c$ los vértices adyacentes a $x$. Entonces $a\sim b\sim c$ y $a\nsim c$, por hipótesis.
 
-Por lo tanto no existe dicha gráfica.
+Por otro lado, como la vecindad de $a$ también es isomorfa a $P_2$ entonces existe $d\in V(G)$, distinto a $b$, $c$ y $x$, tal que $a$ es adyacente a \'el. Nuevamente, por hipótesis $d\sim b\sim x$, v\'ease figura~\ref{isomorfp2}.
+
+Finalmente, $a$, $c$, $d$ y $x$ son adyacentes a $b$, haciendo imposible que su vecindad sea isomorfa a $P_2$, contradiciendo el supuesto de que existe dicha gráfica.   
+
 
 \begin{figure}\centering
   \begin{tikzpicture}
@@ -799,7 +790,7 @@ Por lo tanto no existe dicha gráfica.
     \grEmptyPath*[x=-2,y=0,RA=2,prefix=a]{,,} \AssignVertexLabel{x}{x}
     \AssignVertexLabel{d}{d} \AssignVertexLabel{a}{a,b,c}
     \Edges(a1,a0,x0,a2,a1,x0) \Edges(a0,d0)
-    \Edge[style={dashed}](d0)(a1)
+    \Edge(d0)(a1)
     % \draw(0,-2.8) node {$T_3$};
   \end{tikzpicture}
   \caption{}\label{isomorfp2}
@@ -1452,12 +1443,12 @@ $(k,g)$-gráficas, lo cual resulta muy conveniente para poder dar una
 cota inferior para la cantidad de vértices que una $(3,n)-jaula$
 tiene.
 
-Si n es par
+Si $n$ es par
 \begin{center}
   con $m=\frac{n}{2}$ cota inferior $\sum^{m}_{i+1}2^i$
 \end{center}
 
-Si n es impar
+Si $n$ es impar
 \begin{center}
   con $m=\frac{(n-3)}{2}$ la cota es $1 + 3\sum^m_{i=0} 2^i$
 \end{center}
