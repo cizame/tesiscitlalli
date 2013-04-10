@@ -700,20 +700,20 @@ $\varphi (V(L))$, si $x\sim y$ en $L\subset G$ entonces $\varphi
 \end{definition}
 
 \begin{proposition}\textbf{}\\
-  Si existe un $uv$-camino, también existe un $vu$-camino. Más aún la
+  Si existe un $uv$-camino en una gráfica $G$, entonces también existe un $vu$-camino. Más aún la
   relación $\simeq$ en $V(G)$ dada por $u\simeq v$ si y solo si existe
   un $uv$-camino en $G$, es una relación de equivalencia.
 \end{proposition}
 \begin{demostration} Sea $\{u=t_0,t_1,t_2,...,t_n=v \}$ un $uv$-camino
-entonces $\{v=t_n,...,t_1,t_0=u \}$ es un $vu$-camino. Ahora se
-demostrar\'a que es una relación de equivalencia.
+en $G$, entonces $\{v=t_n,...,t_1,t_0=u \}$ es un $vu$-camino. Por lo tanto, si existe un $uv$-camino siempre va a existir un $vu$-camino.
+
+ Ahora se demostrará que es una relación de equivalencia.
 
 \begin{enumerate}
 
 \item Reflexividad: $x\simeq x$, $\{ x\}$ es el $xx$-camino.
 
-\item Simetría: si $x \simeq y$ entonces $y \simeq x$. Por lo ya
-  demostrado, como existe un $xy$-camino entonces existe un
+\item Simetría: si $x \simeq y$ entonces $y \simeq x$. Como existe un $xy$-camino entonces existe un
   $yx$-camino.
 
 \item Transitividad: Si $x \simeq y$ y $y \simeq z$ entonces $x \simeq
@@ -729,8 +729,8 @@ Por lo tanto $\simeq$ es una relación de equivalencia.
 \end{demostration}
 
 \begin{definition}\textbf{Distancia}\\\index{Distancia}
-  Sean $u,v\in V(G)$, la distancia $d(u,v)$ entre $u$ y $v$, si existe
-  un $uv$-camino es:
+Sea $G$ una gráfica y sean $u,v\in V(G)$. La distancia entre $u$ y $v$, $d(u,v)$, si existe
+  un $uv$-camino se define como:
   \begin{equation*}
     d(u,v)=\min\{ \text{longitud $p$}  \mid \text{$p$ es un $uv$-camino} \}
   \end{equation*}
@@ -753,9 +753,9 @@ respectivamente.
 \end{definition}
 
 \begin{definition}\textbf{Cuello}\\\index{Cuello}
-  Sea $G$ una gráfica con ciclos, el cuello $g(G)$ de $G$ es:
+  Sea $G$ una gráfica con ciclos. Se define el cuello de $G$ como:
   \begin{equation*}
-    g(G)= \min\{ \text{longitud $c$} \mid  \text{$c$ es un ciclo en $G$} \}
+    g(G):= \min\{ \text{longitud $c$} \mid  \text{$c$ es un ciclo en $G$} \}
   \end{equation*}
 \end{definition}
 
@@ -779,7 +779,7 @@ que no tienen cuello.
   No existe una gráfica $G$ tal que la vecindad de $x$ sea isomorfa al camino de longitud dos, para todo $ x\in  V(G)$.
 \end{proposition}
 
-\begin{demostration} Se demostrar\'a por contradicción. Suponga que existe una gráfica $G$, tal que la vecindad de cualquiera de sus vértices es isomorfa a $P_2$. 
+\begin{demostration} Se demostrará por contradicción. Suponga que existe una gráfica $G$, tal que la vecindad de cualquiera de sus vértices es isomorfa a $P_2$. 
 
 Sea $x\in V(G)$ y sean $a$, $b$ y $c$ los vértices adyacentes a $x$. Entonces $a\sim b\sim c$ y $a\nsim c$, por hipótesis.
 
@@ -805,11 +805,11 @@ Finalmente, $a$, $c$, $d$ y $x$ son adyacentes a $b$, haciendo imposible que su 
 
 
 \begin{proposition}\textbf{}\\
-  Si $G$ tiene un ciclo de longitud impar entonces $G$ no es
+  Sea $G$ una gráfica con al menos un ciclo de longitud impar, entonces $G$ no es
   bipartita.
 \end{proposition}
 
-Demostración: Se demostrar\'a que si $G$ es bipartita entonces no
+Demostración: Se demostrará que si $G$ es bipartita entonces no
 tiene ciclos de longitud impar. Sea $v_1, v_2,..., v_m, v_1$ un ciclo
 de $G$, al ser bipartita, sabemos que podemos colorear con dos
 colores, es decir, si $i$ es par $v_i$ tiene un color y si es impar
@@ -3160,7 +3160,7 @@ para decidir si es o no localmente $3K_2$.
   entonces $Cay(G,T)$ no es localmente $3K_2$.
 \end{lemma}
 
-Demostracion: Primero, como $b\nsim a^{-1}$ entonces Cayley no puede
+Demostración: Primero, como $b\nsim a^{-1}$ entonces Cayley no puede
 ser del tipo uno. Después, $b$ se puede escribir de la forma $b=a^n$
 para algún $n$, entonces
 
