@@ -415,7 +415,7 @@ aristas no dirigidas y sin lazos.
 
 
 \begin{definition}\textbf{Orden de una gráfica}\\\index{Orden de una gráfica}
-  El orden de una grafica $\Gamma$ se define como $|\Gamma|:= |V(\Gamma)|$.
+  El orden de una gráfica $\Gamma$ se define como $|\Gamma|:= |V(\Gamma)|$.
 \end{definition}
 
 \begin{definition}\textbf{Vértices adyacentes}\\\index{Vértices adyacentes}
@@ -530,7 +530,7 @@ $v$ esta estrictamente en $V(G)$ o en $V(H)$.
 
 
 \begin{definition}\textbf{Gráfica $nK_m$}\\\index{Gráfica $nK_m$}
-  A la unión disjunta de $n$ gráficas completas con $m$ vertices, $K_m$, se le denota por $nK_m$
+  A la unión disjunta de $n$ gráficas completas con $m$ vértices, $K_m$, se le denota por $nK_m$
 \end{definition}
 
 
@@ -703,12 +703,12 @@ $\varphi (V(L))$, si $x\sim y$ en $L\subset G$ entonces $\varphi
 \end{definition}
 
 \begin{proposition}\textbf{}\\
-  Si existe un $uv$-camino en una gráfica $G$, entonces también existe un $vu$-camino. Más aún la
+  Sea $G$ una gráfica. Si existe un $uv$-camino en $G$, entonces también existe un $vu$-camino. Más aún la
   relación $\simeq$ en $V(G)$ dada por $u\simeq v$ si y solo si existe
   un $uv$-camino en $G$, es una relación de equivalencia.
 \end{proposition}
-\begin{demostration} Sea $\{u=t_0,t_1,t_2,...,t_n=v \}$ un $uv$-camino
-en $G$, entonces $\{v=t_n,...,t_1,t_0=u \}$ es un $vu$-camino. Por lo tanto, si existe un $uv$-camino siempre va a existir un $vu$-camino.
+\begin{proof} Sea $\{u=t_0,t_1,t_2,...,t_n=v \}$ un $uv$-camino
+en $G$, entonces $\{v=t_n,...,t_1,t_0=u \}$ es un $vu$-camino. Por lo tanto, si existe un $uv$-camino siempre existe un $vu$-camino.
 
  Ahora se demostrará que es una relación de equivalencia.
 
@@ -729,7 +729,7 @@ en $G$, entonces $\{v=t_n,...,t_1,t_0=u \}$ es un $vu$-camino. Por lo tanto, si 
 \end{enumerate}
 
 Por lo tanto $\simeq$ es una relación de equivalencia.
-\end{demostration}
+\end{proof}
 
 \begin{definition}\textbf{Distancia}\\\index{Distancia}
 Sea $G$ una gráfica y sean $u,v\in V(G)$. La distancia entre $u$ y $v$, $d(u,v)$, si existe
@@ -762,13 +762,13 @@ respectivamente.
   \end{equation*}
 \end{definition}
 
-Los \'arboles o la unión disjunta de ellos, son las únicas gráficas
+Los árboles y la unión disjunta de ellos, son las únicas gráficas
 que no tienen cuello.
 
 \begin{definition}\textbf{Diámetro}\\\index{Diámetro}
-  Sea $G$ una gráfica, el diámetro $\diam(G)$ de $G$ es:
+  Sea $G$ una gráfica, el diámetro de $G$ es:
   \begin{equation*}
-    \diam(G)=\max\{ d(u,v) | u,v \in V(G)\}
+    \diam(G):=\max\{ d(u,v) | u,v \in V(G)\}
   \end{equation*}
 \end{definition}
 
@@ -782,7 +782,7 @@ que no tienen cuello.
   No existe una gráfica $G$ tal que la vecindad de $x$ sea isomorfa al camino de longitud dos, para todo $ x\in  V(G)$.
 \end{proposition}
 
-\begin{demostration} Se demostrará por contradicción. Suponga que existe una gráfica $G$, tal que la vecindad de cualquiera de sus vértices es isomorfa a $P_2$. 
+\begin{proof} Se demostrará por contradicción. Suponga que existe una gráfica $G$, tal que la vecindad de cualquiera de sus vértices es isomorfa a $P_2$. 
 
 Sea $x\in V(G)$ y sean $a$, $b$ y $c$ los vértices adyacentes a $x$. Entonces $a\sim b\sim c$ y $a\nsim c$, por hipótesis.
 
@@ -803,7 +803,7 @@ Finalmente, $a$, $c$, $d$ y $x$ son adyacentes a $b$, haciendo imposible que su 
   \end{tikzpicture}
   \caption{}\label{isomorfp2}
 \end{figure}
-\end{demostration}
+\end{proof}
 
 
 
@@ -813,24 +813,28 @@ Finalmente, $a$, $c$, $d$ y $x$ son adyacentes a $b$, haciendo imposible que su 
 \end{proposition}
 
 \begin{proof} Se demostrará que si $G$ es bipartita entonces no
-tiene ciclos de longitud impar. Sea $v_1, v_2,..., v_m, v_1$ un ciclo
-de $G$, al ser bipartita, sabemos que podemos colorear con dos
+tiene ciclos de longitud impar.
+
+ Sea $v_1, v_2,..., v_m, v_1$ un ciclo
+de $G$. Al ser bipartita, los vértices del ciclo se pueden  colorear con dos
 colores, es decir, si $i$ es par $v_i$ tiene un color y si es impar
-tiene otro. Como existe arista entre $v_1$ y $v_m$ entonces $v_m$
-tiene un color distinto al de $v_1$ lo que implica que $m$ es par.
+tiene otro.
+
+ Como existe arista entre $v_1$ y $v_m$ entonces $v_m$
+tiene un color distinto al de $v_1$, lo que implica que $m$ es par.
 Por lo tanto si es bipartita no admite ciclos impares.
 \end{proof}
 
 \begin{theorem}\textbf{}\\
-  Si $G$ es una gráfica conexa, con $ |G| \geq 2$ y no tiene ciclos
+  Si $G$ es una gráfica conexa, de orden mayor o igual a dos y sin ciclos
   impares, entonces $G$ es bipartita.
 \end{theorem}
 
-Demostración: Se exhibirá una bipartición de $G$. Sean $x_0\in V(G)$ y
+\begin{proof} Para demostrar el teorema se exhibirá una bipartición de $G$. Sea $x_0\in V(G)$, se definen los conjuntos $X$ y $Y$:
 \begin{equation*}
   \begin{split}
-    X&=\{ x\in V(G)\mid \text{$d(x_0,x)$ es par}\}\\
-    Y&=\{ x\in V(G)\mid \text{$d(x_0,x)$ es impar}\}
+    X&:=\{ x\in V(G)\mid \text{$d(x_0,x)$ es par}\}\\
+    Y&:=\{ x\in V(G)\mid \text{$d(x_0,x)$ es impar}\}
   \end{split}
 \end{equation*}
 
@@ -859,22 +863,21 @@ Demostración: Se exhibirá una bipartición de $G$. Sean $x_0\in V(G)$ y
   cero, que sea par e impar.
 \end{enumerate}
 
-Entonces $G$ es bipartita.
-
+Entonces $X$ y $Y$ son una bipartición $G$, por lo tanto es bipartita.
+\end{proof}
 
 
 
 \begin{definition}\textbf{Grado de un vértice}\\\index{Grado de un vértice}
-  Sea $G$ una gráfica, $x\in V(G)$, el grado de $x$,
-  $d_G(x)$\index{$d_G(x)$}, es $|N_G(x)|=|V(N_G(x))|$.
+  Sean $G$ una gráfica y $x\in V(G)$. El grado de $x$ es el orden de la gráfica inducida por si mismo.
+ $$d_G(x)\index{$d_G(x)$}:=|N_G(x)|=|V(N_G(x))|$$.
 \end{definition}
-
-En otras palabras, el grado de un vértice coincide con la cantidad de
-amigos que tiene.
+En otras palabras, el grado de un vértice coincide con la cantidad de vértices adyacentes que tiene.
 
 \begin{definition}\textbf{Grado mínimo de una gráfica}\\\index{Grado mínimo de una gráfica}
-  El grado mínimo de $G$ \index{$\delta(G)$} es $\delta(G)=\min
-  \{d_G(x)\mid x\in V(G)\}$.
+  El grado mínimo de una gráfica $G$ \index{$\delta(G)$} es igual al mínimo de los grados de sus vértices.
+$$\delta(G)=\min
+  \{d_G(x)\mid x\in V(G)\}$$
 \end{definition}
 
 
@@ -887,7 +890,7 @@ amigos que tiene.
 
 
 \begin{theorem}\textbf{}\\
-  \label{teogradoaristas} En toda gráfica $G$,
+  \label{teogradoaristas} En toda gráfica $G$, la suma de los grados de sus vértices es igual al doble de la cantidad de aristas que tiene.
 
 \begin{equation*}
   \sum_{v\in
@@ -895,19 +898,20 @@ amigos que tiene.
 \end{equation*}
 \end{theorem}
 
-Demostración: Consideremos la gráfica bipartita, $B(G)$, con vértices
-$V(G)\cup E(G)$ en donde $v\sim e$ si y solo si $v\in e$ entonces se
+\begin{proof} Para probar la igualdad, defina la gráfica bipartita, $B(G)$, con vértices
+$V(G)\cup E(G)$ en donde $v\sim e$ si y solo si $v\in e$. Entonces se
 tiene que:
 \begin{equation*}
   |E(B(G))| = \sum_{v\in V(G)}d_G(v)=2|E(G)|
 \end{equation*}
+\end{proof}
 
 \begin{corollary}\textbf{}\\
   \label{gradoparesimpar} En cualquier gráfica, la cantidad de
   vértices de grado impar es par.
 \end{corollary}
 
-Demostración: Sea $m$ la cantidad de vértices de grado impar. Si en la
+\begin{proof} Sea $m$ la cantidad de vértices de grado impar. Si en la
 gráfica no existen vértices de grado impar, el resultado se deduce del
 hecho de que cero es par. Si no, por el teorema~\ref{teogradoaristas}
 se sabe que:
@@ -924,51 +928,50 @@ para algún $a\in N$ entonces
 
 para algún $b\in N$ y la única forma en que esto ocurra es que la
 cantidad de sumandos sea par.
+\end{proof}
 
 \begin{corollary}\textbf{}\\
-  \label{cardinespar} Si $G$ es $k$-regular, con $k$ impar, entonces
-  $|G|$ es par.
+  \label{cardinespar}
+Sea $G$ una gráfica tal que el grado de todos sus vértices es igual a $k$. Entonces el orden de $G$ es par.
 \end{corollary}
 
-Demostración: Como $G$ es $k$-regular entonces todos sus vértices
-tienen grado impar, por el corolario~\ref{gradoparesimpar}, $ |G|$ es
+\begin{proof} Como $G$ es $k$-regular entonces todos sus vértices
+tienen grado impar, por el corolario~\ref{gradoparesimpar}, $|G|$ es
 par.
-
+\end{proof}
 
 \begin{theorem}\textbf{}\\
-  Si $G$ es una gráfica $1$-regular entonces $|G|$ es par y $G \cong
-  nK_2$.
+  Sea $G$ una gráfica $1$-regular. Entonces el orden de $G$ es par y además $G$ es isomorfa a la unión disjunta de caminos de longitud dos.
 \end{theorem}
 
-Demostración: El hecho de que $|G|$ es par es resultado inmediato de
-el corolario~\ref{cardinespar}. Si $G$ es $1$-regular y $|G|=2$
-entonces $G\cong K_2$, supongamos la hipótesis valida para $|G| =
+\begin{proof}El hecho de que $|G|$ es par es resultado inmediato del corolario~\ref{cardinespar}. Si $G$ es $1$-regular y $|G|=2$
+entonces $G$ es isomorfa al camino de longitud dos,$K_2$. Suponga la hipótesis valida para $|G|=
 2(n-1)$ con $n\in N$.
 
 Sea $G$ una gráfica $1$-regular tal que $|G|=2n$ y sean $v,w\in V(G)$
 tales que $v \sim w$, entonces $G[ V(G)\backslash\{v,w\}]$ es
 $1$-regular y tiene $2(n-1)$ vértices, entonces $G[ V(G)\backslash
 \{v,w\}]\cong (n-1)K_2$ por lo tanto $G\cong nK_2$.
-
+\end{proof}
 
 \begin{theorem}\textbf{}\\\label{teo8}
-  Sea $G$ una gráfica con $\delta(G)\geq2$, entonces $G$ tiene ciclos.
+  Si $G$ es una gráfica con grado mínimo mayor o igual a dos, entonces $G$ tiene ciclos.
 \end{theorem}
 
-Demostración: Sea $v_0 \in V(G)$, consideremos el $v_0v_n$-camino, un
+\begin{proof} Sea $v_0 \in V(G)$, consideremos el $v_0v_n$-camino, un
 camino maximal. Como el grado de la gráfica es al menos dos, entonces
 existe una arista entre $v_1$ y otro vértice de la gráfica, lo cual da
 lugar a un ciclo.
-
+\end{proof}
 
 \begin{corollary}\textbf{}\\
-  \label{gesciclo} Si $G$ es $2$-regular, conexa y $|G|=n$ entonces $G
-  \cong C_n$.
+  \label{gesciclo} Si $G$ es una gráfica $2$-regular, conexa y de orden $n$. Entonces $G$ es isomorfa al ciclo de longitud $n$.
 \end{corollary}
 
-Demostración: Como $G$ es $2$-regular, por el teorema~\ref{teo8},
+\begin{proof} Como $G$ es $2$-regular, por el teorema~\ref{teo8},
 entonces tiene un ciclo y como es conexa entonces el ciclo abarca
 todos los vértices de $G$ por lo tanto $G \cong C_n$.
+\end{proof}
 
 \begin{corollary}\textbf{}\\
   Si $G$ es una gráfica $2$-regular, entonces $G=C_{n_1}\cup C_{n_2}
