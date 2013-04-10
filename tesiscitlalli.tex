@@ -974,29 +974,31 @@ todos los vértices de $G$ por lo tanto $G \cong C_n$.
 \end{proof}
 
 \begin{corollary}\textbf{}\\
-  Si $G$ es una gráfica $2$-regular, entonces $G=C_{n_1}\cup C_{n_2}
-  \cup ... \cup C_{n_k}$ donde $|G|=n_1 + ...+ n_k$.
+  Si $G$ es una gráfica $2$-regular, entonces $G$ es isomorfa a la unión disjunta de ciclos.$$G\cong C_{n_1}\cup C_{n_2}
+  \cup ... \cup C_{n_k}$$
+ Donde donde el orden de $G$ es igual a la suma de las longitudes de los ciclos. $$|G|=n_1 + ...+ n_k$$
 \end{corollary}
 
-Demostración: Por el corolario~\ref{gesciclo} cada componente conexa
+\begin{proof} Por el corolario~\ref{gesciclo} cada componente conexa
 de $G$ es isomorfa a $C_{n_i}$ para algún $n_i$, es decir
 $G=C_{n_1}\cup C_{n_2} \cup ... \cup C_{n_k}$, donde la cardinalidad
 de cada $C_{n_i}$ es $n_i$ entonces: $$|G|=n_1 + ...+ n_k$$
+\end{proof}
 
 \begin{definition}\textbf{Gráfica cubica}\\\index{Gráfica cubica}
-  Una gráfica cubica, es una gráfica $3$-regular.
+  Una gráfica cubica, es una gráfica $3$-regular. 
 \end{definition}
-
+Es decir todos sus vértices tienen grado igual a tres.
 
 
 \begin{theorem}\textbf{}\\
-  Si $G$ es cubica y $|G|=6$ entonces $G$ es isomorfa a la bipartita
-  completa $K_{3,3}$ o $G$ es isomorfa a $\overline{C_6}$.
+  Si $G$ es una gráfica cubica y su orden es igual a seis, entonces $G$ es isomorfa a la bipartita
+  completa $K_{3,3}$ o $G$ es isomorfa al complemento del ciclo de longitud seis.
 \end{theorem}
 
-Demostración: Como $G$ es cubica y tiene cardinalidad seis entonces,
-$\overline{G}$ es $2$-regular entonces, $\overline{G}\cong C_6$ o
-$\overline{G} \cong K_3\cup K_3$; volviendo a $G$,
+\begin{proof} Como $G$ es cubica y tiene cardinalidad seis, entonces
+$\overline{G}$ es $2$-regular. Entonces, $\overline{G}$ es isomorfa a $C_6$ o
+$\overline{G}$ es isomorfa a $K_3\cup K_3$; volviendo a la gráfica $G$,
 
 \begin{equation*}
   \begin{split}
@@ -1005,7 +1007,7 @@ $\overline{G} \cong K_3\cup K_3$; volviendo a $G$,
     G&\cong \overline{K_3\cup K_3} \cong K_{3,3}
   \end{split}
 \end{equation*}
-
+\end{proof}
  
 
 \begin{definition}\textbf{ Cuerda}\\\index{Cuerda}
@@ -1024,31 +1026,34 @@ $\overline{G} \cong K_3\cup K_3$; volviendo a $G$,
 
 
 \begin{definition}\textbf{Vértice-transitiva}\\\index{Vértice-transitiva}
-  Una gráfica $\Gamma $ es vértice-transitiva si existe un
-  automorfismo tal que para todos $v_1, v_2 \in V(\Gamma)$,
-  $\Gamma(v_1)= v_2 $.
+  Una gráfica $G$ es vértice-transitiva si existe un
+  automorfismo $\phi$, tal que para todos $v_1, v_2 \in V(G)$,
+  $\phi(v_1)= v_2 $.
 \end{definition}
 
-Observación: La gráfica $\Gamma$ es vértice-transitiva si el grupo de
-automorfismos de $G$, $\Aut(\Gamma)$, actúa transitivamente en
-$V(\Gamma)$.
+Observación: La gráfica $G$ es vértice-transitiva si el grupo de
+automorfismos de $G$, $\Aut(G)$, actúa transitivamente en
+$V(G)$.
 
 \begin{proposition}\textbf{}\\
   Si $G$ es vértice-transitiva entonces es regular.
 \end{proposition}
 
-Demostración: Sean $a,b \in V(G)$ y sea $\phi:G\rightarrow G$ un
-automorfismo tal que $\phi(a)=b$. Si ${x_1,...,x_n}$ son los vecinos
-de $a$ entonces $\phi(x_1),...,\phi(x_n)$ son los vecinos de $b$,
-puesto que $\phi$ es biyectivo y $x\sim y$ entonces $\phi(x)\sim
-\phi(y)$, entonces \text{$n=$ grado de $a$ $=$ grado de $b$}, por lo
-tanto $G$ es regular.
+\begin{proof} Sean $a,b \in V(G)$ y sea $\phi:G\rightarrow G$ un
+automorfismo tal que $\phi(a)=b$.
 
+ Si ${x_1,...,x_n}$ son los vértices adyacentes
+de $a$, entonces $\phi(x_1),...,\phi(x_n)$ son los vértices adyacentes de $b$;
+puesto que $\phi$ es biyectivo y $x\sim y$ entonces $\phi(x)\sim
+\phi(y)$.
+
+Entonces \text{$n=$ grado de $a$ $=$ grado de $b$}, por lo
+tanto $G$ es regular.
+\end{proof}
 
 \begin{definition}\textbf{Vecindad constante}\\\index{Vecindad constante}
-  Decimos que $G$ es de vecindad constante si $N_G(x)\cong N_G(y)$
-  para todos $x, y \in V(G)$, ($N_G(x)$ es la subgráfica de $G$
-  inducida por los vecinos de $x$).
+  Una gráfica $G$ es de vecindad constante si las gráficas inducidas por los vecinos de $x$ y $y$ respectivamente, son isomorfas, para todos $x, y \in V(G)$.
+$$N_G(x)\cong N_G(y)$$
 \end{definition}
 
 
@@ -1056,15 +1061,16 @@ tanto $G$ es regular.
   Si una gráfica $G$ es transitiva entonces es de vecindad constante.
 \end{proposition}
 
-Demostración: Sean $x,y \in V(G)$ y sea $\phi: G \rightarrow G $ un
+\begin{proof} Sean $x,y \in V(G)$ y sea $\phi: G \rightarrow G $ un
 automorfismo, tal que $\phi(x)=y$, entonces $\phi$ induce un
 isomorfismo entre las vecindades de $x$ y $y$, $\phi: N_G(x)
 \rightarrow N_G(y) $, por lo que es de vecindad constante.
-
+\end{proof}
 
 \begin{definition}\textbf{Gráfica localmente $3K_2$}\\\index{Gráfica localmente $3K_2$}
   Una gráfica $G$ es conocida como localmente $3K_2$ si es de vecindad
-  constante, con $N_G(x)\cong 3K_2$, para todo $x\in V(G)$.
+  constante y además la gráfica de $G$ inducida por $x$ es isomorfa a la unión disjunta de tres caminos de longitud dos, para todo $x\in V(G)$.
+$$N_G(x)\cong 3K_2$$
 \end{definition}
 
 La figura~\ref{loc} es la forma en que se ve la gráfica, al rededor de
@@ -1094,7 +1100,8 @@ cada vértice.
 
 \subsection{Jaulas}
 
-El termino jaula, es uno de los m\'as usados en la presente, pues es
+
+El termino jaula, es uno de los más usados en la presente, pues es
 precisamente el objetivo principal, y ha llegado la hora de definirlo.
 
 Estas gráficas pertenecen a la familia de $(k,g)$-gráficas.
