@@ -1078,7 +1078,7 @@ cada vértice.
 
 \begin{figure}
   \centering
-  \begin{tikzpicture}
+  \begin{tikzpicture}[scale=0.85]
     \SetUpVertex[MinSize=10pt] \SetVertexNoLabel {
       \grEmptyCycle[prefix=v,RA=3]{6} \Vertex[x=-0,y=0]{w0} }
 
@@ -1131,8 +1131,6 @@ $n\geq 13$ las jaulas aun no son conocidas, lo que hasta el momento se a podido 
 $(3,n)$-gráficas, que sirven como cotas superiores para la cantidad de
 vértices que pudieran tener.
 
-
-
 Un dato curioso: la razón por la que se les conoce como jaulas es por
 el parecido en la forma de pronunciar $(k,g)$ y $cages$ en el idioma
 ingles.
@@ -1149,7 +1147,7 @@ conceptos y resultados necesarios para este proceso.
 \begin{definition}\textbf{Gráfica de Cayley}\\\index{Gráfica de Cayley}
   Sea $G$ un grupo y $T$ un subconjunto de $G$ tal que:
   \begin{enumerate}
-  \item $I \notin T $
+  \item $e \notin T $
   \item Si $t\in T$ entonces $t^{-1}\in T$
   \end{enumerate}
   Se define $\Cay(G,T)$ como la gráfica $V(\Cay(G,T))=G$ donde $g_1$
@@ -1163,8 +1161,8 @@ decir $\{g_1,g_2\}\in E(\Cay(G,T))$ si y solo si
 $g_2^{-1}g_1 \in T$.
 
 \begin{example}\textbf{}\\
-  Sean $G=S_3= \{(1),(12),(13),(23),(123),(132)\}$ y $T=\{(12)\}$
-  entonces $\Cay(G,T)\cong 3K_2$. Figura~\ref{3 veces k2}.
+  Sean $G$ el grupo de permutaciones $S_3$, $G=S_3= \{(1),(12),(13),(23),(123),(132)\}$ y $T=\{(12)\}$
+  entonces la gráfica de Cayley, $\Cay(G,T)$ es isomorfa a $3K_2$, la unión disjunta de tres caminos de longitud dos. La figura~\ref{3 veces k2} muestra la relación entre los vértices de la gráfica, al ser etiquetados con los elementos del grupo.
 \end{example}
 
 \begin{figure}[htb]
