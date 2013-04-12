@@ -944,7 +944,7 @@ par.
   Sea $G$ una gráfica $1$-regular. Entonces el orden de $G$ es par y además $G$ es isomorfa a la unión disjunta de caminos de longitud dos.
 \end{theorem}
 
-\begin{proof}El hecho de que $|G|$ es par es resultado inmediato del corolario~\ref{cardinespar}. Si $G$ es $1$-regular y $|G|=2$
+\begin{proof} El hecho de que $|G|$ es par es resultado inmediato del corolario~\ref{cardinespar}. Si $G$ es $1$-regular y $|G|=2$
 entonces $G$ es isomorfa al camino de longitud dos,$K_2$. Suponga la hipótesis valida para $|G|=
 2(n-1)$ con $n\in N$.
 
@@ -1467,9 +1467,11 @@ Por lo tanto $G$ es también gráfica una gráfica de Cayley.
 
 
 \begin{definition}\textbf{Arista-transitiva}\\\index{Arista-transitiva}
-  Sea $G$ una gráfica, $G$ es arista-transitiva si $Aut(G)$ actúa
-  transitivamente en $E(G)$. La acción es
-  $\phi\{x,y\}=\{\phi(x),\phi(y)\}$.
+  Una gráfica $G$ es arista-transitiva, si el grupo de automorfismos
+  de la grafica, actúa
+  transitivamente en sus aristas. La acción es:
+
+  \begin{equation*}\phi\{x,y\}=\{\phi(x),\phi(y)\}\end{equation*}
 \end{definition}
 
 
@@ -1481,39 +1483,54 @@ Por lo tanto $G$ es también gráfica una gráfica de Cayley.
   $\varphi(y)=z$.
 \end{proposition}
 
-Demostración:\\
-$\Rightarrow)$ Dadas $e_1=\{x,y\}$ y $e_2=\{z,w\}$ aristas de $G$,
-existe $\phi\in Aut(G)$ tal que $\phi(\{x,y\})=\{z,w\}$ entonces
-$\{\phi(x),\phi(y)\}=\{z,w\}$ entonces $\phi(x)=z$ y $\phi(y)=w$ o
+\begin{proof}
+
+\begin{enumerate}
+
+\item $\Rightarrow)$
+
+Dadas $e_1=\{x,y\}$ y $e_2=\{z,w\}$ dos aristas de $G$,
+existe $\phi\in Aut(G)$ tal que $\phi(\{x,y\})=\{z,w\}$, porque al ser
+$G$ arista-transitiva, el grupo de automorfismos de $G$ actua
+transitivamente en sus aristas. Entonces
+$\{\phi(x),\phi(y)\}=\{z,w\}$, entonces $\phi(x)=z$ y $\phi(y)=w$ o
 $\phi(x)=w$ y $\phi(y)=z$.
-\\
-$\Leftarrow)$ El automorfismo inducido por $\phi$ o $\varphi$, es un
+
+\item
+$\Leftarrow)$
+Sean $e_1,e_2\in V(G)$. El automorfismo inducido por $\phi$ o $\varphi$, es un
 automorfismo que envía la arista $e_1$ a $e_2$.
+\end{enumerate}
+\end{proof}
+
 
 
 \begin{definition}\textbf{Gráficas 1-arco-transitiva}\\\index{Gráfica $1-arco-transitiva$}
-  Sea G una gráfica, decimos que es 1-arco-transitiva si dadas dos
-  parejas ordenadas de vértices $(x,y)$, $(z,w)$ tales que $x\sim y$ y
-  $z \sim w$ existe un automorfismo de $G$ tal que $\phi(x)=z$ y
+  Sea $G$ una gráfica, decimos que es 1-arco-transitiva si dadas dos
+  parejas ordenadas de vértices $(x,y)$, $(z,w)$ tales que $x$
+  es adyasente a $y$ y
+  $z$ es adyasente a $w$, existe un automorfismo de $G$ tal que $\phi(x)=z$ y
   $\phi(y)=w$.
 \end{definition}
 
 
 
 \begin{definition}\textbf{Distancia-transitiva}\\\index{Distancia-transitiva}
-  Una gráfica $\Gamma$ es distancia-transitiva si $d(x,y)=d(z,w)$,
-  entonces existe un automorfismo de $\Gamma$ tal que $\phi(x)=z$ y
+  Una gráfica $G$ es distancia-transitiva si dadas dos
+  parejas ordenadas de vértices $(x,y)$, $(z,w)$, tales que la distancia de $x$
+  a $y$ es igual a la distania de $z$ a $w$,
+  entonces existe un automorfismo de $G$ tal que $\phi(x)=z$ y
   $\phi(y)=w$.
 \end{definition}
 
-Observación: Si $\Gamma$ es distancia-transitiva, entonces es
-vértice-transitiva. Pues si $u,v \in V(\Gamma)$, entonces
-$d(u,u)=d(v,v)=0$, y por ser $\Gamma$ distancia-transitiva existe
-$\phi\in Aut(\Gamma)$ tal que $\phi(u)=v$.
+Si $G$ es distancia-transitiva, entonces es
+vértice-transitiva. Pues si $u,v \in V(G)$, entonces
+$d(u,u)=d(v,v)=0$, y por ser $G$ distancia-transitiva existe
+$\phi\in Aut(G)$ tal que $\phi(u)=v$.
 
-Observación: Si $\Gamma$ es distancia-transitiva entonces es
+Si $G$ es distancia-transitiva entonces es
 1-arco-transitiva. Pues si $u\sim v$ y $x\sim y$ entonces
-$d(u,v)=d(x,y)=1$ entonces existe $\phi \in Aut(\Gamma)$ tal que
+$d(u,v)=d(x,y)=1$ entonces existe $\phi \in Aut(G)$ tal que
 $\phi(u)=x$ y $\phi(v)=y$.
 
 \chapter{Jaulas 3-regular de cuello pequeño}
@@ -2117,7 +2134,7 @@ figura~\ref{arbol(3,7)mas2}.
   \caption{} \label{arbol(3,7)mas2}
 \end{figure}
 
-Supongamos que para todo $x$ en la gráfica, los vértices que quedan
+Suponga que para todo $x$ en la gráfica, los vértices que quedan
 fuera del árbol no son vecino entre si y nuevamente contando los
 $7-ciclos$ que pasan por $x$, se sabe que no existe arista entre $v_1$
 y $v_2$ entonces las tres aristas de cada uno de ellos van a los
