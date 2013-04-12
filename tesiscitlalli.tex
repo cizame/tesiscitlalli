@@ -1320,16 +1320,16 @@ de vértices de la gráfica.
 \item$\Rightarrow$) 
 
 Sean $H$ un grupo y $T$ un conjunto que cumple con las
-condiciones de la definicion~\ref{defcay}. Es decir, como hipótesis se
-tiene que la grafica $G=\Cay(H,T)$, es de Cayley. 
+condiciones de la definición~\ref{defcay}. Es decir, como hipótesis se
+tiene que la gráfica $G=\Cay(H,T)$, es de Cayley. 
 
 Sea $A$ el grupo de automorfismos de la gráfica $G$.
 
 
 Como $G$ es de Cayley, por el teorema~\ref{CayVT}, es
-vertice-transitiva. Entonces para cada $v \in H=V(G)$, existe un
-automorfismo $\phi_v$ tal que a cada vertice $w$
-lo manda al vertice $vw$, la demostración de que $\phi_v$ es un
+vértice-transitiva. Entonces para cada $v \in H=V(G)$, existe un
+automorfismo $\phi_v$ tal que a cada vértice $w$
+lo manda al vértice $vw$, la demostración de que $\phi_v$ es un
 automorfismo se encuentra en  la parte~\ref{3} del
 teorema~\ref{CayVT}.
 
@@ -1345,8 +1345,8 @@ B:=\{
 
 \item El conjunto $B$ es no vacío. 
 
-La identidad de $A$ es el automorfasmo que deja fijos a todos los
-vertices de la grafica. En otras palabras, manda a
+La identidad de $A$ es el automorfismo que deja fijos a todos los
+vértices de la gráfica. En otras palabras, manda a
 $w$ en $ew$ para todo $w\in V(G)$, con $e$ la identidad de $H$.
 
 Entonces 
@@ -1376,7 +1376,7 @@ Por lo tanto, usando en teorema~\ref{subgrupo}, $B$ es un subgrupo de
 $A$.
  
 \item
-El subgrupo $B$ actúa regularmente en el conjunto de vertices de la gráfica.
+El subgrupo $B$ actúa regularmente en el conjunto de vértices de la gráfica.
 
 \begin{enumerate}
 \item\label{sab11} El conjunto $B$ actúa transitivamente en $V(G)=H$. 
@@ -1387,13 +1387,13 @@ Sean $v_1,v_2\in H$, si
 phi_v(v_1)=\phi_{v_2v_1^{-1}}(v_1)=v_2v_1^{-1}v_1=v_2
 \end{equation*}
 
-entonces $\phi_v$ es tal que manda el vertice $v_1$ al vertice $v_2$,
+entonces $\phi_v$ es tal que manda el vértice $v_1$ al vértice $v_2$,
 para toda pareja $\{v_1,v_2\}$.
 
 Por lo tanto $B$ actúa transitivamente en $V(G)$.
 
 \item \label{sab12}
-El orden del estabilizador de $v$, en el sibgrupo $B$, es igual a uno, para todo
+El orden del estabilizador de $v$, en el subgrupo $B$, es igual a uno, para todo
 $v \in V(G)$. 
 
 Para todo $v\in V(G)=H$, \begin{equation*}Stab(B,v):=\{\phi_{v_1}
@@ -1406,48 +1406,62 @@ Para todo $v\in V(G)=H$, \begin{equation*}Stab(B,v):=\{\phi_{v_1}
 \end{enumerate}
 \end{enumerate}
 Entonces, el subgrupo del
-grupo de automorfasmos de la grafica $Cay(H,T)$,  actúa regularmente en
-el conjunto de vertices $V(Cay(H,T))=H$. 
+grupo de automorfismos de la gráfica $Cay(H,T)$,  actúa regularmente en
+el conjunto de vértices $V(Cay(H,T))=H$. 
 
 \smallskip
 
 \item $\Leftarrow$) 
 
-Sea $A_s$ el subgrupo del grupo de automorfismos de $G$
-que actúa regularmente en $V(G)$. Sea $x \in V(G)$, se define $T:=\{
-\sigma \in A_s \mid \sigma(x)\sim x\}$.
+Como hipótesis se tiene que un subgrupo $B$, del grupo de automorfismos de
+la gráfica $G$, actúa regularmente en sus vértices. 
 
-La identidad de $A_s$ no se encuentra en $T$ pues no existen lazos. Si
-$\sigma \in T$ entonces $\sigma(x)\sim x$ si y solo si
-$\sigma^{-1}(\sigma (x))=x \sim \sigma^{-1}(x)$, por lo tanto
-$\sigma^{-1}\in T$.
+Sea $x \in V(G)$ fijo. Se define el conjunto:
+\begin{equation*} T:=\{
+\phi \in B \mid \phi(x)\sim x\}\end{equation*}
+\begin{enumerate}
 
-Sea $Cay(A_s,T)$ la gráfica que tiene como vértices a los elementos de
-$A_s$ donde $v_1, v_2 \in A_s$ son vecinos si y solo si $v_2^{-1}v_1
+\item La identidad del grupo de automorfismos, no se encuentra en $T$
+  pues no existen lazos.
+\item Si $\phi \in T$ entonces $\phi^{-1}\in T$.
+Si $\phi \in T$ entonces $\phi(x)\sim x$, si y solo si
+$\phi^{-1}(\phi (x)) \sim \phi^{-1}(x)$, entonces $x \sim
+\phi^{-1}(x)$, por lo tanto $\phi^{-1}\in T$.
+\end{enumerate}
+
+Sea $Cay(B,T)$ la gráfica que tiene como vértices a los elementos de
+$B$, donde $v_1, v_2 \in B$ son adyacentes si y solo si $v_2^{-1}v_1
 \in T$.
 
-Para concluir con la prueba resta dar un isomorfismo entre
-$Cay(A_s,T)$ y $G$.
+Para concluir con la prueba resta dar un isomorfismo entre las gráficas
+$Cay(B,T)$ y $G$.
 
-Para un $x\in V(G)$ fijo, sea $\varphi:A_s \rightarrow V(G)$ tal que a
-cada $\sigma \in A_s$ le asocie $\sigma (x) \in V(G)$.
+Para un $x\in V(G)$ fijo, sea $\varphi:B \rightarrow V(G)$ tal que a
+cada $\phi \in B$ le asocie $\phi (x) \in V(G)$.
 
-Por un lado $|A_s|=|V(G)|$ porque $A_s$ actúa regularmente en $V(G)$.
+Por un lado $|B|=|V(G)|$ porque $B$ actúa regularmente en $V(G)$.
 
-Por otro lado, sean $\sigma_{1}\neq \sigma_2 \in A_s$. Suponga que al
-aplicar $\varphi$ se tiene $\sigma_1(x)=\sigma_2(x)$, lo que sucede si
+Por otro lado, sean $\phi_{1}\neq \phi_2 \in B$. Suponga que al
+aplicar $\varphi$ se tiene $\phi_1(x)=\phi_2(x)$, lo que sucede si
 y solo si
-$$\sigma_2^{-1}(\sigma_1(x))=\sigma_2^{-1}(\sigma_2(x))=x$$ si y solo
-si $$\sigma_2^{-1}\circ \sigma_1= I$$ si y solo si
-$$\sigma_2^{-1}=\sigma_1^{-1}$$ si y solo si $$\sigma_1 =\sigma_2$$
-contradiciendo el hecho de que son distintos. Por lo tanto $\varphi$
+$$\phi_2^{-1}(\phi_1(x))=\phi_2^{-1}(\phi_2(x))=x$$
+ si y solo si
+ $$\phi_2^{-1}\circ \phi_1= I$$ si y solo si
+$$\phi_2^{-1}=\phi_1^{-1}$$ si y solo si 
+$$\phi_1 =\phi_2$$
+contradiciendo el hecho de que son distintos. Por lo tanto la función $\varphi$
 es biyectiva.
 
-Ahora, sean $\sigma_{1}\sim \sigma_2$ en $Cay(A_s,T)$, entonces
-$\sigma_2^{-1}\sigma_1 \in T$ es decir $\sigma_2^{-1}\sigma_1(x)\sim
-x$ lo cual ocurre si y solo si $\sigma_1(x)\sim \sigma_2(x)$.
+Ahora, sean $\phi_{1}\sim \phi_2$ en $Cay(B,T)$, entonces
+$\phi_2^{-1}\phi_1 \in T$, es decir $\phi_2^{-1}\phi_1(x)\sim
+x$ lo cual ocurre si y solo si $\phi_1(x)\sim \phi_2(x)$, lo que es
+igual a $\varphi(\phi_1)\sim\varphi(\phi_2)$ en la gráfica
+$G$.
 
-Por lo tanto $G$ es también gráfica de Cayley.
+Entonces $\varphi$ $G$ es in isomorfismo entre las gráficas
+$Cay(B,T)$ y $G$. 
+
+Por lo tanto $G$ es también gráfica una gráfica de Cayley.
 \end{enumerate}
 \end{proof}
 
