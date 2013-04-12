@@ -1245,8 +1245,20 @@ la definición~\ref{defcay}, sea $\Cay(G,T)$  la gráfica de Cayley
 asociada a $G$ y $T$, y sean $g_1, g_2$ dos vértices
 de $Cay(G,T)$. 
 
-Dado $x \in G$, defínase $\phi_x:G \rightarrow G$ tal que $g \rightarrow xg$,
-$\phi_x$ es biyectiva y tiene inversa $\phi_{x^{-1}}$, pues:
+Dado $x \in G$, se define $\phi_x:G \rightarrow G$ tal que $g
+\rightarrow xg$.
+
+\begin{enumerate}
+
+\item
+La función $\phi_x$ es biyectiva.
+
+Si $\phi_x(g_1)=\phi_x(g_2)$ entonces
+$xg_1=xg_2$, lo que implica que $g_1=g_2$, y como $|G|$ es finito,
+entonces $\phi_x$ es biyectiva.      
+
+\item
+El inverso de $\phi_x$ es $\phi_{x^{-1}}$.
 \begin{equation*}
   \begin{split}
     (\phi_{x^{-1}}\circ \phi_x)(g)&= \phi_{x^{-1}} (\phi_x(g))\\
@@ -1259,14 +1271,16 @@ $\phi_x$ es biyectiva y tiene inversa $\phi_{x^{-1}}$, pues:
     (\phi_x \circ \phi_{x^{-1}})(g)&=x(x^{-1}g)=g
   \end{split}
 \end{equation*}
-Entonces $\phi_x \circ \phi_{x^{-1}}=$ identidad.
+Entonces $\phi_x \circ \phi_{x^{-1}}=identidad$. Por lo que el inverso
+de $\phi_x$ es $\phi_{x^{-1}}$.
 
-Además, $\phi_x$ es un automorfismo de $\Cay(G,T)$. Si $g_1 \sim g_2$
-se sabe que $g_2^{-1}g_1\in T$ por ser de Cayley, m\'as a\'un:
+\item
+La función $\phi_x$ es un automorfismo de $\Cay(G,T)$. 
 
+Si $g_1 \sim g_2$ se sabe que $g_2^{-1}g_1\in T$ por ser de Cayley, más aún:
 \begin{equation*}
   \begin{split}
-    g_2^{-1}g_1&=g_2^{-1}x^{1}xg_1\\
+    g_2^{-1}g_1&=g_2^{-1}x^{-1}xg_1\\
     &=(xg_2)^{-1}(xg_1)\\
     &=(\phi_x(g_2))^{-1} \phi_x(g_1)
   \end{split}
@@ -1274,7 +1288,10 @@ se sabe que $g_2^{-1}g_1\in T$ por ser de Cayley, m\'as a\'un:
 
 Entonces $(\phi_x(g_2))^{-1}\phi_x(g_1)\in T$ por lo que $\phi_x(g_1)
 \sim \phi_x(g_2)$.
-Por otro lado, observe que si $x=g_2g_1^{-1}$ se tiene
+
+\end{enumerate}
+
+Finalmente, si $x=g_2g_1^{-1}$ se tiene que: 
 \begin{equation*}
   \begin{split}
     \phi_x(g_1)&=\phi_{g_2g_1^{-1}}(g_1)\\
@@ -1296,16 +1313,38 @@ de vértices de la gráfica.
 
 \begin{proof}
 
-$\Rightarrow$) Como hipótesis se tiene $G=\Cay(H,T)$. Sea $A$ el grupo
-de automorfismos de $G$.  Para cada $w \in H$ defínase $$A_s:=\{
-\sigma_{v} \in A \mid \sigma_{v} (w)=vw, v\in V(G)\}$$
+$\Rightarrow$) Sean $H$ un grupo y $T$ un conjunto que cumple con las
+condiciones de la definicion~\ref{defcay}; es decir, como hipótesis se
+tiene que la grafica $G=\Cay(H,T)$, es de Cayley. 
 
-A continuación se probará que $A_s$ es un subgrupo de $A$.
+Sea $A$ el grupo de automorfismos de la gráfica $G$.
 
-La identidad está en $A_s$, pues al ser gráfica de Cayley, sus
-vértices son elementos del grupo $H$, $\sigma_e(w)=ew=w$.
 
-Ahora, si $\sigma_{v_1}, \sigma_{v_2} \in A_s$ entonces
+Como $G$ es de Cayley, por el teorema~\ref{CayVT}, es
+vertice-transitiva. Entonces para cada $w \in H=V(G)$, existe un
+automorfismo $\sigma_v$ tal que al vertice $w$
+lo manda al vertice $vw$, para todo $v \in H=V(G)$. Defínase:
+\begin{equation*}
+A_w:=\{
+\sigma_{v} \in A \mid \sigma_{v} (w)=vw, v\in V(G)\}\end{equation*}
+
+\begin{enumerate}
+
+\item $A_w$ es un subgrupo de $A$.
+
+\begin{enumerate}
+
+\item La identidad de $A$ está en $A_w$. 
+
+La identidad de $A$ es el automorfasmo que deja fijos a todos los
+vertices, en particular deja fijo a $w$; o en otras palabras manda a
+$w$ en $ew$, con $e$ la identidad de $H$.
+
+Entonces 
+Por hipotesis $G$ es gráfica de Cayley, entonces sus
+vértices son los elementos del grupo $H$. Como $e\in H$ entonces $\sigma_e(w)=ew=w$.
+
+Ahora, si $\sigma_{v_1}, \sigma_{v_2} \in A_w$ entonces
 
 \begin{equation*}
   \begin{split}
@@ -1314,9 +1353,11 @@ Ahora, si $\sigma_{v_1}, \sigma_{v_2} \in A_s$ entonces
     &=v_1v_2w=\sigma_{v_1v_2}(w)
   \end{split}
 \end{equation*}
-por lo que $\sigma_{v_1}\circ \sigma_{v_2} \in A_s$.
+por lo que $\sigma_{v_1}\circ \sigma_{v_2} \in A_w$.
+\end{enumerate}
 
-Por lo tanto $A_s$ es un subgrupo de $A$, pero falta verificar que
+Por lo tanto $A_w$ es un subgrupo de $A$, 
+\item pero falta verificar que
 actúa regularmente.
 
 \begin{enumerate}
@@ -1333,6 +1374,7 @@ $$\sigma_v(v_1)=\sigma_{v_2v_1^{-1}}(v_1)=v_2v_1^{-1}v_1=v_2$$
 
 Por $1)$, $2)$ y $3)$ $A_s$ actúa regularmente en $H$. 
 
+\end{enumerate}
 \smallskip
 
 $\Leftarrow$) Sea $A_s$ el subgrupo del grupo de automorfismos de $G$
