@@ -184,8 +184,8 @@ manda $i_j$ a $i_{j+1}$ e $i_k$ a $i_1$.
 \end{definition}
 
 
-\begin{theorem}
-  Sea $G$ un grupo, $H\subseteq G$, $H\neq \phi$. Entonces las
+\begin{theorem}\label{subgrupo}
+  Sean $G$ un grupo y $H$ un subconjunto no vacío de $G$. Entonces las
   siguientes condiciones son equivalentes:
   \begin{enumerate}
   \item $H$ es un subgrupo de $G$
@@ -268,11 +268,11 @@ cuales se les conoce como grupos finitos.\index{Grupos finitos}
 \end{definition}
 
 \begin{definition}\textbf{Estabilizador}\\\index{Estabilizador}
-  Sea $G$ un grupo y $x\in G$, el estabilizador de $x$, se define
+  Sea $G$ un grupo y $x\in G$, el estabilizador de $x$ en $G$, se define
   como:
 
 \begin{equation*}
-  \Stab (x)=\{ g\in G \mid gx=x \}
+  \Stab (G,x)=\{ g\in G \mid gx=x \}
 \end{equation*}
 \end{definition}
 
@@ -1209,13 +1209,16 @@ $g_2^{-1}g_1 \in T$.
 
 En la gráfica de Cayley asociada a un grupo $G$ y un conjunto $T$ que
 cumpla con las condiciones de la definición~\ref{defcay}, si $T=\{t_1,t_2,t_3,..., t_n\}$, entonces los vértices adyacentes de $g\in G$, en
-$\Cay(G,T)$, son $gt_1,gt_2,...,gt_n$. Pues si $x$ es vecino de $g$ en
-la gráfica,
-entonces $g^{-1}x\in T$ por ser de Cayley, entonces  $g^{-1}x=t_i$
-para algún $i\in \{1,2,...,n\}$,
-entonces $x=gt_i$. Ahora, considerando los elementos $gt_i$, $g$ es vecino
+$\Cay(G,T)$, son $gt_1,gt_2,...,gt_n$. 
+
+Por un lado si $x$ es vecino de $g$ en la gráfica, entonces $g^{-1}x\in T$ por ser de Cayley, entonces  $g^{-1}x=t_i$
+para algún $i\in \{1,2,...,n\}$, entonces $x=gt_i$.
+
+Por otro lado, considerando los elementos $gt_i$, $g$ es vecino
 de $gt_i$ para todo $i\in \{1,2,...,n\}$ si y solo si $g^{-1}(gt_i)\in
-T$, si y solo si $t_i \in T$. Por lo que se puede asegurar que todos
+T$, si y solo si $t_i \in T$.
+
+Por lo que se puede asegurar que todos
 los vecinos de $g$, en $Cay(G,T)$, son  precisamente $gt_1,gt_2,...,gt_n$. 
 
 De lo anterior es evidente que en la gráfica de Cayley, $\Cay(G,T)$,
@@ -1250,15 +1253,15 @@ Dado $x \in G$, se define $\phi_x:G \rightarrow G$ tal que $g
 
 \begin{enumerate}
 
-\item
+\item \label{1}
 La función $\phi_x$ es biyectiva.
 
 Si $\phi_x(g_1)=\phi_x(g_2)$ entonces
 $xg_1=xg_2$, lo que implica que $g_1=g_2$, y como $|G|$ es finito,
 entonces $\phi_x$ es biyectiva.      
 
-\item
-El inverso de $\phi_x$ es $\phi_{x^{-1}}$.
+\item\label{2}
+El inverso de $\phi_x$ es $\phi_x^{-1}=\phi_{x^{-1}}$.
 \begin{equation*}
   \begin{split}
     (\phi_{x^{-1}}\circ \phi_x)(g)&= \phi_{x^{-1}} (\phi_x(g))\\
@@ -1274,7 +1277,7 @@ El inverso de $\phi_x$ es $\phi_{x^{-1}}$.
 Entonces $\phi_x \circ \phi_{x^{-1}}=identidad$. Por lo que el inverso
 de $\phi_x$ es $\phi_{x^{-1}}$.
 
-\item
+\item \label{3}
 La función $\phi_x$ es un automorfismo de $\Cay(G,T)$. 
 
 Si $g_1 \sim g_2$ se sabe que $g_2^{-1}g_1\in T$ por ser de Cayley, más aún:
@@ -1312,72 +1315,105 @@ de vértices de la gráfica.
 \end{theorem}
 
 \begin{proof}
+\begin{enumerate}
 
-$\Rightarrow$) Sean $H$ un grupo y $T$ un conjunto que cumple con las
-condiciones de la definicion~\ref{defcay}; es decir, como hipótesis se
+\item$\Rightarrow$) 
+
+Sean $H$ un grupo y $T$ un conjunto que cumple con las
+condiciones de la definicion~\ref{defcay}. Es decir, como hipótesis se
 tiene que la grafica $G=\Cay(H,T)$, es de Cayley. 
 
 Sea $A$ el grupo de automorfismos de la gráfica $G$.
 
 
 Como $G$ es de Cayley, por el teorema~\ref{CayVT}, es
-vertice-transitiva. Entonces para cada $w \in H=V(G)$, existe un
-automorfismo $\sigma_v$ tal que al vertice $w$
-lo manda al vertice $vw$, para todo $v \in H=V(G)$. Defínase:
+vertice-transitiva. Entonces para cada $v \in H=V(G)$, existe un
+automorfismo $\phi_v$ tal que a cada vertice $w$
+lo manda al vertice $vw$, la demostración de que $\phi_v$ es un
+automorfismo se encuentra en  la parte~\ref{3} del
+teorema~\ref{CayVT}.
+
+ Se define el conjunto $B$:
 \begin{equation*}
-A_w:=\{
-\sigma_{v} \in A \mid \sigma_{v} (w)=vw, v\in V(G)\}\end{equation*}
+B:=\{
+\phi_{v} \in A \mid \phi_{v} (w)=vw,\text{ para todo }  w\in V(G)\}\end{equation*}
+\begin{enumerate}
+
+\item $B$ es un subgrupo de $A$.
 
 \begin{enumerate}
 
-\item $A_w$ es un subgrupo de $A$.
-
-\begin{enumerate}
-
-\item La identidad de $A$ está en $A_w$. 
+\item El conjunto $B$ es no vacío. 
 
 La identidad de $A$ es el automorfasmo que deja fijos a todos los
-vertices, en particular deja fijo a $w$; o en otras palabras manda a
-$w$ en $ew$, con $e$ la identidad de $H$.
+vertices de la grafica. En otras palabras, manda a
+$w$ en $ew$ para todo $w\in V(G)$, con $e$ la identidad de $H$.
 
 Entonces 
-Por hipotesis $G$ es gráfica de Cayley, entonces sus
-vértices son los elementos del grupo $H$. Como $e\in H$ entonces $\sigma_e(w)=ew=w$.
+\begin{equation*}
+w=ew=\phi_e(w) \in B
+\end{equation*}
 
-Ahora, si $\sigma_{v_1}, \sigma_{v_2} \in A_w$ entonces
+Como la identidad de $A$ esta en $B$, entonces $B$ es no vacío.
+
+\item
+Si $\phi_{v_1}, \phi_{v_2} \in B$ entonces $\phi_{v_1v_2^{-1}} \in B$.
 
 \begin{equation*}
   \begin{split}
-    (\sigma_{v_1}\circ \sigma_{v_2})(w)&=\sigma_{v_1}(\sigma_{v_2}(w))\\
-    &=\sigma_{v_1}(v_2w)\\
-    &=v_1v_2w=\sigma_{v_1v_2}(w)
+    (\phi_{v_1}\phi_{v_2}^{-1})(w)&=\phi_{v_1}(\phi_{v_2}^{-1}(w))\\
+    &=\phi_{v_1}(\phi_{v_2^{-1}}(w)) \text{ por la parte~\ref{2} del
+    teorema~\ref{CayVT}}\\
+    &=\phi_{v_1}(v_2^{-1}w)\\
+    &=v_1v_2^{-1}w=\phi_{v_1v_2^{-1}}(w)
   \end{split}
 \end{equation*}
-por lo que $\sigma_{v_1}\circ \sigma_{v_2} \in A_w$.
+
+por lo que $\phi_{v_1}\phi_{v_2^{-1}} \in B$.
 \end{enumerate}
 
-Por lo tanto $A_w$ es un subgrupo de $A$, 
-\item pero falta verificar que
-actúa regularmente.
+Por lo tanto, usando en teorema~\ref{subgrupo}, $B$ es un subgrupo de
+$A$.
+ 
+\item
+El subgrupo $B$ actúa regularmente en el conjunto de vertices de la gráfica.
 
 \begin{enumerate}
-\item $A_s$ actúa transitivamente en $V(G)=H$. Sean $v_1,v_2\in H$, si
-  $v=v_2v_1^{-1}$, $\sigma_v \in A_s$ y
-$$\sigma_v(v_1)=\sigma_{v_2v_1^{-1}}(v_1)=v_2v_1^{-1}v_1=v_2$$
-\item $|Stab(v)| = 1$. Para todo $v_1\in H$, $$Stab(v_1):=\{\sigma_{v}
-  \in A_s \mid \sigma_v(v_1)=v_1, v\in H \}$$
+\item\label{sab11} El conjunto $B$ actúa transitivamente en $V(G)=H$. 
 
-  Sea $\sigma_v\in Stab(v_1)$ pero, $\sigma_{v}(v_1)=vv_1=v_1$ si y
-  solo si $v=e$ entonces $|Stab(v)| = 1$ para todo $v\in H$.
-\item $|A_s|=|H|$ por definición.
+Sean $v_1,v_2\in H$, si
+  $v=v_2v_1^{-1}$, $\phi_v \in B$, más aún:
+\begin{equation*}
+phi_v(v_1)=\phi_{v_2v_1^{-1}}(v_1)=v_2v_1^{-1}v_1=v_2
+\end{equation*}
+
+entonces $\phi_v$ es tal que manda el vertice $v_1$ al vertice $v_2$,
+para toda pareja $\{v_1,v_2\}$.
+
+Por lo tanto $B$ actúa transitivamente en $V(G)$.
+
+\item \label{sab12}
+El orden del estabilizador de $v$, en el sibgrupo $B$, es igual a uno, para todo
+$v \in V(G)$. 
+
+Para todo $v\in V(G)=H$, \begin{equation*}Stab(B,v):=\{\phi_{v_1}
+  \in B \mid \phi_{v_1}(v)=v, v_1\in H \}\end{equation*}
+
+  Sea $\phi_{v_1}\in Stab(B,v)$, entonces $\phi_{v_1}(v)=v_1v=v$ lo
+  que pasa si y
+  solo si $v_1=e$. Entonces $|Stab(B,v)| = 1$ para todo $v\in H$.
+\item \label{sab13}El orden de $B$ es igual al orden de $H$ por definición.
 \end{enumerate}
-
-Por $1)$, $2)$ y $3)$ $A_s$ actúa regularmente en $H$. 
-
 \end{enumerate}
+Entonces, el subgrupo del
+grupo de automorfasmos de la grafica $Cay(H,T)$,  actúa regularmente en
+el conjunto de vertices $V(Cay(H,T))=H$. 
+
 \smallskip
 
-$\Leftarrow$) Sea $A_s$ el subgrupo del grupo de automorfismos de $G$
+\item $\Leftarrow$) 
+
+Sea $A_s$ el subgrupo del grupo de automorfismos de $G$
 que actúa regularmente en $V(G)$. Sea $x \in V(G)$, se define $T:=\{
 \sigma \in A_s \mid \sigma(x)\sim x\}$.
 
@@ -1412,6 +1448,7 @@ $\sigma_2^{-1}\sigma_1 \in T$ es decir $\sigma_2^{-1}\sigma_1(x)\sim
 x$ lo cual ocurre si y solo si $\sigma_1(x)\sim \sigma_2(x)$.
 
 Por lo tanto $G$ es también gráfica de Cayley.
+\end{enumerate}
 \end{proof}
 
 
