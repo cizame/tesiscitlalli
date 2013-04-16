@@ -1562,13 +1562,16 @@ En general aun no se conoce la forma exacta de las $(m,n)$-jaulas, si
 son únicas o la cantidad de vértices que tienen. Las jaulas que a ésta
 tesis interesan son las $(3,n)$-jaulas y uno de los objetivos
 principales es llegar a las $(3,g)$-gráficas de cuello par mayor o
-igual a 14, pero para ello primero se dará un recorrido por las
-gráficas $3-regular$ de cuello menor. 
+igual a 14. Pero para ello primero se dará un recorrido por las
+gráficas $3$-regulares de cuello menor. 
 
 Al momento de dibujar gráficas regulares de cuello dado, es conveniente
-comenzar con un árbol. Para que lo que se a dicho quede mas claro he
-aquí un ejemplo; si se quiere una gráfica tres regular de cuello cinco
-el árbol es el de la figura~\ref{arbol}, el cual tiene tres niveles
+comenzar con un árbol, tal que cada vertice tenga la cantidad de
+adyacencias que se requiera, eseptuando solo algunos.
+
+\begin{example}
+Si se quiere una gráfica tres regular de cuello cinco,
+el árbol con el que es combeniente comenzar, es el de la figura~\ref{arbol}; el cual tiene tres niveles
 como mínimo, pues si las aristas se unen antes de formar estos tres
 niveles, aparece un ciclo de longitud menor.
 
@@ -1580,28 +1583,31 @@ niveles, aparece un ciclo de longitud menor.
   \end{tikzpicture}
   \caption{} \label{arbol}
 \end{figure}
+\end{example}
 
-La construcción de estos arboles siempre es posible para
-$(k,g)$-gráficas, lo cual resulta muy conveniente para poder dar una
-cota inferior para la cantidad de vértices que una $(3,n)-jaula$
+La construcción de éstos arboles siempre es posible para
+$(k,g)$-gráficas, lo cual resulta conveniente para dar una
+cota inferior para la cantidad de vértices que una $(3,n)$-jaula
 tiene.
 
-Si $n$ es par
-\begin{center}
-  con $m=\frac{n}{2}$ cota inferior $\sum^{m}_{i+1}2^i$
-\end{center}
+Si $n$ es par:
+\begin{equation*}
+\text{  con } m=\frac{n}{2} \text{ , la cota inferior es} \sum^{m}_{i+1}2^i
+\end{equation*}
 
-Si $n$ es impar
-\begin{center}
-  con $m=\frac{(n-3)}{2}$ la cota es $1 + 3\sum^m_{i=0} 2^i$
-\end{center}
+Si $n$ es impar:
+\begin{equation*}
+  \text{ con } m=\frac{(n-3)}{2} \text{ , la cota inferior es } 1 + 3\sum^m_{i=0} 2^i
+\end{equation*}
 
 Lo anterior se puede deducir fácilmente del hecho de que para dibujar
 una gráfica de cuello par es conveniente comenzar con un árbol que en
 la base tenga dos vértices y para una de cuello impar la base del
-árbol debe tener un solo vértice. Por conveniencia se usan estos
-árboles, pues las cotas que arrojan, en algunas ocasiones se alcanzan,
-a dicha cota también se le conoce como la cota ingenua \index{Cota
+árbol debe tener un solo vértice. 
+
+La cantidad de vertices que estos
+árboles tienen, se usa como cota inferior pues en algunas ocasiones se alcanza.
+A dicha cota también se le conoce como la cota ingenua\index{Cota
   ingenua}. Cuando una jaula cumple con esta cota, se le conoce como
 $jaulita$\index{Jaulita}, termino que se a popularizado entre los
 expertos en el área, aquí en México.
@@ -1609,10 +1615,7 @@ expertos en el área, aquí en México.
 
 \section{(3,3)-jaula}
 
-Como el ciclo mas chico es de longitud tres. La jaula $3-regular$ de
-menor cuello es la $(3,3)-jaula$, dicha gráfica es la gráfica completa
-$K_4$ es decir, tiene cuatro vértices y seis aristas,
-figura~\ref{jaula(3,3)}.
+La jaula $3$-regular de cuello menor es la $(3,3)$-jaula. Dicha gráfica es la gráfica representada en la figura~\ref{jaula(3,3)}; es decir, tiene cuatro vértices y seis aristas.
 
 \begin{figure}[htb]
   \centering
@@ -1626,74 +1629,104 @@ figura~\ref{jaula(3,3)}.
   \caption{} \label{jaula(3,3)}
 \end{figure}
 
-La gráfica es $K_4$, y otra forma de verla es la figura~\ref{K_4}
+La jaula es la gráfica completa $K_4$, y otra forma de verla es la figura~\ref{K_4}.
 
 \begin{figure}[htb]
   \centering
   \begin{tikzpicture}
     \SetVertexNoLabel \SetUpVertex[MinSize=2pt] \grComplete[RA=2]{4}
   \end{tikzpicture}
-  \caption{Esta es la gráfica $K_4$.} \label{K_4}
+  \caption{Gráfica completa $K_4$.} \label{K_4}
 \end{figure}
 
-El este caso, la cota mínima $1+3(2^{0})=4$ se alcanza y la jaulita es
-única; además, la gráfica es arista transitiva, vértice-transitiva,
+El éste caso, la cota mínima dana por la cantidad de vertices del
+árbol con dos niveles y un solo vertice en la bace es
+$1+3(2^{0})=4$. La cota se alcanza y la jaulita es
+única. Además, la gráfica es arista transitiva, vértice-transitiva,
 1-arco transitiva y distancia transitiva.
 
 
 \section{(3,4)-jaula}
 
-Para dibujar la gráfica $3-regular$ con cuello par igual a cuatro es
-conveniente comenzar con el árbol de seis vértices
-figura~\ref{arbol(3,4)}.
+Para dibujar una gráfica $3$-regular con cuello cuatro, es
+conveniente comenzar con el árbol de dos niveles que tiene como base
+dos vertices, representado en la figura~\ref{arbol(3,4)}.
 
-\begin{figure}[htb]
+\begin{figure}
   \centering
   \begin{tikzpicture}
-    \SetUpVertex[MinSize=2pt] \grEmptyPath[x=-2,y=0,RA=4,prefix=w]{2}
-    \grEmptyPath[x=-3,y=2,RA=2,prefix=v]{4} \Edges(v0,w0,w1,v3)
-    \Edges(v1,w0,w1,v2)
+    \SetUpVertex[MinSize=2pt]\SetVertexNoLabel
+
+ \grSubtreeOfCage[RA=3.2,RB=2]{3}{4} \foreach \y in {0,1,2,3}{%
+      \setcounter{in}{\y} \stepcounter{in} \draw (a1;\y)
+      node[below right]{$\alph{in}$}; })
   \end{tikzpicture}
   \caption{} \label{arbol(3,4)}
 \end{figure}
 
-Y sin perdida de generalidad se pueden colocar las aristas que faltan
-a $v_0$, nótese que las aristas no pueden ir a los vértices que están
-en la misma rama pues el ciclo seria menor. Nuevamente sin perdida de
-generalidad la primer arista faltante de $v_0$ puede ir a $v_2$ y la
-segunda a $v_3$, figura~\ref{primarist(3,4)}.
+No es necesario un nuevo nivel en el árbol pues algunos vertices de la
+parte superior pueden ser adyacentes entre sí, sin que se formen
+ciclos de longitud menor a cuatro.
+
+Para que el grado de los  vertices de la parte superio sea tres, es
+necesario que cada uno tenga dos vertices adyacentes más, es decir
+cada vertice necesita estar en dos aristas más. 
+
 
 \begin{figure}[htb]
   \centering
   \begin{tikzpicture}
-    \SetUpVertex[MinSize=2pt] \grEmptyPath[x=-2,y=0,RA=4,prefix=w]{2}
-    \grEmptyPath[x=-3,y=2,RA=2,prefix=v]{4} \Edges(v0,w0,w1,v3)
-    \Edges(v1,w0,w1,v2) \Edge[style={bend right}](v2)(v0)
-    \Edge[style={bend right}](v3)(v0)
+    \SetUpVertex[MinSize=2pt] \SetVertexNoLabel
+
+ \grSubtreeOfCage[RA=3.2,RB=2]{3}{4} \foreach \y in {0,1,2,3}{%
+      \setcounter{in}{\y} \stepcounter{in} \draw (a1;\y)
+      node[below right]{$\alph{in}$}; })
+ \Edges(a1;0,a0;0,a0;1,a1;3)
+    \Edges(a1;1,a0;0,a0;1,a1;2) 
+\Edge[style={bend right}](a1;2)(a1;0)
+    \Edge[style={bend right}](a1;3)(a1;0)
   \end{tikzpicture}
   \caption{} \label{primarist(3,4)}
 \end{figure}
 
-Ahora la gráfica ya esta determinada, las aristas de $v_1$ van a $v_2$
-y $v_3$ respectivamente, figura~\ref{jaula(3,4)}.
 
+Sin perdida de generalidad, se pude eligir primero al vertice $a$ para que sus
+aristas sean completadas. No puede existir adyacencia entre $a$ y $b$
+pues la grafica no debe tener ciclos de longitud 3. Entonces las
+aristas faltante de $a$ son $ac$ y $ad$, vease
+figura~\ref{primarist(3,4)}.
 
 \begin{figure}[htb]
   \centering
   \begin{tikzpicture}
-    \SetUpVertex[MinSize=2pt] \grEmptyPath[x=-2,y=0,RA=4,prefix=w]{2}
-    \grEmptyPath[x=-3,y=2,RA=2,prefix=v]{4} \Edges(v0,w0,w1,v3)
-    \Edges(v1,w0,w1,v2) \Edge[style={bend right}](v2)(v0)
-    \Edge[style={bend right}](v2)(v1) \Edge[style={bend
-      right}](v3)(v0) \Edge[style={bend left}](v1)(v3)
+    \SetUpVertex[MinSize=2pt]
+\SetVertexNoLabel
+
+ \grSubtreeOfCage[RA=3.2,RB=2]{3}{4} \foreach \y in {0,1,2,3}{%
+      \setcounter{in}{\y} \stepcounter{in} \draw (a1;\y)
+      node[below right]{$\alph{in}$}; })
+ \Edges(a1;0,a0;0,a0;1,a1;3)
+    \Edges(a1;1,a0;0,a0;1,a1;2) 
+\Edge[style={bend right}](a1;2)(a1;0)
+    \Edge[style={bend right}](a1;3)(a1;0)
+
+    \Edge[style={bend right}](a1;2)(a1;1) \Edge[style={bend left}](a1;1)(a1;3)
   \end{tikzpicture}
   \caption{} \label{jaula(3,4)}
 \end{figure}
 
-Con esto se ha demostrado que la jaula es única y que la cantidad de
-vértices alcanza la cota mínima. Esta jaula es isomorfa a $K_{3,3}$,
+Ahora, las aristas faltantes de $b$ son  $bc$
+y $bd$ respectivamente, tal como lo muestra la
+figura~\ref{jaula(3,4)}. Despues de formar esas dos nuevas adyacencias
+las grafica ya es 3-regular y como alcansa la cota ingenua entonces
+más que ser jaula es
+jaulita.
+
+
+Queda demostrado que la jaulita es única. Esta jaula es isomorfa a la
+grafica bipartita clanica  $K_{3,3}$,
 dibujada en la figura~\ref{K_3,3}, es 1-arco transitiva, vértice
-transitiva, arista transitiva.
+transitiva y arista transitiva.
 
 \begin{figure}[htb]
   \centering
@@ -1707,7 +1740,8 @@ transitiva, arista transitiva.
 
 \section{(3,5)-jaula}
 
-Para la jaula de cuello cinco el árbol tiene como base un solo vértice
+Para formar la jaula $3$-regular de cuello cinco, el árbol con el que
+es combeniente comensar tiene como base un solo vértice
 y tres pisos; y al igual que en el caso anterior se dibujan las
 aristas que faltan a $a$ y a $b$, las cuales tienen que ir a vértices
 de ramas distintas, pues sino lo hicieran se formaría un ciclo de
@@ -1717,10 +1751,10 @@ longitud menor,figura~\ref{arbol(3,5)}.
 \begin{figure}[htb]
   \centering
   \begin{tikzpicture}
-    \SetUpVertex[MinSize=13pt] \SetVertexNoLabel
+    \SetUpVertex[MinSize=2pt] \SetVertexNoLabel
     \grSubtreeOfCage[RA=3,RB=1.2]{3}{5} \foreach \y in {0,1,...,5}{%
       \setcounter{in}{\y} \stepcounter{in} \draw (a2;\y)
-      node[]{$\alph{in}$}; }
+      node[below right]{$\alph{in}$}; }
 
     \Edges[style={bend left=20}](a2;0,a2;2) \Edges[style={bend
       left=20}](a2;0,a2;4) \Edges[style={bend left=20}](a2;1,a2;3)
@@ -1738,10 +1772,10 @@ figura~\ref{jaula(3,5)}.
 \begin{figure}[htb]
   \centering
   \begin{tikzpicture}
-    \SetUpVertex[MinSize=13pt] \SetVertexNoLabel
+    \SetUpVertex[MinSize=2pt] \SetVertexNoLabel
     \grSubtreeOfCage[RA=2,RB=1.2]{3}{5} \foreach \y in {0,1,...,5}{%
-      \setcounter{in}{\y} \stepcounter{in} \draw (a2;\y) node
-      {$\alph{in}$}; }
+      \setcounter{in}{\y} \stepcounter{in} \draw (a2;\y) node[below
+      right]{$\alph{in}$}; }
     % \AssignVertexLabel{a2;0}{a}
     \Edges[style={bend left=30}](a2;0,a2;2) \Edges[style={bend
       left=30}](a2;0,a2;4) \Edges[style={bend left=30}](a2;1,a2;3)
