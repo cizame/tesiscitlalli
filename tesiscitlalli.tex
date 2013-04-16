@@ -96,8 +96,8 @@ programa antes mencionado.
 Antes de comenzar con el tema principal del presente trabajo, es
 necesario introducir algunos conceptos, unos mas básicos y comunes
 que otros, pero necesarios para facilitar la comprensión del
-lenguaje que aquí se maneja; así como resultados ya existentes que
-serven de ayuda en la justificación del análisis que se hace a las
+lenguaje que se maneja. Así como resultados ya existentes que
+serviran de ayuda en la justificación del análisis que se hace a las
 gráficas de Cayley 3-regulares.
 
 
@@ -105,7 +105,7 @@ gráficas de Cayley 3-regulares.
 
 En esta sección se encuentran definiciones básicas de grupos y
 algunos resultados elementales que no serán demostrados. Si
-el lector se interesa puede consultar m\'as acerca del tema en
+el lector se interesa puede consultar más acerca del tema en
 $\cite{Barrera}$, $\cite{Ehrlich}$, $\cite{Hall}$ y $\cite{Zaldivar}$.
 
 \begin{definition}{\textbf{Grupo}}\\\index{Grupo} Un grupo es una
@@ -115,7 +115,7 @@ denotada por $\circ (x,y):=x\circ y$, la cual satisface:
 
 \begin{enumerate}
 \item La operación $\circ$ es asociativa, es decir, $g_1\circ
-  (g_2\circ G_3)=(g_1 \circ g_2)\circ g_3$ para todos
+  (g_2\circ g_3)=(g_1 \circ g_2)\circ g_3$ para todos
   $g_1,g_2,g_3\in G$.
 \item Existe $e\in G$ tal que $e\circ g_1=g_1$, para todo
   $g_1\in G$, llamado neutro por la izquierda.
@@ -125,15 +125,19 @@ denotada por $\circ (x,y):=x\circ y$, la cual satisface:
 \end{enumerate}
 \end{definition}
 
+
 Apartir de este momento, la notación $g_1\circ g_2$ ser\'a
 sustituida por $g_1g_2$ pues es m\'as cómodo dejar de escribir
-$\circ$.
+$\circ$. 
+
 
 
 \begin{theorem}\label{gg=g}
-  Sean $G$ un grupo y $g\in G$, si $gg=g$ entonces $g=e$.
+  Sean $G$ un grupo y $g$ un elemento de él, si $gg=g$ entonces $g$ es
+  igual a la identidad.
 \end{theorem}
-\begin{demostration}
+
+\begin{proof}
  Como $g\in G$ entonces existe un elemento $g'\in G$ tal
 que $g'g=e$ y como $gg=g$ se tiene
 \begin{equation*}
@@ -144,21 +148,35 @@ que $g'g=e$ y como $gg=g$ se tiene
 \end{equation*}
 
 concluyendo la demostración.
-\end{demostration}
+\end{proof}
 
 Se puede demostrar que tanto el elemento neutro, como el inverso son
-únicos, además
-$$eg=ge=e  \textit{    y   }  g^{-1}g=gg^{-1}=e$$
-para todo $g \in G$. Si se desea, se puede consultar la demostración
+únicos, además se tiene que:
+\begin{equation*}
+\begin{split}
+eg&=ge=e\\ 
+& \textit{    y   }\\
+ g^{-1}g&=gg^{-1}=e
+\end{split}
+\end{equation*}
+para todo  $g$ del grupo $G$. Si se desea, se puede consultar la demostración
 en $\cite{Barrera}$.
 
-\begin{example}\textbf{Grupo simétrico}\\\index{Grupo simétrico}
+\begin{example}\textbf{Grupo simétrico o de
+    permutaciones}\\\index{Grupo simétrico}\index{Grupo de permutaciones}
   Sea $S_n$\index{$S_n$} el conjunto formado por todas las funciones
-  biyectivas de $\{1,2,...,n \}$ en s\'i mismo; entonces $S_n$ es un
+  biyectivas del conjunto $\{1,2,...,n \}$ en sí mismo. Entonces $S_n$ es un
   grupo con respecto a la composición de funciones.
 
-  $S_n $ se denomina grupo simétrico de grado $n$ y sus elementos son
-  conocidos como permutaciones del conjunto.
+
+\begin{proof}
+
+Dado que la operacion es la compocision de funciones, se sabe que las
+tres condiciones necesarias par ser grupo, se cumplen. 
+\end{proof}
+
+  $S_n$ se denomina grupo simétrico de grado $n$ y sus elementos son
+  conocidos como permutaciones del conjunto $\{1,2,...,n\}$.
 \end{example}
 
 Sea $\sigma \in S_n$ la permutación que manda el elemento $j$ a $j+1$
@@ -196,26 +214,32 @@ manda $i_j$ a $i_{j+1}$ e $i_k$ a $i_1$.
   \item Para todo $x,y \in H$ se tiene $xy^{-1}\in H$
   \end{enumerate}\label{teonodemos}
 \end{theorem}
-\begin{demostration}
+
+\begin{proof}
   La demostración del teorema~\ref{teonodemos} se encuentra en
   \cite{Barrera}, página 24; o en \cite{Ehrlich}, página 44.
-\end{demostration}
+\end{proof}
 
 \begin{theorem}
 Sea $G$ un grupo. La intersección de subgrupos de $G$ es también un subgrupo. 
 \end{theorem}
 
-\begin{demostration}
+\begin{proof}
 Sea $I$ un conjunto de subgrupos de $G$. 
 
-Primero; cada $H\in I$ contiene la identidad, $e$, de $G$. Se tiene
-$e\in \bigcap_{H\in I}H$, entonces $\bigcap_{H\in I}H\neq \phi$.
+Primero; cada subgrupo $H$ en el conjunto $I$, contiene a la identidad,
+$e$, de $G$, por ser un subgrupo. Entonces se tiene que
+$e\in \bigcap_{H\in I}H$, con lo que se puede comcluir que la
+interseccion de los elementos de $I$, es no vacia.
 
-Ahora suponga que $a,b\in \bigcap_{H\in I}H$. Entonces $a,b\in H$,
-para cada $H\in I$. Por el teorema~\ref{teonodemos} se tiene
+Ahora, sean $a,b\in \bigcap_{H\in I}H$. Entonces $a,b\in H$,
+para cada $H$ en $I$. Por el teorema~\ref{teonodemos}, se tiene
 $ab^{-1}\in H$, para cada $H\in I$, de lo que se sigue $ab^{-1}\in
-\bigcap_{H\in I}H$. Por lo tanto $\bigcap_{H\in I}H\le G$.
-\end{demostration}
+\bigcap_{H\in I}H$.
+
+Nuevamente, usando el teorema~\ref{teonodemos}, se concluye que la
+interseccion de subgrupos de $G$ es tambien un subgrupo de $G$.
+\end{proof}
 
 \begin{definition}\textbf{Subgrupo generado por un conjunto}\\\index{Subgrupo generado}
   Sean $G$ un grupo y $S$ un conjunto no vacío de $G$. Entonces el
@@ -230,20 +254,19 @@ $ab^{-1}\in H$, para cada $H\in I$, de lo que se sigue $ab^{-1}\in
   denotado por $|G|$.
 \end{definition}
 
-Note que en la definición no se pide que el orden sea finito, pero
+La definición no pide que el orden de un grupo sea finito, pero
 para fines de esta tesis sólo se consideran éste tipo de grupos, a los
 cuales se les conoce como grupos finitos.\index{Grupos finitos}
 
 \begin{definition}\textbf{Orden de un elemento}\\\index{Orden de un elemento del grupo}
-  Sean $G$ un grupo y $g\in G$, el orden de $G$ es el menor entero
+  Sean $G$ un grupo y $g\in G$, el orden de $g$ es el menor entero
   positivo $n$ tal que $g^n=e$ y se denotará por $|g|=n$.\index{$|g|$}
 \end{definition}
 
 \begin{definition}{\textbf{Homomorfismo}}\\\index{Homomorfismo de
-    grupos} Sean $(G,\circ)$ y ($G_1, \ast$) dos grupos. A $f : G
-  \rightarrow G_1$, una función inyectiva, tal que $f(x\circ
-  y)=f(x)\ast f(y)$ para todo $x,y\in G$, se le conoce como un
-  homomorfismo.
+    grupos} Sean $(G,\circ)$ y ($G_1, \ast$) dos grupos. 
+Un homomorfismo entre $G$ y $G_1$ es una funcion $f : G \rightarrow G_1$, tal que $f(x\circ
+  y)=f(x)\ast f(y)$ para todo $x,y\in G$.
 \end{definition}
 
 \begin{definition}\textbf{Isomorfismo de grupos}\\\index{Isomorfismo de grupos}
@@ -304,35 +327,35 @@ interesado puede consultar la demostración en \cite{Barrera} y \cite{Ehrlich}.
   \rightarrow gx$ tal que:
 
   \begin{enumerate}
-  \item $ex=x$ con $e$ la identidad en $G$ y $x\in X$.
+  \item $ex=x$, con $e$ la identidad en $G$ y $x\in X$.
 
-  \item $g_1(g_2x)=(g_1g_2)x$ con $g_1,g_2 \in G$ y $x\in X$.
+  \item $g_1(g_2x)=(g_1g_2)x$, con $g_1,g_2 \in G$ y $x\in X$.
   \end{enumerate}
 \end{definition}
 
 
 \begin{definition}\textbf{Acción transitiva}\\\index{Acción transitiva}
-  $G$ actúa transitivamente en $X$ si para toda $x_1, x_2 \in X$,
-  existe $\sigma \in G$ tal que $\sigma (x_1) = x_2$.
+  Un grupo $G$, actúa transitivamente en un conjunto $X$, si para todo
+  par de elementos $x_1, x_2 \in X$, existe $\sigma \in G$ tal que $\sigma (x_1) = x_2$.
 \end{definition}
 
 
 
 \begin{definition}\textbf{Acción regular}\\\index{Acción regular}
-  Supongamos que $H$ actúa en $X$. Decimos que la acción es regular, o
-  que $H$ actúa regularmente en $X$ si:
+  Sea $G$ un grupo y $X$ un conjunto, tal que $G$ actua en él. Se dice que la acción es regular, o
+  que $G$ actúa regularmente en $X$ si:
   \begin{enumerate}
   \item La acción es transitiva
-  \item $|\Stab (H,x)|=1$ para toda $x\in X$
-  \item $|H|=|X|$
+  \item $|\Stab (G,x)|=1$, para toda $x\in X$
+  \item $|G|=|X|$
   \end{enumerate}
 \end{definition}
 
 
 \begin{example}
-  Sea $H=\{ (123),(132),(1)\}$ subconjunto de $S_3$, entonces $H$
-  actúa regularmente en $X=\{ 1,2,3\}$.
-\begin{demostration} Para que la acción sea regular se deben probar tres cosas:
+  Sea $G=\{ (123),(132),(1)\}$ subgrupo del grupo de permutaciones $S_3$, entonces $G$
+  actúa regularmente en el conjunto $X=\{ 1,2,3\}$.
+\begin{proof} Para que la acción sea regular se deben probar tres cosas:
 
   \begin{enumerate}
   \item La acción es transitiva
@@ -344,26 +367,26 @@ interesado puede consultar la demostración en \cite{Barrera} y \cite{Ehrlich}.
     \item Para $2,3\in X$, $(123)$ manda $2$ en $3$ y $(132)$ manda
       $3$ a $2$.
     \end{enumerate}
-  \item $|\Stab (H,x)|=1$ para todo $x$
+  \item $|\Stab (G,x)|=1$ para todo $x$
     \begin{enumerate}
-    \item Para $1\in X$, $|Stab (H,1)|=1$
-    \item Para $2\in X$, $|Stab (H,2)|=1$
-    \item Para $3\in X$, $|Stab (H,3)|=1$
+    \item Para $1\in X$, $|Stab (G,1)|=1$
+    \item Para $2\in X$, $|Stab (G,2)|=1$
+    \item Para $3\in X$, $|Stab (G,3)|=1$
     \end{enumerate}
-  \item $|H|=3=|X|$
+  \item $|G|=3=|X|$
   \end{enumerate}
-  Por lo tanto $H$ actúa regularmente en $X$.
-\end{demostration}
+  Por lo tanto $G$ actúa regularmente en $X$.
+\end{proof}
 \end{example}
 
 
-Si $H$ actúa regularmente en $X$ entonces, si $x \in X$
+Si un grupo $G$ actúa regularmente en un conjunto $X$ entonces, si $x \in X$
 \begin{equation*}
-  |H|=\frac{|H|}{|\Stab(H,x)|}
-  = | \orb (H,x)|=|X|
+  |G|=\frac{|G|}{|\Stab(G,x)|}
+  = | \orb (G,x)|=|X|
 \end{equation*}
 
-De hecho, para verificar que $H$ actúa regularmente en $X$, basta
+De hecho, para verificar que $G$ actúa regularmente en $X$, basta
 probar una de las tres condiciones para que las otras se cumplan, pero
 este resultado no será demostrado aquí.
 
@@ -405,8 +428,8 @@ aristas no dirigidas y sin lazos.
 
   \begin{equation*}
     \begin{split}
-      V(\overline{G})&=V(G)\\
-      E(\overline{G})&=V(G)^{(2)}\setminus E(G)
+      V(\overline{\Gamma})&=V(\Gamma)\\
+      E(\overline{\Gamma})&=V(\Gamma)^{(2)}\setminus E(\Gamma)
     \end{split}
   \end{equation*}
 
@@ -446,13 +469,13 @@ hablando de la misma gráfica.
 
 \begin{definition}\textbf{Gráficas isomorfas}\\\index{Gráfica isomorfa}
   Sean $\Gamma_1,\Gamma_2$ dos gráficas, si existe un isomorfismo
-  entre $\Gamma_1$ y $\Gamma_2$, decimos que $\Gamma_1$ y $\Gamma_2$
+  entre $\Gamma_1$ y $\Gamma_2$, se dice que $\Gamma_1$ y $\Gamma_2$
   son isomorfas.
 \end{definition}
 
 
 \begin{definition}\textbf{Automorfismo}\\\index{Automorfismo}
-  Un isomorfismo de una gráfica $\Gamma$ en si misma se llama automorfismo de
+  Un isomorfismo de una gráfica $\Gamma$ en si misma, se llama automorfismo de
   $\Gamma$.
 \end{definition}
 
@@ -3708,11 +3731,6 @@ y cinco elementos.
 
 \begin{thebibliography}{}
 
-\bibitem{Ehrlich}{book}{ author={Ehrlich, Gertrude},
-    title={Fundamental Concepts of Abstract Algebra}, publisher={
-      PWS-KENT Publishing Company}, date={1991}, }
-
-
 
 \bibitem{Barrera}{book}{ author={Barrera Mora, Jos\'e F\'elix
       Fernando}, title={Introducción a la Teoría de Grupos},
@@ -3720,14 +3738,17 @@ y cinco elementos.
     date={2004}, }
 
 
+\bibitem{Ehrlich}{book}{ author={Ehrlich, Gertrude},
+    title={Fundamental Concepts of Abstract Algebra}, publisher={
+      PWS-KENT Publishing Company}, date={1991}, }
+
 
 \bibitem{Zaldivar}{book}{ author={Zaldívar, Felipe},
     title={Introducción a la teoría de grupos}, publisher={Editorial
       Reverté}, date={2006}, }
 
 
-
-\bibitem{Marshall}{book}{ author={Hall, Marshall Jr. }, title={Teoría
+\bibitem{Hall}{book}{ author={Hall, Marshall Jr. }, title={Teoría
       de los grupos}, publisher={Editorial Trillas, M\'exico},
     date={1969}, }
 
