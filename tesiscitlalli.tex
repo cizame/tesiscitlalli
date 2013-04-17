@@ -1917,14 +1917,23 @@ plano proyectivo de orden dos, el plano de Fano.
 
 \section{(3,7)-jaula}
 
-Hasta este momento el análisis ha sido relativamente sencillo, pues al
-ir descartando posibilidades se ha podido decidir que forma tiene la
-jaula y al mismo tiempo se demuestra que es única. Más aún parecería
-que una jaula siempre va a alcanzar la cota mínima sugerida, pero
-veamos que pasa en el siguiente caso.
+%Hasta el momento el análisis ha sido relativamente sencillo, pues al
+%ir descartando posibilidades se ha podido decidir que forma tiene la
+%jaula y al mismo tiempo se demuestra que es única. Más aún parecería
+%que una jaula siempre va a alcanzar la cota mínima sugerida.
 
-Como en los casos anteriores primero se dibujan las aristas de los
-vértices $a$ y $b$; nuevamente, aristas que salen del mismo vértice
+
+El árbol que es conbeniente utilizar para dibujar la jaula $3$-regular
+de cuello siete, es el que tiene como base un solo vertice, pues el
+cuello es impar, y cuatro pisos porque a partir de éste momento es
+posible unir vertices cuyo grado es uno, sin que se formen ciclos de
+longitud menor a la deseada. 
+
+
+Sin perdida de generalidad, primero se asignan las aristas de los
+vértices $a$ y $b$. 
+
+ nuevamente, aristas que salen del mismo vértice
 tienen que ir a ramas distintas, figura~\ref{arbol(3,7)}.
 
 \begin{figure}
@@ -1942,8 +1951,8 @@ tienen que ir a ramas distintas, figura~\ref{arbol(3,7)}.
     \Edges[style={bend left,color=green}](a3;1,a3;6)
     \Edges[style={bend left},color=green](a3;1,a3;10)
 
-    \draw(-2.5,2) node {primer rama}; \draw(0,1.3) node {segunda
-      rama};\draw(2.5,2) node {tercer rama};
+    \draw(-3.2,.5) node {primer rama}; \draw(0,.8) node {segunda
+      rama};\draw(3.2,.5) node {tercer rama};
   \end{tikzpicture}
   \caption{} \label{arbol(3,7)}
 \end{figure}
@@ -1979,7 +1988,7 @@ longitud seis, figura~\ref{ciclo5(3,7)}.
   \centering
   \begin{tikzpicture}
     \SetVertexNoLabel \SetUpVertex[MinSize=1.5pt]
-    \grSubtreeOfCage[RA=4,RB=1]{3}{7} \foreach \y in {0,1,...,11}{%
+    \grSubtreeOfCage[RA=4,RB=1.2]{3}{7} \foreach \y in {0,1,...,11}{%
       \setcounter{in}{\y} \stepcounter{in} \draw (a3;\y) node[below
       right]{$\alph{in}$}; } \Edges[style={bend
       left},color=blue](a3;0,a3;4) \Edges[style={bend
@@ -1990,8 +1999,12 @@ longitud seis, figura~\ref{ciclo5(3,7)}.
     \GraphInit[vstyle=Shade] \Edges[style={bend
       left},color=red](a3;2,a3;4)
     \Edges[color=red](a3;2,a2;1,a1;0,a2;0,a3;0) \Edges[style={bend
-      left},color=red](a3;0,a3;4) \draw(-2.5,2) node {primer rama};
-    \draw(0,1.3) node {segunda rama};\draw(2.5,2) node {tercer rama};
+      left},color=red](a3;0,a3;4)
+
+
+    \draw(-3.2,.5) node {primer rama}; \draw(0,.8) node {segunda
+      rama};\draw(3.2,.5) node {tercer rama};
+
   \end{tikzpicture}
   \caption{} \label{ciclo1(3,7)}
 \end{figure}
@@ -2002,7 +2015,7 @@ longitud seis, figura~\ref{ciclo5(3,7)}.
   \begin{tikzpicture}
     % \label{ciclo2(3,7)}
     \SetVertexNoLabel \SetUpVertex[MinSize=1pt]
-    \grSubtreeOfCage[RA=4,RB=1]{3}{7}
+    \grSubtreeOfCage[RA=4,RB=1.2]{3}{7}
 
     \foreach \y in {0,1,...,11}{%
       \setcounter{in}{\y} \stepcounter{in} \draw (a3;\y) node[below
@@ -2016,8 +2029,10 @@ longitud seis, figura~\ref{ciclo5(3,7)}.
     % \Edges[color=red](a3;2,a2;6,a1;0,a2;0,a3;0)
     \Edges[style={bend left},color=red](a3;0,a3;8) \Edges[style={bend
       left},color=red](a3;0,a3;8) \Edges[style={bend
-      left},color=blue](a3;0,a3;4) \draw(-2.5,2) node {primer rama};
-    \draw(0,1.3) node {segunda rama};\draw(2.5,2) node {tercer rama};
+      left},color=blue](a3;0,a3;4) 
+
+    \draw(-3.2,.5) node {primer rama}; \draw(0,.8) node {segunda
+      rama};\draw(3.2,.5) node {tercer rama};
   \end{tikzpicture}
   \caption{} \label{ciclo2(3,7)}
 \end{figure}
@@ -2027,7 +2042,7 @@ longitud seis, figura~\ref{ciclo5(3,7)}.
   \centering
   \begin{tikzpicture}
     \SetVertexNoLabel \SetUpVertex[MinSize=1.5pt]
-    \grSubtreeOfCage[RA=4,RB=1]{3}{7} \foreach \y in {0,1,...,11}{%
+    \grSubtreeOfCage[RA=4,RB=1.2]{3}{7} \foreach \y in {0,1,...,11}{%
       \setcounter{in}{\y} \stepcounter{in} \draw (a3;\y) node[below
       right]{$\alph{in}$}; }
 
@@ -2039,8 +2054,10 @@ longitud seis, figura~\ref{ciclo5(3,7)}.
       left},color=red](a3;4,a3;10) \Edges[style={bend
       left},color=green](a3;1,a3;10)
     \Edges[color=green](a3;1,a2;0,a3;0) \Edges[style={bend
-      left},color=blue](a3;0,a3;4) \draw(-2.5,2) node {primer rama};
-    \draw(0,1.3) node {segunda rama};\draw(2.5,2) node {tercer rama};
+      left},color=blue](a3;0,a3;4) 
+
+    \draw(-3.2,.5) node {primer rama}; \draw(0,.8) node {segunda
+      rama};\draw(3.2,.5) node {tercer rama};
   \end{tikzpicture}
   \caption{} \label{ciclo3(3,7)}
 \end{figure}
@@ -2050,7 +2067,7 @@ longitud seis, figura~\ref{ciclo5(3,7)}.
   \centering
   \begin{tikzpicture}
     \SetVertexNoLabel \SetUpVertex[MinSize=1.5pt]
-    \grSubtreeOfCage[RA=4,RB=1]{3}{7} \foreach \y in {0,1,...,11}{%
+    \grSubtreeOfCage[RA=4,RB=1.2]{3}{7} \foreach \y in {0,1,...,11}{%
       \setcounter{in}{\y} \stepcounter{in} \draw (a3;\y) node[below
       right]{$\alph{in}$}; }
 
@@ -2062,8 +2079,9 @@ longitud seis, figura~\ref{ciclo5(3,7)}.
     \Edges[style={bend left},color=purple](a3;4,a3;11)
     \Edges[style={bend left},color=purple](a3;2,a3;11)
 
-    \draw(-2.5,2) node {primer rama}; \draw(0,1.3) node {segunda
-      rama};\draw(2.5,2) node {tercer rama};
+
+    \draw(-3.2,.5) node {primer rama}; \draw(0,.8) node {segunda
+      rama};\draw(3.2,.5) node {tercer rama};
   \end{tikzpicture}
   \caption{} \label{arbol2(3,7)}
 \end{figure}
@@ -2074,7 +2092,7 @@ longitud seis, figura~\ref{ciclo5(3,7)}.
   \centering
   \begin{tikzpicture}
     \SetVertexNoLabel \SetUpVertex[MinSize=1pt]
-    \grSubtreeOfCage[RA=4,RB=1]{3}{7} \foreach \y in {0,1,...,11}{%
+    \grSubtreeOfCage[RA=4,RB=1.2]{3}{7} \foreach \y in {0,1,...,11}{%
       \setcounter{in}{\y} \stepcounter{in} \draw (a3;\y) node[below
       right]{$\alph{in}$}; }
 
@@ -2089,8 +2107,9 @@ longitud seis, figura~\ref{ciclo5(3,7)}.
     \Edges[style={bend left},color=blue](a3;0,a3;8) \Edges[style={bend
       left,color=green}](a3;1,a3;6) \Edges(a3;0,a2;0,a3;1)
 
-    \draw(-2.5,2) node {primer rama}; \draw(0,1.3) node {segunda
-      rama};\draw(2.5,2) node {tercer rama};
+
+    \draw(-3.2,.5) node {primer rama}; \draw(0,.8) node {segunda
+      rama};\draw(3.2,.5) node {tercer rama};
   \end{tikzpicture}\caption{} \label{ciclo4(3,7)}
 \end{figure}
 
@@ -2099,7 +2118,7 @@ longitud seis, figura~\ref{ciclo5(3,7)}.
   \centering
   \begin{tikzpicture}
     \SetVertexNoLabel \SetUpVertex[MinSize=1pt]
-    \grSubtreeOfCage[RA=4,RB=1]{3}{7} \foreach \y in {0,1,...,11}{%
+    \grSubtreeOfCage[RA=4,RB=1.2]{3}{7} \foreach \y in {0,1,...,11}{%
       \setcounter{in}{\y} \stepcounter{in} \draw (a3;\y) node[below
       right]{$\alph{in}$}; }
 
@@ -2116,8 +2135,9 @@ longitud seis, figura~\ref{ciclo5(3,7)}.
       left},color=magenta](a3;6,a3;9)
     \Edges(a3;6,a2;3,a3;7,a3;8,a2;4,a3;9)
 
-    \draw(-2.5,2) node {primer rama}; \draw(0,1.3) node {segunda
-      rama};\draw(2.5,2) node {tercer rama};
+
+    \draw(-3.2,.5) node {primer rama}; \draw(0,.8) node {segunda
+      rama};\draw(3.2,.5) node {tercer rama};
   \end{tikzpicture}\caption{} \label{ciclo5(3,7)}
 \end{figure}
 
@@ -2127,7 +2147,7 @@ longitud seis, figura~\ref{ciclo5(3,7)}.
   \centering
   \begin{tikzpicture}
     \SetVertexNoLabel \SetUpVertex[MinSize=1.5pt]
-    \grSubtreeOfCage[RA=4,RB=1]{3}{7} \foreach \y in {0,1,...,11}{%
+    \grSubtreeOfCage[RA=4,RB=1.2]{3}{7} \foreach \y in {0,1,...,11}{%
       \setcounter{in}{\y} \stepcounter{in} \draw (a3;\y) node[below
       right]{$\alph{in}$}; }
 
@@ -2144,16 +2164,10 @@ longitud seis, figura~\ref{ciclo5(3,7)}.
 
     \Edges(a3;4,a2;2,a3;5)
 
-    \draw(-2.5,2) node {primer rama}; \draw(0,1.3) node {segunda
-      rama};\draw(2.5,2) node {tercer rama};
-
+    \draw(-3.2,.5) node {primer rama}; \draw(0,.8) node {segunda
+      rama};\draw(3.2,.5) node {tercer rama};
   \end{tikzpicture}\caption{} \label{ciclo6(3,7)}
 \end{figure}
-
-
-
-\newpage
-
 
 Con este razonamiento se concluye que debe existir arista entre $f$ e
 $i$, lo que lleva a la existencia de un ciclo de longitud cinco,
