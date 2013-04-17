@@ -1742,10 +1742,14 @@ transitiva y arista transitiva.
 
 Para formar la jaula $3$-regular de cuello cinco, el árbol con el que
 es combeniente comensar tiene como base un solo vértice
-y tres pisos; y al igual que en el caso anterior se dibujan las
-aristas que faltan a $a$ y a $b$, las cuales tienen que ir a vértices
-de ramas distintas, pues sino lo hicieran se formaría un ciclo de
-longitud menor,figura~\ref{arbol(3,5)}.
+y tres pisos. Apartir de éste momento, es posible crear aristas entre
+los vertices cuyo grado aún no es tres, sin que se formen ciclos de
+longitud menor a cinco, por ello no es necesario otro piso en el árbol.
+
+Sin perdida de generalidad se pueden establecer aristas entre el vertice $a$, y los
+vertices $c$ y $e$ respectivamente; al igual que entre el vertice $b$
+y los vertices $d$ y $f$, vease figura~\ref{arbol(3,5)}. Los cuales estan en ramas
+distintas a la rama en la que se encuantran $a$ y $b$, evitando así la formacion de ciclos de longitud menor a 5.
 
 
 \begin{figure}[htb]
@@ -1763,17 +1767,20 @@ longitud menor,figura~\ref{arbol(3,5)}.
   \caption{} \label{arbol(3,5)}
 \end{figure}
 
-Después de hacer esto, las aristas restantes están determinadas. La
-arista de $c$ que falta, no puede ir a $d$ porque esta en la misma
-rama y tampoco a $e$ pues se formaría un triángulo entre $a$, $c$ y
-$e$, por lo tanto la única posibilidad es ir a $f$ y unir $d$ con $e$,
-figura~\ref{jaula(3,5)}.
+Después de hacer esto, como lo que se quiere es que no se formen
+ciclos de longitud menores a 5, las aristas restantes están
+determinadas. El vertice adyacente que falta a $c$, no puede ser $d$
+porque está en la misma rama y tampoco $e$ pues se formaría un triángulo entre $a$, $c$ y
+$e$, por lo tanto la única posibilidad es el vertice $f$. Para
+finalizar, los unicos dos vertices cuyo grado no es aún tres, son $d$
+y $e$, y si ésta arista se agrega no acaciona ciclos de longutud menor a
+5, por lo tanto la grafica de la figura~\ref{jaula(3,5)} es la $(3,5)$-jaula.
 
 \begin{figure}[htb]
   \centering
   \begin{tikzpicture}
     \SetUpVertex[MinSize=2pt] \SetVertexNoLabel
-    \grSubtreeOfCage[RA=2,RB=1.2]{3}{5} \foreach \y in {0,1,...,5}{%
+    \grSubtreeOfCage[RA=3,RB=1.2]{3}{5} \foreach \y in {0,1,...,5}{%
       \setcounter{in}{\y} \stepcounter{in} \draw (a2;\y) node[below
       right]{$\alph{in}$}; }
     % \AssignVertexLabel{a2;0}{a}
@@ -1789,10 +1796,8 @@ figura~\ref{jaula(3,5)}.
 \end{figure}
 
 
-
-
-Por lo tanto la gráfica es única y alcanza su cota mínima, esta es la
-llamada gráfica de Petersen y la forma mas común de dibujarla es como
+La gráfica es única y alcanza su cota mínima, esta es la
+llamada gráfica de Petersen y la forma más común de dibujarla es como
 en la figura \ref{petersen}.
  
 
