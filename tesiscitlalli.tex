@@ -1605,12 +1605,22 @@ una gráfica de cuello par es conveniente comenzar con un árbol que en
 la base tenga dos vértices y para una de cuello impar la base del
 árbol debe tener un solo vértice. 
 
-La cantidad de vertices que estos
-árboles tienen, se usa como cota inferior pues en algunas ocasiones se alcanza.
+La cantidad de vertices que éstos
+árboles tienen se usa como cota inferior, pues en algunas ocasiones se alcanza.
 A dicha cota también se le conoce como la cota ingenua\index{Cota
-  ingenua}. Cuando una jaula cumple con esta cota, se le conoce como
+  ingenua}. Cuando una jaula cumple con ésta cota, se le conoce como
 $jaulita$\index{Jaulita}, termino que se a popularizado entre los
-expertos en el área, aquí en México.
+expertos del área, en México.
+
+
+Para mostrar la forma espesifica de las jaulas $3$-regulares de cuello
+menor a ocho, primero se construirá un árbol con los grados de sus
+vertices igual a tres, exceptuando un conjunto de ellos cuyo grado sera uno. 
+Despues se añadirán aristas a los vertices de grado uno, de manera
+adecuada, para evitar que se formen ciclos de longuitud menor a la que
+se desea. El proceso terminara cuando todos los vertices tengan grado
+tres o cuando sea imposible colocar una nueva arista sin que se formen
+ciclos de longitud menor a la deseada.
 
 
 \section{(3,3)-jaula}
@@ -1621,9 +1631,12 @@ La jaula $3$-regular de cuello menor es la $(3,3)$-jaula. Dicha gráfica es la gr
   \centering
   \begin{tikzpicture}
     \SetVertexNoLabel \SetUpVertex[MinSize=2pt] \Vertex{$v_1$}
-    \grEmptyPath[x=-2,y=2,RA=2,prefix=v]{3} \Edge[style={bend
-      left}](v0)(v2) \Edge[style={bend right}](v1)(v2)
-    \Edge[style={bend right}](v0)(v1) \Edges(v0,$v_1$,v1,$v_1$,v2)
+    \grEmptyPath[x=-2,y=2,RA=2,prefix=v]{3}
+ \Edge[style={bend
+      left},color=green](v0)(v2) 
+\Edge[style={bend right},color=blue](v1)(v2)
+    \Edge[style={bend right},color=blue](v0)(v1)
+\Edges(v0,$v_1$,v1,$v_1$,v2)
     % \grEmptyPath[x=1,y=3,RA=5]{3}
   \end{tikzpicture}
   \caption{} \label{jaula(3,3)}
@@ -1683,8 +1696,8 @@ cada vertice necesita estar en dos aristas más.
       node[below right]{$\alph{in}$}; })
  \Edges(a1;0,a0;0,a0;1,a1;3)
     \Edges(a1;1,a0;0,a0;1,a1;2) 
-\Edge[style={bend right}](a1;2)(a1;0)
-    \Edge[style={bend right}](a1;3)(a1;0)
+\Edge[style={bend right},color=green](a1;2)(a1;0)
+    \Edge[style={bend right},color=green](a1;3)(a1;0)
   \end{tikzpicture}
   \caption{} \label{primarist(3,4)}
 \end{figure}
@@ -1707,10 +1720,10 @@ figura~\ref{primarist(3,4)}.
       node[below right]{$\alph{in}$}; })
  \Edges(a1;0,a0;0,a0;1,a1;3)
     \Edges(a1;1,a0;0,a0;1,a1;2) 
-\Edge[style={bend right}](a1;2)(a1;0)
-    \Edge[style={bend right}](a1;3)(a1;0)
+\Edge[style={bend right},color=green](a1;2)(a1;0)
+    \Edge[style={bend right},color=green](a1;3)(a1;0)
 
-    \Edge[style={bend right}](a1;2)(a1;1) \Edge[style={bend left}](a1;1)(a1;3)
+    \Edge[style={bend right},color=blue](a1;2)(a1;1) \Edge[style={bend left},color=blue](a1;1)(a1;3)
   \end{tikzpicture}
   \caption{} \label{jaula(3,4)}
 \end{figure}
@@ -1760,9 +1773,9 @@ distintas a la rama en la que se encuantran $a$ y $b$, evitando así la formacion
       \setcounter{in}{\y} \stepcounter{in} \draw (a2;\y)
       node[below right]{$\alph{in}$}; }
 
-    \Edges[style={bend left=20}](a2;0,a2;2) \Edges[style={bend
-      left=20}](a2;0,a2;4) \Edges[style={bend left=20}](a2;1,a2;3)
-    \Edges[style={bend left=20}](a2;1,a2;5)
+    \Edges[style={bend left=20},color=green](a2;0,a2;2) \Edges[style={bend
+      left=20},color=green](a2;0,a2;4) \Edges[style={bend left=20},color=blue](a2;1,a2;3)
+    \Edges[style={bend left=20},color=blue](a2;1,a2;5)
   \end{tikzpicture}
   \caption{} \label{arbol(3,5)}
 \end{figure}
@@ -1784,13 +1797,13 @@ y $e$, y si ésta arista se agrega no acaciona ciclos de longutud menor a
       \setcounter{in}{\y} \stepcounter{in} \draw (a2;\y) node[below
       right]{$\alph{in}$}; }
     % \AssignVertexLabel{a2;0}{a}
-    \Edges[style={bend left=30}](a2;0,a2;2) \Edges[style={bend
-      left=30}](a2;0,a2;4) \Edges[style={bend left=30}](a2;1,a2;3)
-    \Edges[style={bend left=30}](a2;1,a2;5)
+    \Edges[style={bend left=30},color=green](a2;0,a2;2) \Edges[style={bend
+      left=30},color=green](a2;0,a2;4) \Edges[style={bend left=30},color=blue](a2;1,a2;3)
+    \Edges[style={bend left=30},color=blue](a2;1,a2;5)
 
-    \Edges[style={bend left=30}](a2;2,a2;5)
+    \Edges[style={bend left=30},color=purple](a2;2,a2;5)
 
-    \Edges[style={bend left}=30](a2;3,a2;4)
+    \Edges[style={bend left}=30,color=purple](a2;3,a2;4)
   \end{tikzpicture}
   \caption{} \label{jaula(3,5)}
 \end{figure}
@@ -1813,9 +1826,17 @@ en la figura \ref{petersen}.
 
 \section{(3,6)-jaula}
 
-El árbol tiene como base dos vértices y tres pisos. Se dibujan las
-aristas de $a$ y $b$, ahora existen otros dos vértices a los que les
-falta dos aristas, $c$ y $d$. Ver la figura~\ref{arbol(3,6)}.
+
+El árbol con el que se debe empesar a dibujar la jaula $3$-regular de
+cuello seis, tiene como base dos vértices, porque el cuello es par y
+tres pisos, porque a partir de éste momento es posible unir vertices
+del ultimo piso entre sí, sin que seformen ciclos de longitud menor a
+seis.
+
+Para completar la grafica, sin perdida de generalidad, se pueden
+aumentar las adyacencias que faltan a los vertices $a$ y $b$ para que
+su grado sea tres. Las nuevas aristas son $ae$, $ag$, $bf$ y $bh$,
+entonces la nueva gráfica se ve como en la figura~\ref{arbol(3,6)}.
 
 \begin{figure}
   \centering
@@ -1829,23 +1850,35 @@ falta dos aristas, $c$ y $d$. Ver la figura~\ref{arbol(3,6)}.
       right]{$\alph{in}$}; }
 
 
-    \Edges[style={bend left=30}](a2;0,a2;4) \Edges[style={bend
-      left=30}](a2;0,a2;6) \Edges[style={bend left=30}](a2;1,a2;5)
-    \Edges[style={bend left=30}](a2;1,a2;7)
+    \Edges[style={bend left=30},color=green](a2;0,a2;4)
+ \Edges[style={bend
+      left=30,color=green}](a2;0,a2;6) \Edges[style={bend left=30,color=blue}](a2;1,a2;5)
+    \Edges[style={bend left=30},color=blue](a2;1,a2;7)
   \end{tikzpicture}
   \caption{} \label{arbol(3,6)}
 \end{figure}
 
-Sin pérdida de generalidad, se puede comenzar a completar $c$. Para la
-primera arista, existen cuatro vértices a los cuales podría ir $e$,
-$f$, $g$ y $h$; note que no importa a quien se seleccione pues
+De los vertices restantes de grado uno, sin perdida de generalidad, se
+pueden completar las aristas de $c$. Existen cuatro vértices de los
+cuales $c$ podría ser adyacente: $e$,
+$f$, $g$ y $h$; note que no importa a quien se seleccione, pues
 reordenando adecuadamente se puede llevar uno de ellos a cualquier
-otro, suponga que unimos $c$ con $e$. En el caso de la segunda arista,
-se puede escoger entre los vértices $g$ y $h$, pues ambas no pueden ir
-a la misma rama a la vez porque se formarían ciclos menores,
-nuevamente no importa a cual de los dos se elija, así que sera a
-$g$. Después de esto, solo resta unir $d$ con los vértices restantes,
-figura~\ref{jaula(3,6)}.
+otro, del mismo conjunto, mediante un automorfismo. Entonces, sin perdida de generalidad, se
+puede aumentar la arista $ce$.
+
+En el caso de la última arista faltante de $c$,
+se puede escoger sólo entre los vértices: $g$ y $h$; pues dos aristas del
+mismo vertice no pueden ir
+a la misma rama, porque se formarían ciclos menores.
+No importa a cual de los dos vertices se elija, pues existe
+un automorfismo de la grafica que manda a uno en el otro, así que sin
+perdida de generalidad se añadirá la arista $cg$. 
+
+Los vertices que aún no tienen grado tres son $d$, $f$ y $h$. Si
+existierá la arista $fh$, para que el grado de $d$ fuerá el correcto
+se necesitaría aumentar al menos otros dos vertices. En cambio, si se
+aumentan las aristas $df$ y $dh$ la grafica de la
+figura~\ref{jaula(3,6)} es $3$-regular.
 
 \begin{figure}
   \centering
@@ -1855,19 +1888,21 @@ figura~\ref{jaula(3,6)}.
 
     \foreach \y in {0,1,...,7}{%
       \setcounter{in}{\y} \stepcounter{in} \draw (a2;\y) node[below
-      right]{$\alph{in}$}; } \Edges[style={bend left=40}](a2;0,a2;4)
-    \Edges[style={bend left=40}](a2;0,a2;6) \Edges[style={bend
-      left=40}](a2;1,a2;5) \Edges[style={bend left=40}](a2;1,a2;7)
-    \Edges[style={bend left=40}](a2;2,a2;4) \Edges[style={bend
-      left=40}](a2;2,a2;6) \Edges[style={bend left=40}](a2;3,a2;5)
-    \Edges[style={bend left=40}](a2;3,a2;7)
+      right]{$\alph{in}$}; } 
+\Edges[style={bend left=40},color=green](a2;0,a2;4)
+    \Edges[style={bend left=40},color=green](a2;0,a2;6) \Edges[style={bend
+      left=40},color=blue](a2;1,a2;5) \Edges[style={bend left=40},color=blue](a2;1,a2;7)
+    \Edges[style={bend left=40},color=purple](a2;2,a2;4) \Edges[style={bend
+      left=40},color=purple](a2;2,a2;6) \Edges[style={bend left=40},color=red](a2;3,a2;5)
+    \Edges[style={bend left=40},color=red](a2;3,a2;7)
   \end{tikzpicture}
   \caption{} \label{jaula(3,6)}
 \end{figure}
 
-Esta es la gráfica de Heawood y su representación más común es la
-figura~\ref{heawood}. Es una jaulita pues también alcanza su cota
-ingenua, y es la representación de la gráfica de puntos y líneas del
+Con lo anterior, queda demostrado que la jaula es única y que alcanza
+la cota ingenua.
+La $(3,6)$-jaula es la llamada gráfica de Heawood y su representación más común es la
+figura~\ref{heawood}. La grafica de Heawood es la representación de la gráfica de puntos y líneas del
 plano proyectivo de orden dos, el plano de Fano.
 
 \begin{figure}%[htb]
