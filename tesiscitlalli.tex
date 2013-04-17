@@ -1931,10 +1931,14 @@ longitud menor a la deseada.
 
 
 Sin perdida de generalidad, primero se asignan las aristas de los
-vértices $a$ y $b$. 
+vértices $a$ y $b$. Como los vertices están en la rama uno, sus dos
+vertices adyacentes deben estar en las ramas dos y tres,
+respectivamente. Sin perdida de generalidad se puede aumentar a la
+grafica las aristas $ae$ y $ai$. 
 
- nuevamente, aristas que salen del mismo vértice
-tienen que ir a ramas distintas, figura~\ref{arbol(3,7)}.
+Los vecinos de $b$ no pueden ser los vertices $f$ y $j$ pues se
+formaría un ciclo de longitud seis, en cada caso. Sin perdida de
+generalidad, se pueden añadir las aristas $bg$ y $bk$, vease figura~\ref{arbol(3,7)}.
 
 \begin{figure}
   \centering
@@ -1957,30 +1961,49 @@ tienen que ir a ramas distintas, figura~\ref{arbol(3,7)}.
   \caption{} \label{arbol(3,7)}
 \end{figure}
 
-Ahora observe el vértice $e$, primero que nada, su arista no debe ir a
-vértices en la misma rama porque se formaría un ciclo de longitud
-menor o igual a 5. Si la arista va a la primer rama, como en la
+El grado del vertice $e$  es dos, es decir necesita un
+vecino más, primero que nada, el vertice adyacente faltante no debe
+hestar en la misma rama, porque se formaría un ciclo de longitud
+menor o igual a 5. Si el vertice está en la primer rama, como en la
 figura~\ref{ciclo1(3,7)}, se forma un ciclo de longitud menor o igual
-a seis. Así que debe ser mandada a algún vértice en la tercer rama; no
-puede ser $i$ porque se forma el triángulo $a, e, i$, si es $j$ se
-tiene un ciclo de longitud cinco, figura~\ref{ciclo2(3,7)}. Otra
-posibilidad es mandarla al vértice $k$ pero nuevamente se forma un
-$C_5$, figura~\ref{ciclo3(3,7)}. Por lo tanto la única posibilidad es
-que exista arista entre $e$ y $l$. Al hacer esto, la arista de $l$,
-sin perdida de generalidad, puede ir a $c$, figura~\ref{arbol2(3,7)}.
+a seis. Así que debe existir arista entre el vertice $e$ y alguno en
+la tercer rama.
+
+El vertice $i$ no debe ser adyacente a $e$ porque se forma el
+triángulo $a, e, i$. Si existe la arista $ej$ se
+tiene el ciclo de longitud cinco de la figura~\ref{ciclo2(3,7)}. Otra
+posibilidad es que exista la arista $ek$, pero nuevamente se forma un
+ciclo de longitud cinco, sólo que ésta vez es el que está representado
+en la figura~\ref{ciclo3(3,7)}. Por lo tanto la única posibilidad es
+que exista arista entre $e$ y $l$. Al hacer esto, la arista faltante de $l$,
+sin perdida de generalidad, es $cl$, vease figura~\ref{arbol2(3,7)}.
 
 
-La arista restante de $g$ tiene que ir a la tercer rama, pero no puede
-ir a $l$ porque ya esta completa, si va a $k$ se forma el triángulo
-$b,g,k$, si va a $i$ se forma el ciclo de la
-figura~\ref{ciclo4(3,7)}. Por lo tanto tiene que ir a $j$.
+El vertice adyacente faltante de $g$, tiene que estar en la tercer
+rama, pues existe un camino de longitud uno de él a la primer rama, lo
+que acaciona que sin importal el vertice, en esta rama, que se elija
+se formara un ciclo de longitud menor o igual a cinco.
+
+El grado del vertice $l$ es tres por lo que no puede ser adyacente a
+ningun otro vertice. Si se añade la arista $gk$ se forma el triángulo
+$b,g,k$ y si la arista que se aumenta es $gi$ se forma el ciclo de
+longitud cinco de la
+figura~\ref{ciclo4(3,7)}. Por lo tanto el vertice $g$ es adyacente al
+vertice $j$.
 
 
 Finalmente el vértice $i$ tiene una arista que viene de la primer rama
-y el se encuentra en la tercera, por lo que debe de ir a la segunda
-rama; $e$ y $g$ están completos, si va a $h$ se forma un ciclo de
-longitud seis, figura~\ref{ciclo5(3,7)}.
+y él se encuentra en la tercera, por lo que el vertice faltante tiene
+que estar en la segunda
+rama. El grado de los vertices $e$ y $g$ ys es tres, es decir están
+completos, si existe la arista $hi$ se forma el ciclo de
+longitud seis de la figura~\ref{ciclo5(3,7)}.
 
+
+Con este razonamiento se concluye que debe existir arista entre los
+vertices $f$ e
+$i$, lo que lleva a la existencia del ciclo de longitud cinco
+representado en la figura~\ref{ciclo6(3,7)}.
 
 
 
@@ -2168,10 +2191,6 @@ longitud seis, figura~\ref{ciclo5(3,7)}.
       rama};\draw(3.2,.5) node {tercer rama};
   \end{tikzpicture}\caption{} \label{ciclo6(3,7)}
 \end{figure}
-
-Con este razonamiento se concluye que debe existir arista entre $f$ e
-$i$, lo que lleva a la existencia de un ciclo de longitud cinco,
-figura~\ref{ciclo6(3,7)}.
 
 La sensación que queda en este momento es que algo estuvo
 mal. Recapitulando; primero se dibujaron las aristas de $a$ y $b$ y
