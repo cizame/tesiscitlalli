@@ -1585,8 +1585,8 @@ niveles, aparece un ciclo de longitud menor.
 \end{figure}
 \end{example}
 
-La construcción de éstos arboles siempre es posible para
-$(k,g)$-gráficas, lo cual resulta conveniente para dar una
+En una $(k,g)$-gráfica siempre existen subgraficas isomorfas a alguno
+de estos árboles, lo cual resulta conveniente para dar una
 cota inferior para la cantidad de vértices que una $(3,n)$-jaula
 tiene.
 
@@ -2001,9 +2001,10 @@ longitud seis de la figura~\ref{ciclo5(3,7)}.
 
 
 Con este razonamiento se concluye que debe existir arista entre los
-vertices $f$ e
-$i$, lo que lleva a la existencia del ciclo de longitud cinco
-representado en la figura~\ref{ciclo6(3,7)}.
+vertices $f$ e $i$, lo que lleva a la existencia del ciclo de longitud cinco
+representado en la figura~\ref{ciclo6(3,7)}. Es decir la jaula
+$3$-regular de cuello siete no
+puede ser formada usando unicamente los vertices del árbol inicial.
 
 
 
@@ -2192,32 +2193,60 @@ representado en la figura~\ref{ciclo6(3,7)}.
   \end{tikzpicture}\caption{} \label{ciclo6(3,7)}
 \end{figure}
 
-La sensación que queda en este momento es que algo estuvo
-mal. Recapitulando; primero se dibujaron las aristas de $a$ y $b$ y
-sin perdida de generalidad se pudieron elegir los vértices a los que
-llegarían, después, para dibujar la arista que faltaba a $e$ se
-descartando casos, hasta darse cuenta que estaban determinadas dos
-aristas mas; nuevamente, descartando caso se determino la arista que
-faltaba a g y finalmente tratando de dibujar la arista restante de $i$
-se noto que dicha arista ya no pudo ser formada con los vértices ya
-dibujados, lo que indica que deben existir más vértices de los que
-forman el árbol.
+%La sensación que queda en este momento es que algo estuvo
+%mal. Recapitulando; primero se dibujaron las aristas de $a$ y $b$ y
+%sin perdida de generalidad se pudieron elegir los vértices a los que
+%llegarían, después, para dibujar la arista que faltaba a $e$ se
+%descartando casos, hasta darse cuenta que estaban determinadas dos
+%aristas mas; nuevamente, descartando caso se determino la arista que
+%faltaba a g y finalmente tratando de dibujar la arista restante de $i$
+%se noto que dicha arista ya no pudo ser formada con los vértices ya
+%dibujados, lo que indica que deben existir más vértices de los que
+%forman el árbol.
 
+\begin{theorem}\textbf{}\\
+\label{Noexiste(3,7)de22}
+No existe grafica $3$-regular de cuello siete, con 22 vértices.
+\end{theorem}
 
-Existe otro método, mas sencillo y con un argumento mas elegante para
-justificar el hecho de que no existe una gráfica $3-regular$ de
-veintidós vértices; consiste en contar los siete ciclos de la gráfica.
+\begin{proof} La demostración del teorema~\ref{Noexiste(3,7)de22} es
+  presisamente el argumento que se dio en la primer parte de ésta
+  sección.
+\end{proof} 
 
-Comenzando con el árbol de veintidós vértices, se cuentan los siete
-ciclos en los que se encuentra $x$. Existe exactamente uno por cada
+\begin{proof} Una segunda demostración al teorema~\ref{Noexiste(3,7)de22},
+  se hace por contradicción. Consiste en suponer que existe una 
+  $(3,7)$-gráfica con 22 vértices. Al contar los ciclos de
+  longitud siete que debe tener, se llega a la contradiccion.
+
+Sea $G$ una $(3,7)$-gráfica. Para todo $x\in V(G)$, se
+puede dibujar el árbol de 22 vertices con cuatro pisos y un solo
+vertice en la base, tal que el
+vertice del primer piso es $x$. Los grados de los vertices del árbol
+es tres, para los vertices de los primeros tres pisos y uno para los
+vertices del último nivel.
+
+Existe exactamente un ciclo de longitud siete que pasa por $x$, por cada
 arista faltante entre los vértices del ultimo piso,
-figura~\ref{arbol(3,7)contarciclos}. Es decir hay
-$$\frac{(2)(12)}{2}=12$$ 7-ciclos que pasan por $x$, entonces para
-calcular el total se debe multiplicar doce por la cantidad total de
-vértices, ya que por cada vértice se puede reproducir el mismo árbol,
-y dividirlos entre siete, que es la cantidad de vértices en cada
-ciclo, en total hay $$\frac{(22)(12)}{7}$$ 7-ciclos, lo cual es
-imposible, por lo tanto no existe una gráfica 3$-$regular con
+vease la figura~\ref{arbol(3,7)contarciclos}, es decir:
+\begin{equation*}
+\text{Cantidad de 7-ciclos que pasan por $x$ = }\frac{2(12)}{2}=12
+\end{equation*}
+
+Para calcular el total de ciclos de longitud siete en la gráfica se
+debe multiplicar la cantidad de 7-ciclos que pasan por
+un vertice, por la
+cantidad total de ellos, y dividirla entre la cantidad de
+vértices en cada ciclo.
+
+\begin{equation*}
+\text{Cantidad total de 7-ciclos en $G$ = } \frac{22(12)}{7}  
+\end{equation*}
+
+La cantidad de ciclos de longitud siete que la $(3,7)$-grafica con 22
+vertices tiene, no es un
+número entero lo cual es
+imposible, por lo tanto no existe una gráfica $3$-regular con
 veintidós vértices.
 
 
@@ -2229,9 +2258,11 @@ veintidós vértices.
     \SetUpVertex[MinSize=1.5pt]
     \grSubtreeOfCage[RA=3,RB=1,prefix=v]{3}{7}
 
-    \GraphInit[vstyle=Shade] \Edges[style={bend
-      left=50},color=blue](v3;0,v3;4)
+    \GraphInit[vstyle=Shade]
+ \Edges[style={bend left=50},color=blue](v3;0,v3;4)
     \Edges[color=blue](v3;0,v2;0,v1;0,v0;0,v1;1,v2;2,v3;4)
+ \Edges[style={bend left=50},color=blue](v3;4,v3;9)
+    \Edges[color=blue](v0;0,v1;2,v2;4,v3;9)
     \draw(0,-.5) node {$x$};
 
   \end{tikzpicture}
@@ -2239,11 +2270,13 @@ veintidós vértices.
   \caption{} \label{arbol(3,7)contarciclos}
 \end{figure}
 
+\end{proof}
 
-El corolario~\ref{cardinespar} dice que la cardinalidad de vértices no
-debe ser impar, entonces el siguiente caso a considerar es una gráfica
-de veinticuatro vértices, veintidós en el árbol y dos fuera de el,
-figura~\ref{arbol(3,7)mas2}.
+El corolario~\ref{cardinespar} dice que la cardinalidad de vértices de
+una grafica regular no
+puede ser impar. Entonces el siguiente caso a considerar es una gráfica
+de veinticuatro vértices, veintidós en el árbol y dos fuera de él,
+como se representa en la figura~\ref{arbol(3,7)mas2}.
 
 
 \begin{figure}
@@ -2300,15 +2333,11 @@ $v_1$ a $a$ y $e$ y de $v_2$ a $c$, figura~\ref{grafica(3,7)mas2}.
     \grEmptyPath*[x=-2,y=5.4,RA=4,prefix=v]{$v_1$,$v_2$}
     \AssignVertexLabel {v}{$v_1$,$v_2$} \Edges(v0,v1)
     \Edges[color=Brown](a3;0,v0,a3;4) \Edges[color=Brown](a3;2,v1)
-
-
-    \draw(-2.5,2) node {Primer rama}; \draw(0,1.3) node {Segunda
-      rama}; \draw(2.5,2) node {Tercer rama}; \draw(0,-.5) node {x};
+    \draw(-3.2,.3) node {Primer rama}; \draw(0,.6) node {Segunda
+      rama}; \draw(3.2,.3) node {Tercer rama}; \draw(0,-.5) node {x};
   \end{tikzpicture}
   \caption{} \label{grafica(3,7)mas2}
 \end{figure}
-
-
 
 
 Si la arista que falta a $e$ va a $a$ o $b$ se forma un ciclo de
@@ -2342,8 +2371,8 @@ menor a siete.
       left=30},color=blue](a3;1,a3;4) \Edges(a3;0,a2;0,a3;1)
     \Edges[color=Brown](a3;0,v0,a3;4)
 
-    \draw(-2.5,2) node {Primer rama}; \draw(0,1.3) node {Segunda
-      rama}; \draw(2.5,2) node {Tercer rama}; \draw(0,-.5) node {x};
+    \draw(-3.2,.3) node {Primer rama}; \draw(0,.6) node {Segunda
+      rama}; \draw(3.2,.3) node {Tercer rama}; \draw(0,-.5) node {x};
   \end{tikzpicture}
   \caption{} \label{(3,7)mas2ciclo1}
 \end{figure}
@@ -2353,11 +2382,11 @@ menor a siete.
   \centering
   \begin{tikzpicture}
     \SetVertexNoLabel { \SetUpVertex[MinSize=1.5pt]
-      \grSubtreeOfCage[RA=4,RB=1.5]{3}{7} } \foreach \y in
+      \grSubtreeOfCage[RA=4,RB=1]{3}{7} } \foreach \y in
     {0,1,...,11}{%
       \setcounter{in}{\y} \stepcounter{in} \draw (a3;\y) node[below
       right]{$\alph{in}$}; }
-    \grEmptyPath*[x=-2,y=7,RA=4,prefix=v]{$v_1$,$v_2$}
+    \grEmptyPath*[x=-2,y=5.4,RA=4,prefix=v]{$v_1$,$v_2$}
     \AssignVertexLabel {v}{$v_1$,$v_2$} \Edges(v0,v1)
     \Edges[color=Brown](a3;0,v0,a3;4) \Edges[color=Brown](a3;2,v1)
 
@@ -2370,8 +2399,9 @@ menor a siete.
 
     % \Edges[style={bend left=30},color=blue](a3;1,a3;5)
     % \GraphInit[vstyle=Shade]
-    \draw(-2.5,2) node {Primer rama}; \draw(0,1.3) node {Segunda
-      rama}; \draw(2.5,2) node {Tercer rama}; \draw(0,-.5) node {x};
+
+    \draw(-3.2,.3) node {Primer rama}; \draw(0,.6) node {Segunda
+      rama}; \draw(3.2,.3) node {Tercer rama}; \draw(0,-.5) node {x};
   \end{tikzpicture}
   \caption{} \label{(3,7)mas2ciclo2}
 \end{figure}
@@ -2383,11 +2413,11 @@ menor a siete.
   \centering
   \begin{tikzpicture}
     \SetVertexNoLabel { \SetUpVertex[MinSize=1.5pt]
-      \grSubtreeOfCage[RA=4,RB=1.5]{3}{7} } \foreach \y in
+      \grSubtreeOfCage[RA=4,RB=1]{3}{7} } \foreach \y in
     {0,1,...,11}{%
       \setcounter{in}{\y} \stepcounter{in} \draw (a3;\y) node[below
       right]{$\alph{in}$}; }
-    \grEmptyPath*[x=-2,y=7,RA=4,prefix=v]{$v_1$,$v_2$}
+    \grEmptyPath*[x=-2,y=5.4,RA=4,prefix=v]{$v_1$,$v_2$}
     \AssignVertexLabel {v}{$v_1$,$v_2$} \Edges(v0,v1)
     \Edges[color=Brown](a3;0,v0,a3;4)
 
@@ -2401,8 +2431,8 @@ menor a siete.
     % \Edges[style={bend left=30},color=blue](a3;10,a3;0)
 
     % \GraphInit[vstyle=Shade]
-    \draw(-2.5,2) node {Primer rama}; \draw(0,1.3) node {Segunda
-      rama}; \draw(2.5,2) node {Tercer rama}; \draw(0,-.5) node {x};
+    \draw(-3.2,.3) node {Primer rama}; \draw(0,.6) node {Segunda
+      rama}; \draw(3.2,.3) node {Tercer rama}; \draw(0,-.5) node {x};
   \end{tikzpicture}
   \caption{} \label{grafica1(3,7)mas2}
 \end{figure}
@@ -2427,13 +2457,13 @@ $(3,7)-jaula$ esta formada, figura~\ref{jaula(3,7)}.
   \centering
   \begin{tikzpicture}
     \SetVertexNoLabel { \SetUpVertex[MinSize=1.5pt]
-      \grSubtreeOfCage[RA=4,RB=1.5]{3}{7}
+      \grSubtreeOfCage[RA=4,RB=1]{3}{7}
 
     } \foreach \y in {0,1,...,11}{%
       \setcounter{in}{\y} \stepcounter{in} \draw (a3;\y) node[below
       right]{$\alph{in}$}; }
 
-    \grEmptyPath*[x=-2,y=7,RA=4,prefix=v]{$v_1$,$v_2$}
+    \grEmptyPath*[x=-2,y=5.4,RA=4,prefix=v]{$v_1$,$v_2$}
     \AssignVertexLabel {v}{$v_1$,$v_2$}
 
     \Edges(v0,v1) \Edges[color=Brown](a3;0,v0,a3;4)
@@ -2454,11 +2484,8 @@ $(3,7)-jaula$ esta formada, figura~\ref{jaula(3,7)}.
     \Edges[style={bend left=30},color=green](a3;1,a3;9)
     \Edges(a3;0,a2;0,a3;1) \Edges(a3;0,v0,v1)
 
-
-
-
-    \draw(-2.5,2) node {Primer rama}; \draw(0,1.3) node {Segunda
-      rama}; \draw(2.5,2) node {Tercer rama}; \draw(0,-.5) node {x};
+    \draw(-3.2,.3) node {Primer rama}; \draw(0,.6) node {Segunda
+      rama}; \draw(3.2,.3) node {Tercer rama}; \draw(0,-.5) node {x};
   \end{tikzpicture}
   \caption{} \label{grafica2(3,7)mas2}
 \end{figure}
@@ -2469,11 +2496,11 @@ $(3,7)-jaula$ esta formada, figura~\ref{jaula(3,7)}.
   \centering
   \begin{tikzpicture}
     \SetVertexNoLabel { \SetUpVertex[MinSize=1.5pt]
-      \grSubtreeOfCage[RA=4,RB=1.5]{3}{7} } \foreach \y in
+      \grSubtreeOfCage[RA=4,RB=1]{3}{7} } \foreach \y in
     {0,1,...,11}{%
       \setcounter{in}{\y} \stepcounter{in} \draw (a3;\y) node[below
       right]{$\alph{in}$}; }
-    \grEmptyPath*[x=-2,y=7,RA=4,prefix=v]{$v_1$,$v_2$}
+    \grEmptyPath*[x=-2,y=5.4,RA=4,prefix=v]{$v_1$,$v_2$}
     \AssignVertexLabel {v}{$v_1$,$v_2$} \Edges(v0,v1)
     \Edges[color=Brown](a3;0,v0,a3;4)
 
@@ -2493,9 +2520,8 @@ $(3,7)-jaula$ esta formada, figura~\ref{jaula(3,7)}.
     \Edges[color=BlueViolet](a3;7,v1) \Edges[style={bend
       left=30},color=WildStrawberry](a3;0,a3;10)
 
-
-    \draw(-2.5,2) node {Primer rama}; \draw(0,1.3) node {Segunda
-      rama}; \draw(2.5,2) node {Tercer rama}; \draw(0,-.5) node {x};
+    \draw(-3.2,.3) node {Primer rama}; \draw(0,.6) node {Segunda
+      rama}; \draw(3.2,.3) node {Tercer rama}; \draw(0,-.5) node {x};
   \end{tikzpicture}
   \caption{Jaula encontrada por McGee.} \label{jaula(3,7)}
 \end{figure}
@@ -3441,10 +3467,11 @@ gráfica dos o mas veces.
   isomorfa a $Cay(G,T)$. \label{orbitas}
 \end{theorem}
 
-Demostración: Para demostrar que $Cay(G,T)\sim Cay(G,\Phi(T))$, se
+\begin{proof} Para demostrar que $Cay(G,T)\sim Cay(G,\Phi(T))$, se
 bebe mostrar que existe $\Psi$, tal que $x,y\in Cay(G,T)$ son
 adyacentes si y solo si $\Psi(x)\sim \Psi(y)$ en $Cay(G,\Phi(T))$ y
 esto ocurre si y solo si
+\end{proof}
 
 \begin{equation*}
   (\Psi(y))^{-1}(\Psi(x))\in \Phi(T)
@@ -3500,18 +3527,18 @@ $x^{-1}$ también esta en $L$.
   $y\in \{b,b^{-1}\}$ y $z\in \{c,c^{-1}\}$.
 \end{proposition}
 
-Demostración: Sea $T_1=\{a,a^{-1},b,b^{-1},c,c^{-1}\}$, el conjunto
+\begin{proof} Sea $T_1=\{a,a^{-1},b,b^{-1},c,c^{-1}\}$, el conjunto
 generado por $a,b,c$. El conjunto generado por $x,y,z$ es
 $T_2=\{x,x^1\}\cup \{y,y^{-1}\}\cup \{z,z^{-1}\}$, es claro que
 $T_1=T_2$.
-
+\end{proof}
 \section[Minimizar el tiempo de ejecución]%
 {Condiciones para minimizar el tiempo de ejecución}
 
 Existe una cantidad muy grande de grupos, y entre mas grande sea el
-numero de elementos que tienen, el tiempo de ejecución del proceso
+número de elementos que tienen, el tiempo de ejecución del proceso
 crecerá. Si se desea examinar la mayor cantidad posible de ellos, es
-necesario reducir este tiempo.
+necesario reducir éste tiempo.
 
 Por pequeñas que parezcan las modificaciones que se pudieran hacer en
 el tiempo; al acumularse, después de examinar varios grupos, se podrá
