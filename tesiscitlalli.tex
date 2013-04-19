@@ -1564,33 +1564,33 @@ Si $G$ es distancia-transitiva entonces es
 $d(u,v)=d(x,y)=1$ entonces existe $\phi \in Aut(G)$ tal que
 $\phi(u)=x$ y $\phi(v)=y$.
 
-\chapter{Jaulas 3-regular de cuello pequeño}
+\chapter{Jaulas 3-regulares de cuello pequeño}
 
-En general aun no se conoce la forma exacta de las $(m,n)$-jaulas, si
-son únicas o la cantidad de vértices que tienen. Las jaulas que a ésta
-tesis interesan son las $(3,n)$-jaulas y uno de los objetivos
+En general aun no se conoce la forma exacta de las $(k,g)$-jaulas, si
+son únicas o la cantidad de vértices que tienen. Las jaulas que a esta
+tesis interesan son las $(3,g)$-jaulas y uno de los objetivos
 principales es llegar a las $(3,g)$-gráficas de cuello par mayor o
 igual a 14. Pero para ello primero se dará un recorrido por las
 gráficas $3$-regulares de cuello menor. 
 
-Al momento de dibujar gráficas regulares de cuello dado, es conveniente
-comenzar con un árbol, tal que cada vertice tenga la cantidad de
-adyacencias que se requiera, eseptuando solo algunos.
+Al momento de dibujar gráficas regulares de cuello dado, es
+conveniente comenzar con un árbol, tal que cada vértice tenga la
+cantidad de adyacencias que se requiera, exceptuando solo algunos.
 
 \begin{example}
-Si se quiere una gráfica tres regular de cuello cinco,
-el árbol con el que es combeniente comenzar, es el de la figura~\ref{arbol}; el cual tiene tres niveles
-como mínimo, pues si las aristas se unen antes de formar estos tres
-niveles, aparece un ciclo de longitud menor.
+  Si se quiere una gráfica 3-regular de cuello 5, el árbol con el que
+  es conveniente comenzar, es el de la figura~\ref{arbol}; el cual
+  tiene tres niveles como mínimo, pues si las aristas se unen antes de
+  formar estos tres niveles, aparece un ciclo de longitud menor.
 
-\begin{figure}[htb]
-  \centering
-  \begin{tikzpicture}
-    \SetUpVertex[MinSize=2pt] \SetVertexNoLabel
-    \grSubtreeOfCage[RA=3,RB=1.5]{3}{5}
-  \end{tikzpicture}
-  \caption{} \label{arbol}
-\end{figure}
+  \begin{figure}[htb]
+    \centering
+    \begin{tikzpicture}
+      \SetUpVertex[MinSize=2pt] \SetVertexNoLabel
+      \grSubtreeOfCage[RA=3,RB=1.5]{3}{5}
+    \end{tikzpicture}
+    \caption{} \label{arbol}
+  \end{figure}
 \end{example}
 
 En una $(k,g)$-gráfica siempre existen subgraficas isomorfas a alguno
