@@ -1645,17 +1645,17 @@ cantidad de adyacencias que se requiera, exceptuando solo algunos.
 
 En una $(k,g)$-gráfica siempre existen subgraficas isomorfas a alguno
 de estos árboles, lo cual resulta conveniente para dar una
-cota inferior para la cantidad de vértices que una $(3,n)$-jaula
+cota inferior para la cantidad de vértices que una $(3,g)$-jaula
 tiene.
 
-Si $n$ es par:
+Si $g$ es par:
 \begin{equation*}
-\text{  con } m=\frac{n}{2} \text{ , la cota inferior es} \sum^{m}_{i+1}2^i
+\text{  con } m=\frac{g}{2} \text{ , la cota inferior es} \sum^{m}_{i+1}2^i
 \end{equation*}
 
-Si $n$ es impar:
+Si $g$ es impar:
 \begin{equation*}
-  \text{ con } m=\frac{(n-3)}{2} \text{ , la cota inferior es } 1 + 3\sum^m_{i=0} 2^i
+  \text{ con } m=\frac{(g-3)}{2} \text{ , la cota inferior es } 1 + 3\sum^m_{i=0} 2^i
 \end{equation*}
 
 Lo anterior se puede deducir fácilmente del hecho de que para dibujar
@@ -1666,14 +1666,14 @@ la base tenga dos vértices y para una de cuello impar la base del
 La cantidad de vertices que éstos
 árboles tienen se usa como cota inferior, pues en algunas ocasiones se alcanza.
 A dicha cota también se le conoce como la cota ingenua\index{Cota
-  ingenua}. Cuando una jaula cumple con ésta cota, se le conoce como
+  ingenua}. Cuando una jaula cumple con esta cota, se le conoce como
 $jaulita$\index{Jaulita}, termino que se a popularizado entre los
 expertos del área, en México.
 
 
 Para mostrar la forma espesifica de las jaulas $3$-regulares de cuello
 menor a ocho, primero se construirá un árbol con los grados de sus
-vertices igual a tres, exceptuando un conjunto de ellos cuyo grado sera uno. 
+vertices igual a tres, exceptuando un conjunto de ellos cuyo grado será uno. 
 Despues se añadirán aristas a los vertices de grado uno, de manera
 adecuada, para evitar que se formen ciclos de longuitud menor a la que
 se desea. El proceso terminara cuando todos los vertices tengan grado
@@ -1710,7 +1710,7 @@ La jaula es la gráfica completa $K_4$, y otra forma de verla es la figura~\ref{
   \caption{Gráfica completa $K_4$.} \label{K_4}
 \end{figure}
 
-El éste caso, la cota mínima dana por la cantidad de vertices del
+El éste caso, la cota mínima dana por la cantidad de vártices del
 árbol con dos niveles y un solo vertice en la bace es
 $1+3(2^{0})=4$. La cota se alcanza y la jaulita es
 única. Además, la gráfica es arista transitiva, vértice-transitiva,
@@ -1983,7 +1983,7 @@ plano proyectivo de orden dos, el plano de Fano.
 
 El árbol que es conbeniente utilizar para dibujar la jaula $3$-regular
 de cuello siete, es el que tiene como base un solo vertice, pues el
-cuello es impar, y cuatro pisos porque a partir de éste momento es
+cuello es impar, y cuatro pisos porque a partir de este momento es
 posible unir vertices cuyo grado es uno, sin que se formen ciclos de
 longitud menor a la deseada. 
 
@@ -2301,8 +2301,8 @@ vértices en cada ciclo.
 \text{Cantidad total de 7-ciclos en $G$ = } \frac{22(12)}{7}  
 \end{equation*}
 
-La cantidad de ciclos de longitud siete que la $(3,7)$-grafica con 22
-vertices tiene, no es un
+La cantidad de ciclos de longitud siete que la $(3,7)$-gráfica con 22
+vértices tiene, no es un
 número entero lo cual es
 imposible, por lo tanto no existe una gráfica $3$-regular con
 veintidós vértices.
@@ -2356,17 +2356,27 @@ como se representa en la figura~\ref{arbol(3,7)mas2}.
   \caption{} \label{arbol(3,7)mas2}
 \end{figure}
 
-Para tratar de construir la $(3,7)$-gráfica con 24 vértices, existen
-dos posibilidades: que los dos vértices que se encuentran fuera del árbol, sean
-adyacentes o no.
+
+
+\begin{theorem}
+Sea $G$ una gráfica $3$-regular de cuello $7$ con 24
+vértices. Entonces existe un vertice $x$ para el cual los dos vértices
+fura del árbol que tiene como base a $x$, son adyacentes.
+\begin{theorem}
+
+
+\begin{proof}
+Se demostrará por contradicción, suponiendo que para todo $x\in V(G)$,  
 
 \begin{enumerate}
 \item Suponga que para todo $x$ en la gráfica, los vértices que quedan
 fuera del árbol no son vecinos entre sí.
 
 
- Contando los
-$7$-ciclos que pasan por el vertice $x$, se sabe que no existe arista entre $v_1$
+Se demostrará que esto es imposible, contando los
+$7$-ciclos que tiene la gráfica.
+
+ se sabe que no existe arista entre $v_1$
 y $v_2$ entonces las tres aristas de cada uno de ellos van a los
 vértices superiores del árbol y que ninguna de ellas es parte de un
 $7$-ciclo que pase por $x$, entonces los $7$-ciclos que pasan por $x$
