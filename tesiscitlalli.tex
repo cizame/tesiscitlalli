@@ -63,7 +63,7 @@
 
     \textbf{\Huge Buscando Jaulas}
 
-    \vspace*{cm}
+    \vspace*{2cm}
 
     {\large Tesis que para obtener el título de}
 
@@ -1719,6 +1719,12 @@ $1+3(2^{0})=4$. La cota se alcanza y la jaulita es
 
 \section{(3,4)-jaula}
 
+\begin{theorem}\textbf{}\\
+La jaula 3-regular de cuello cuatro tiene seis vertices y es unica.
+\end{theorem}
+
+\begin{proof}
+
 Para dibujar una gráfica $3$-regular con cuello cuatro, es
 conveniente comenzar con el árbol de dos niveles que tiene como base
 dos vertices, representado en la figura~\ref{arbol(3,4)}.
@@ -1792,7 +1798,7 @@ figura~\ref{jaula(3,4)}. Despues de formar esas dos nuevas adyacencias
 las grafica ya es 3-regular y como alcansa la cota ingenua entonces
 más que ser jaula es
 jaulita.
-
+\end{proof}
 
 Queda demostrado que la jaulita es única. Esta jaula es isomorfa a la
 grafica bipartita clanica  $K_{3,3}$,
@@ -2331,7 +2337,7 @@ veintidós vértices.
 \end{proof}
 
 Por el teorema~\ref{Noexiste(3,7)de22} se sabe que la jaula $3$-regular
-de cuallo siete no alcanza su cota ingenua. El corolario~\ref{cardinespar} dice que la cantidad de vértices de
+de cuallo 7 no alcanza su cota ingenua. El corolario~\ref{cardinespar} dice que la cantidad de vértices de
 una grafica regular no
 puede ser impar. Entonces, la cantidad mínima de vertices que puede
 tener la $(3,7)$-jaula es 24, veintidós en el árbol y dos fuera de él,
@@ -2362,26 +2368,28 @@ como se representa en la figura~\ref{arbol(3,7)mas2}.
 Sea $G$ una gráfica $3$-regular de cuello $7$ con 24
 vértices. Entonces existe un vertice $x$ para el cual los dos vértices
 fura del árbol que tiene como base a $x$, son adyacentes.
-\begin{theorem}
+\end{theorem}
 
 
 \begin{proof}
-Se demostrará por contradicción, suponiendo que para todo $x\in V(G)$,  
-
-\begin{enumerate}
-\item Suponga que para todo $x$ en la gráfica, los vértices que quedan
-fuera del árbol no son vecinos entre sí.
+Se demostrará por contradicción, suponiendo que para todo $x\in V(G)$,
+los vértices que quedan fuera del árbol no son adyacentes, y al contar
+los ciclos de longitud 7 de $G$ se llega a la contradicción.  
 
 
-Se demostrará que esto es imposible, contando los
-$7$-ciclos que tiene la gráfica.
+Sea $G$ una $(3,7)$-gráfica con 24 vertices, tal que para todo $x\in V(G)$ los
+vértices que quedan fuera del árbol no son adyacentes entre sí. Sean
+$v_1$ y $v_2$ los vertices que quedan fura del árbol.
 
- se sabe que no existe arista entre $v_1$
-y $v_2$ entonces las tres aristas de cada uno de ellos van a los
-vértices superiores del árbol y que ninguna de ellas es parte de un
-$7$-ciclo que pase por $x$, entonces los $7$-ciclos que pasan por $x$
+Se sabe que no existe arista entre $v_1$
+y $v_2$, entonces las tres aristas de cada uno de ellos van a los
+vértices de grado uno, situados en el cuarto piso del árbol. Ademas
+ninguna de estas aristas es parte de un
+$7$-ciclo que pase por $x$.
+
+Entonces los $7$-ciclos que pasan por $x$
 son igual al número de vértices que hay en la parte superior de árbol,
-por la cantidad de aristas que le faltan a cada uno de ellos, menos
+por la cantidad de aristas que les faltan para que su grado sea tres, menos
 las seis aristas correspondientes a $v_1$ y $v_2$, entre dos, pues se
 esta contando dos veces cada $7$-ciclo, es decir:
 
@@ -2389,12 +2397,21 @@ esta contando dos veces cada $7$-ciclo, es decir:
   \text{Cantidad de $7$-ciclos que pasan por $x$ = } \frac{2(12)-6}{2}
 \end{equation*}
 
-Entonces la cantidad total de $7-ciclos$ en la gráfica es el numero de
-vértices por la cantidad de $7-ciclos$ que pasan por $x$ entre la
-cantidad de vértices que forman un $7-ciclo$, es decir
-$$\frac{24[\frac{2(12)-6}{2}]}{7}$$ lo cual es imposible, 
 
-\item
+Entonces la cantidad total de $7$-ciclos en la gráfica es el número de
+vértices por la cantidad de $7$-ciclos que pasan por $x$ entre la
+cantidad de vértices que forman un $7$-ciclo, es decir:
+
+\begin{equation*}
+\text{Cantidad total 7-ciclos de $G$ = }\frac{24[\frac{2(12)-6}{2}]}{7} 
+\end{equation*}
+
+La cantidad de 7-ciclos de $G$ no es un númer entero, lo cual es
+imposible. Por lo tanto debe existir un vertice $x$ para el cual $v_1$
+y $v_2$ son adyacentes.
+\end{proof}
+
+
 por lo tanto
 existe un vértice $x$ para el cual $v_1$ y $v_2$ son vecinos entre
 si. Con esto y sin perdida de generalidad se eligen como vecinos de
@@ -2605,7 +2622,9 @@ $(3,7)-jaula$ esta formada, figura~\ref{jaula(3,7)}.
   \end{tikzpicture}
   \caption{Jaula encontrada por McGee.} \label{jaula(3,7)}
 \end{figure}
-\end{enumerate}
+
+
+
 Hasta antes de este momento se hubiera pensado que las cota ingenua
 siempre se alcanzaría, pero resulta ser que la $(3,7)-jaula$ es la
 primera que no la alcanza, pues esta necesita dos vértices extras para
@@ -2935,7 +2954,7 @@ mayores, se a dado computacionalmente.
 
 En un principio se hubiera podido suponer que las jaulas siempre
 alcanzaban la cota ingenua, pero la $(3-7)$-jaula derrumbo esta
-hipótesis pues necesito dos vértices m\'as, para poder
+hipótesis pues necesito dos vértices más, para poder
 formarse. Después de ver esto y analizar el caso de cuello igual a
 ocho, una nueva hipótesis surge, las jaulas no siempre alcanzan la
 cota inferior pero tal vez sean únicas.
@@ -2944,10 +2963,10 @@ La $(3,9)$-jaula es la primera que resulta no ser única, la primera
 fue encontrada por Biggs y Hoare y no cumplía con la cota ingenua,
 pues dicha gráfica contaba con cincuenta y ocho
 vértices. Posteriormente Brendan McKay probó que en efecto, $58$ era
-el n\'umero de vértices que debería tener una $(3,9)$-jaula; y
+el número de vértices que debería tener una $(3,9)$-jaula; y
 finalmente en $1995$, Brinkmann y Saager, de manera computacional
 demostraron que existían dieciocho jaulas de $58$ vértices cada una,
-no isomorfas entre si. En \cite{9jaula} se encuentran dos métodos de
+no isomorfas entre si. En \cite{cuello10} se encuentran dos métodos de
 construcción, para estas dieciocho $(3,9)$-jaulas.
 
 Existen tres jaulas, 3-regular de cuello diez, no isomorfas,
@@ -2974,7 +2993,7 @@ construida. La $(3,13)$-gráfica mas pequeña conocida tiene $272$
 vértices y fue encontrada por Miles Whitehead.
 
 Si se desea saber mas sobre jaulas se puede consultar
-\cite{cuellogrande} y \cite{survey}.
+\cite{cgcuellogrande} y \cite{ASurvey}.
 
 \chapter{Gráficas 3-regular de cuello par $\geq$ 14}
 
