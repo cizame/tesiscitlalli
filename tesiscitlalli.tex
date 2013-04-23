@@ -1623,15 +1623,88 @@ principales es llegar a las $(3,g)$-gráficas de cuello par mayor o
 igual a 14. Pero para ello primero se dará un recorrido por las
 gráficas $3$-regulares de cuello menor. 
 
-Al momento de dibujar gráficas regulares de cuello dado, es
-conveniente comenzar con un árbol, tal que cada vértice tenga la
-cantidad de adyacencias que se requiera, exceptuando solo algunos.
+
+Si $G$ es una grafica 3-regular de cuello $n$, entonces $G$ tiene
+una subgrafica isomorfa al árbol cuyos vertices tienen grado 1 y 3. El
+cual es posible ordenar en $m=(n + 1)/ 2$ niveles si $n$ es impar o en
+$m=n/ 2$ niveles si $n$ es par, tal que los grados de los vertices
+en los primeros $m-1$ niveles sea 3, y los grados de los vertices en
+el ultimo nivel sea uno. Con un solo vertice en la base si $n$ es
+impar o dos si $n$ es par. Las figuras~\ref{arbolimpar}
+y~\ref{arbolpar} son una representacion de como se ven estos árboles.
+
+\begin{figure}
+    \centering
+    \begin{tikzpicture}[scale=0.4]
+      \SetUpVertex[MinSize=.2pt] \SetVertexNoLabel
+      \grSubtreeOfCage[RA=6,RB=2.5]{3}{5}
+       \grEmptyPath[x=-6,y=10,RA=12,prefix=a]{2}
+       \grEmptyPath[x=-8,y=12,RA=4,prefix=b]{2}
+       \grEmptyPath[x=4,y=12,RA=4,prefix=c]{2}
+       \grEmptyPath[x=-9,y=14,RA=2,prefix=d]{4}
+       \grEmptyPath[x=3,y=14,RA=2,prefix=e]{4}
+\Edges(d0,b0,a0,b1,d3)
+\Edges(e0,c0,a1,c1,e3)
+\Edges(d1,b0)
+\Edges(e1,c0)
+\Edges(d2,b1)
+\Edges(e2,c1)
+
+\draw(-6,6.5) node {.};\draw(-6,7.5) node {.};\draw(-6,8.5) node {.};
+\draw(6,6.5) node {.};\draw(6,7.5) node {.};\draw(6,8.5) node {.};
+\draw(-3,10) node {.};\draw(-1,10) node {.};
+\draw(1,10) node {.};\draw(3,10) node {.};
+
+
+  \draw(14,0.3) node {Primer nivel}; \draw(14,2.8) node {Segundo
+    nivel};\draw(14,5.3) node {Tercer nivel};\draw(14,10.3) node {Nivel
+    $n-2$};\draw(14,12.3) node {Nivel $n-1$};\draw(14,14.3) node {Ultimo nivel};
+     %  \grSubtreeOfCage[RA=3,RB=1]{3}{5}
+    \end{tikzpicture}
+    \caption{Árbol en la gráfica 3-regular de cuello impar}\label{arbolimpar}
+  \end{figure}
+
+
+
+\begin{figure}
+    \centering
+    \begin{tikzpicture}[scale=0.4]
+      \SetUpVertex[MinSize=.2pt] \SetVertexNoLabel
+      \grSubtreeOfCage[RA=8.4,RB=2.5]{3}{6}
+       \grEmptyPath[x=-6,y=10,RA=12,prefix=a]{2}
+       \grEmptyPath[x=-8,y=12,RA=4,prefix=b]{2}
+       \grEmptyPath[x=4,y=12,RA=4,prefix=c]{2}
+       \grEmptyPath[x=-9,y=14,RA=2,prefix=d]{4}
+       \grEmptyPath[x=3,y=14,RA=2,prefix=e]{4}
+\Edges(d0,b0,a0,b1,d3)
+\Edges(e0,c0,a1,c1,e3)
+\Edges(d1,b0)
+\Edges(e1,c0)
+\Edges(d2,b1)
+\Edges(e2,c1)
+
+\draw(-6,6.5) node {.};\draw(-6,7.5) node {.};\draw(-6,8.5) node {.};
+\draw(6,6.5) node {.};\draw(6,7.5) node {.};\draw(6,8.5) node {.};
+\draw(-3,10) node {.};\draw(-1,10) node {.};
+\draw(1,10) node {.};\draw(3,10) node {.};
+
+
+  \draw(14,0.3) node {Primer nivel}; \draw(14,2.8) node {Segundo
+    nivel};\draw(14,5.3) node {Tercer nivel};\draw(14,10.3) node {Nivel
+    $n-2$};\draw(14,12.3) node {Nivel $n-1$};\draw(14,14.3) node {Ultimo nivel};
+     %  \grSubtreeOfCage[RA=3,RB=1]{3}{5}
+    \end{tikzpicture}
+    \caption{Árbol en la gráfica 3-regular de cuello par}\label{arbolpar}
+  \end{figure}
+
+
+
 
 \begin{example}
   Si se quiere una gráfica 3-regular de cuello 5, el árbol con el que
   es conveniente comenzar, es el de la figura~\ref{arbol}; el cual
   tiene tres niveles como mínimo, pues si las aristas se unen antes de
-  formar estos tres niveles, aparece un ciclo de longitud menor.
+  formar estos tres niveles, se forma un ciclo de longitud menor.
 
   \begin{figure}[htb]
     \centering
@@ -1643,10 +1716,10 @@ cantidad de adyacencias que se requiera, exceptuando solo algunos.
   \end{figure}
 \end{example}
 
-En una $(k,g)$-gráfica siempre existen subgraficas isomorfas a alguno
-de estos árboles, lo cual resulta conveniente para dar una
-cota inferior para la cantidad de vértices que una $(3,g)$-jaula
-tiene.
+
+
+La cantidad de vertices que estos arboles tienen, se usa como cota
+inferior, para la cantidad de vertices que una $(3,g)$-jaula pudiera tener.
 
 Si $g$ es par:
 \begin{equation*}
@@ -1659,7 +1732,7 @@ Si $g$ es impar:
 \end{equation*}
 
 Lo anterior se puede deducir fácilmente del hecho de que para dibujar
-una gráfica de cuello par es conveniente comenzar con un árbol que en
+una gráfica 3-regular de cuello par es conveniente comenzar con un árbol que en
 la base tenga dos vértices y para una de cuello impar la base del
 árbol debe tener un solo vértice. 
 
@@ -1672,11 +1745,15 @@ expertos del área, en México.
 
 
 Para mostrar la forma espesifica de las jaulas $3$-regulares de cuello
-menor a ocho, primero se construirá un árbol con los grados de sus
-vertices igual a tres, exceptuando un conjunto de ellos cuyo grado será uno. 
+menor a ocho, primero se construirá un árbol con el de la
+figura~\ref{arbolimpar} o el de la figura~\ref{arbolpar} segun sea el
+caso.
+ 
 Despues se añadirán aristas a los vertices de grado uno, de manera
 adecuada, para evitar que se formen ciclos de longuitud menor a la que
-se desea. El proceso terminara cuando todos los vertices tengan grado
+se desea. 
+
+El proceso terminara cuando todos los vertices tengan grado
 tres o cuando sea imposible colocar una nueva arista sin que se formen
 ciclos de longitud menor a la deseada.
 
@@ -1719,11 +1796,12 @@ $1+3(2^{0})=4$. La cota se alcanza y la jaulita es
 
 \section{(3,4)-jaula}
 
-\begin{theorem}\textbf{}\\
+\begin{theorem}\textbf{}\\\label{teo(3,4)-jaula}
 La jaula 3-regular de cuello cuatro tiene seis vertices y es unica.
 \end{theorem}
 
-\begin{proof}
+\begin{proof} El teorema~\ref{teo(3,4)-jaula} se demostrará
+  construyendo la jaula.
 
 Para dibujar una gráfica $3$-regular con cuello cuatro, es
 conveniente comenzar con el árbol de dos niveles que tiene como base
@@ -1821,7 +1899,31 @@ Para formar la jaula $3$-regular de cuello cinco, el árbol con el que
 es combeniente comensar tiene como base un solo vértice
 y tres pisos. Apartir de éste momento, es posible crear aristas entre
 los vertices cuyo grado aún no es tres, sin que se formen ciclos de
-longitud menor a cinco, por ello no es necesario otro piso en el árbol.
+longitud menor a cinco, por ello no es necesario otro piso en el
+árbol. 
+
+Es decir la cota injenua para la $(3,5)$-jaula es: 
+\begin{equation*}
+\begin{split}
+  &\text{ con } m=\frac{(5-3)}{2}=1\\
+ &\text{ cota ingenua }= 1 + 3\sum^{m=1}_{i=0} 2^i=1+3(1+2)=10
+\end{split}
+\end{equation*}
+
+\begin{theorem}\textbf{}\\\label{teo(3,5)-jaula}
+El orden de la jaula 3-regular de cuello cinco es 10, es decir alcanza
+su cota ingenua. Más aún es unica. 
+\end{theorem}
+
+\begin{proof}
+El teorema se demostrara exibiendo la $(3,5)$-jaula. Al construirla se
+probara tambien que es unica. 
+
+Primero, si existe una grafica $G$, 3-regular de cuello 5, con 10 vertices
+entonces es jaula porque su cota ingenua es 10. 
+
+Sea $G$ una $(3,5)$-grafica. En la grafica  $G$ existe una subgrafica,
+isomorfa al arbol con tres niveles,y un solo vertice en la base. 
 
 Sin perdida de generalidad se pueden establecer aristas entre el vertice $a$, y los
 vertices $c$ y $e$ respectivamente; al igual que entre el vertice $b$
@@ -1872,7 +1974,7 @@ y $e$, y si ésta arista se agrega no acaciona ciclos de longutud menor a
   \caption{} \label{jaula(3,5)}
 \end{figure}
 
-
+\end{proof}
 La gráfica es única y alcanza su cota mínima, esta es la
 llamada gráfica de Petersen y la forma más común de dibujarla es como
 en la figura \ref{petersen}.
