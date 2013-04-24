@@ -2793,7 +2793,7 @@ figura~\ref{jaula(3,7)} es la representacion de la $(3,7)$-jaula.
 Hasta antes de este momento se hubiera pensado que las cota ingenua
 siempre se alcanzaría, pero resulta ser que la $(3,7)$-jaula es la
 primera que no la alcanza, pues necesita dos vértices extras para
-poder ser completada.
+poder existir.
 
 La $(3,7)$-jaula fue encontrada por McGee y posteriormente Tutte
 demostró que es única, además la jaula resulto no ser
@@ -2802,13 +2802,46 @@ vértice-transitiva.
 
 \section{(3,8)-jaula}
 
-Con la experiencia adquirida de los casos anteriores, para reconstruir
-la $(3,8)$-jaula primero es necesario colocar las aristas de $a$ y de
-$b$, y sin perdida de generalidad, se une $c$ a $j$. Ahora, a $d$ le
-faltan los dos aristas, una debe ir a la tercer rama y otra a la
-cuarta; en la rama tres, no puede ir a $i$, $j$ o $k$ porque se
-formarían ciclos menores a ocho, por lo que tiene que ir a $l$,
-figura~\ref{arbol(3,8)}.
+La cota ingenua de la $(3,8)$-jaula esta dada por el arbol con cuatro
+niveles y dos vertices en la base porque el cuello es par. Es decir:
+
+\begin{equation*}
+\begin{split}
+&\text{con $m$ = } \frac{8}{2} = 4\\
+&\text{ Cota ingenua = } \sum^{m=4}_{i=0} 2^i=2+4+8+16=30 
+\end{split}
+\end{equation*}
+
+\begin{theorem}\textbf{}\\\label{Teo(3,8)-jaula}
+El orden la jaula 3-regular de cuello ocho es 30. Más aún es unica. 
+\end{theorem}
+
+\begin{proof} Para demostrar el teorema~\ref{teo(3,8)-jaula} se
+  reconstruira la jaula a partir del árbol al que es isomorfa una
+  subgrafica de la jaula. Con la construcción se probará que tambien
+  es unica.
+
+Sea $G$ la jaula 3-regular de cuello 8. $G$ tiene una subgrfica
+isomorfa al arbol de 30 vertices, con dos vertices en la base y cuatro
+niveles. Sean $a$, $b$,..., $p$ y $q$ los vertices con grado uno del
+árbol, etiquetados de izquierda a derecha.
+
+Para reconstruir la $(3,8)$-jaula se colocan las
+aristas de $a$, las cuales deben tener un vertice en las ramas tres y
+cuatro, respectivamente; al igual que las aristas de $b$, solo que
+estas no deben estar en la misma subrama, en la que se encuentran los vertices
+adyacentes a $a$. Sin perdida de generalidad, las cuatro aristas son
+$ai$, $am$, $bk$ y $bp$. Tambien, sin perdida de generalidad, se puede
+unir el vertice $c$ al vertice $j$. 
+
+El grado del vertice $d$ es uno, es decir necesita dos aristas más,
+una debe tener un vertice en la tercer rama y otra en la cuarta. Los
+vertice $i$, $j$ o $k$ de la tercer rama, no son adyacentes a $d$
+porque se formarían ciclos menores a ocho, por lo que tiene que la
+aarista $dl$ esta en la grafica $G$. 
+
+La subgrafica que hasta ahora se ha construido es la figura~\ref{arbol(3,8)}.
+
 
 \begin{figure}
   \centering
@@ -2837,20 +2870,19 @@ figura~\ref{arbol(3,8)}.
   \caption{} \label{arbol(3,8)}
 \end{figure}
 
-Para continuar; en esta ocasión, se dibuja primero la arista que falta
+Para continuar, se dibuja la arista que falta
 a $i$, pues esta arista solo puede ir a la rama dos, ya que tiene un
-vecino en la rama uno y este a su ves es amigo de $m$ que se encuentra
-en la rama cuatro; entonces, sin perdida d\begin{equation*}
-\begin{split}
-  &\text{ con } m=\frac{(5-3)}{2}=1\\
- &\text{ cota ingenua }= 1 + 3\sum^{m=1}_{i=0} 2^i=1+3(1+2)=10
-\end{split}
-\end{equation*}e generalidad, se forma la
-arista $ei$, lo que a su vez, determina la arista entre $g$ y $m$. La
-arista que falta a $k$ va a la segunda rama, por la misma razón que
-$i$; puede llegar a $f$ o a $h$, sin perdida de generalidad, se elige
-$f$, y ahora la arista que se determina es la $ho$,
-figura~\ref{arbol2(3,8)}.
+vecino en la rama uno y este a su ves es adyacente al vertice $m$ que
+se encuentra en la rama cuatro. Entonces, sin perdida de generalidad,
+se forma la arista $ei$, lo que a su vez, determina adyacencia entre
+$g$ y $m$. 
+
+La arista que falta a $k$ va a la segunda rama, por la
+misma razón que $i$, es decir tiene un camino de longitud uno a la
+primer rama y uno de longitud dos a la cuarta rama, lo que ocacionaría
+ciclos de longitud menor a 8. $k$ puede ser adyacente a $f$ o a $h$,
+sin perdida de generalidad, se elige $f$, y ahora la arista que se
+determina es $ho$, vease figura~\ref{arbol2(3,8)}.
 
 \begin{figure}
   \centering
@@ -2878,14 +2910,16 @@ figura~\ref{arbol2(3,8)}.
   \caption{} \label{arbol2(3,8)}
 \end{figure}
 
-Ahora, $e$ ,que esta en la segunda rama, tiene como amigo a $i$, en la
-tercer rama, quien a su vez tiene un amigo en la primer rama, es
+El vertice $e$ que esta en la segunda rama, es adyacente a $i$ en
+latercer rama, quien a su vez tiene un vecino en la primer rama, es
 decir, existe un camino de longitud dos que parte de $e$ y llega a la
-primer rama; entonces si la arista que falta a $e$ fuera a alguna de
-estas ramas, se formaría un ciclo de longitud menor a ocho, por lo
-tanto solo tiene una posibilidad, ir a la cuarta rama. Si va a $n$ se
-forma un $C_6$, figura~\ref{ciclo(3,8)1}, entonces va a $p$.
-
+primer rama. Entonces si $e$ fuera adyacente a un vertices que se
+encuentre en alguna de estas ramas, se formaría un ciclo de longitud
+menor a ocho. Por lo tanto, $e$ solo tiene una posibilidad, ser
+adyacente a algun vertice en la rama cuatro. La arista $en$  no existe
+en $G$ pues se formaría el ciclo de longitud de la
+figura~\ref{ciclo(3,8)1}, lo que es imposible porque el cuello es
+ocho,  entonces la arista $ep$ esta en $G$.
 
 \begin{figure}
   \centering
@@ -2923,10 +2957,11 @@ forma un $C_6$, figura~\ref{ciclo(3,8)1}, entonces va a $p$.
 \end{figure}
 
 Los caminos de longitud dos del vértice $g$, llegan a las ramas uno,
-dos y cuatro, entonces la arista faltante a $g$ tiene que ir a la rama
-tres; si llega a $j$, se forma un ciclo de longitud seis,
-figura~\ref{ciclo(3,8)2}, entonces $g$ es amigo de $l$,
-figura~\ref{arbol(3,8)1}.
+dos y cuatro, entonces la arista faltante a $g$  tiene un vertice en la rama
+tres. Si $g$ es adyacente a $j$, se forma el ciclo de longitud seis de
+la figura~\ref{ciclo(3,8)2}, entonces $g$ es adyacente a $l$. La
+subgrafica de $G$ que hasta el momento esta formada es la representada
+en la figura~\ref{arbol(3,8)1}.
 
 \begin{figure}
   \centering
@@ -3061,16 +3096,23 @@ figura~\ref{arbol(3,8)1}.
 \end{figure}
 
 
-Siguiendo el mismo proceso, los caminos de longitud dos de $d$ llegan
-a la primera, segunda y tercer rama, por ello, la arista restante debe
-ir a la cuarta rama. Si llega a $n$ se forma un ciclo de longitud
-seis, figura~\ref{ciclo(3,8)3}; entonces tiene que existir arista
-entre $d$ y $p$; y con esto queda determinada $cn$,
-figura~\ref{arbol(3,8)2}.
+Siguiendo el mismo proceso, los caminos de longitud dos que parten de $d$ llegan
+a la primera, segunda y tercer rama, por ello, el vertice adyacente a
+$d$ que falta, esta en la cuarta rama. La arista $dn$ no esta en $G$
+pues al añadirla a subgrafica que hasta este momento esta formada, se crea el
+ciclo de longitud seis de la figura~\ref{ciclo(3,8)3}. Entonces existe arista
+entre $d$ y $p$; y con esto queda determinada la arista $cn$, veace figura~\ref{arbol(3,8)2}.
 
-Finalmente la arista de $f$ viene de la rama tres entonces debe ir a
-la rama cuatro, en donde solo queda un lugar, $n$. Resta unir $h$ con
-$j$ y la jaula estará construida, figura~\ref{jaula(3,8)}.
+
+En el caso del vertice $f$, por un lado, una de las aristas de $f$
+tiene un vertice en la rama tres, y por otro existe un caminos de le
+longitud seis que parte de $f$ y llega a cualquier vertice de la rama uno. Entonces, la arista faltante de
+$f$ tiene un vertice en la rama cuatro, en donde el unico vertice de
+grado distinto a tres es $n$. Resta unir $h$ con
+$j$ para que todos los vertices de la grafica tengan grado tres. La
+grafica representada en la figura~\ref{jaula(3,8)} es $G$, como es
+3-regular, tiene cuello ocho y alcansa la cota ingenua, entonces $G$
+es la $(3,8)$-jaula. 
 
 
 
@@ -3106,7 +3148,7 @@ $j$ y la jaula estará construida, figura~\ref{jaula(3,8)}.
   \caption{(3,8)-jaula, encontrada por Tutte.} \label{jaula(3,8)}
 \end{figure}
 
-
+\end{proof}
 
 
 Con el proceso anterior queda demostrado que la $(3,8)$-jaula es única
