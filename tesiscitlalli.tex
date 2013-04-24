@@ -2572,7 +2572,7 @@ del árbal, y sean $a$, $b$,..., $k$ y $l$ los 12 vertices del árbol
 con grado uno, etiquetados de izquierda a derecha.
 
 Para reconstruir la jaula 3-regular de cuello 7, primero se agraga la
-arista $v_1v_2$, la cual se sabe que existe poque por el
+arista $v_1v_2$, lo que se puede hacer poque por el
 teorema~\ref{teoexistex} se sabe que existe un vertice que se puede
 tomar como base del árbol, para el cual los dos vertices que quedan fuera de él son adyacentes.
 
@@ -2597,18 +2597,23 @@ $v_1$ a $a$ y $e$ y de $v_2$ a $c$, tal como lo representa la figura~\ref{grafic
 \end{figure}
 
 
-Si la arista que falta a $e$ va a $a$ o $b$ se forma un ciclo de
-longitud tres o cinco, respectivamente, figura~\ref{(3,7)mas2ciclo1};
-si va a $c$ o $d$ se forma un ciclo de longitud cuatro o seis,
-figura~\ref{(3,7)mas2ciclo2}; la única posibilidad que resta es que
-vaya a la rama tres y sin perdida de generalidad podemos elegir a
-$i$. La arista que falta a $i$ esta determinada y tiene que ir a $d$,
-después $d$ debe ir a la segunda rama si va a $f$ se forma un $C_5$,
-entonces sin perdida de generalidad $d$ va a $g$ y nuevamente sin
-perdida de generalidad $g$ va a $k$,
-figura~\ref{grafica1(3,7)mas2}. Note que ninguna de las aristas
-anteriores puede ir a $v_2$ porque se formarían ciclos de longitud
-menor a siete.
+Si la arista que falta a $e$ es $ae$ o $be$ se forma un ciclo de
+longitud tres o cinco, respectivamente, como en la figura~\ref{(3,7)mas2ciclo1}.
+Si es $ce$ o $de$ se forma un ciclo de longitud cuatro o seis,
+como lo muestra la figura~\ref{(3,7)mas2ciclo2}. La única posibilidad es que
+el vertice adyacente a $e$ este en la rama tres y sin perdida de
+generalidad se puede elegir a $i$.
+
+La arista que falta a $i$ esta determinada y es $di$.
+Después, $d$ debe ser adyacente a un vertice en la segunda rama, si es
+adyacente a $f$ se forma un ciclo de longitud 5.
+Entonces, sin perdida de generalidad, $d$ es adyacente a $g$ y nuevamente sin
+perdida de generalidad $g$ es adyacente a $k$, la
+figura~\ref{grafica1(3,7)mas2} representa como se ve la subgráfica de
+$G$ que hasta ahora se a reconstruido.
+
+Note que ninguna de las aristas anteriores puede ir a $v_2$ porque se
+formarían ciclos de longitud menor a siete.
 
 
 \begin{figure}
@@ -2695,20 +2700,20 @@ menor a siete.
 \end{figure}
 
 
-La arista que falta a $c$ no puede ir a $f$, $h$ o $j$ porque se forma
-un $C_6$, entonces debe ir a $l$ y esta a su vez tiene que ir a la
-rama dos, pero si va a $h$ se forma un ciclo de longitud seis, por lo
-que debe llegar a $f$. Después, $bf$ queda determinada, seguida de
-$bj$, porque si $b$ va a $k$ se forma un $C_5$. Si existiera arista
-entre $j$ y $v_2$ se forma el $C_6$ de la
-figura~\ref{grafica2(3,7)mas2}, por ello $j$ va a $h$ y $h$ a $v_2$.
-Finalmente solo resta colocar arista entre $a$ y $k$, y la
-$(3,7)-jaula$ esta formada, figura~\ref{jaula(3,7)}.
+La arista que falta a $c$ no puede ser $cf$, $ch$ o $cj$ porque se forma
+un ciclo de longitud 6, entonces debe ser  $cl$. El vertice $l$ no
+puede ser adyacente a $v_2$ porque se forma el triangulo $c$, $l$,
+$v_2$ entonces $l$ debe ser adyacente a algun vertice en la rama
+dos. Si $l$ es adyacente a $h$ se forma un ciclo de longitud seis, por lo
+que $f$ es quien debe ser adyacente a él. Después la arista $bf$ queda
+determinada, haciendo esto tambien queda determinana la arista $bj$,
+porque si $b$ fuera adyacente a  $k$ se formaría un ciclo de longitud
+5.
 
-
-
-
-
+Si existiera arista entre $j$ y $v_2$ se forma el ciclo de longitud 6 de la
+figura~\ref{grafica2(3,7)mas2}, por ello $j$ es adyacente a  $h$ y $h$
+a $v_2$. Finalmente solo resta colocar arista entre $a$ y $k$. La
+figura~\ref{jaula(3,7)} es la representacion de la $(3,7)$-jaula.
 
 \begin{figure}
   \centering
@@ -2786,8 +2791,8 @@ $(3,7)-jaula$ esta formada, figura~\ref{jaula(3,7)}.
 \end{proof}
 
 Hasta antes de este momento se hubiera pensado que las cota ingenua
-siempre se alcanzaría, pero resulta ser que la $(3,7)-jaula$ es la
-primera que no la alcanza, pues esta necesita dos vértices extras para
+siempre se alcanzaría, pero resulta ser que la $(3,7)$-jaula es la
+primera que no la alcanza, pues necesita dos vértices extras para
 poder ser completada.
 
 La $(3,7)$-jaula fue encontrada por McGee y posteriormente Tutte
