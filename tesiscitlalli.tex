@@ -1723,7 +1723,7 @@ inferior, para la cantidad de vertices que una $(3,g)$-jaula pudiera tener.
 
 Si $g$ es par:
 \begin{equation*}
-\text{  con } m=\frac{g}{2} \text{ , la cota inferior es} \sum^{m}_{i+1}2^i
+\text{  con } m=\frac{g}{2} \text{ , la cota inferior es} \sum^{m}_{i=1}2^i
 \end{equation*}
 
 Si $g$ es impar:
@@ -1923,7 +1923,10 @@ Primero, si existe una grafica $G$, 3-regular de cuello 5, con 10 vertices
 entonces es jaula porque su cota ingenua es 10. 
 
 Sea $G$ una $(3,5)$-grafica. En la grafica  $G$ existe una subgrafica,
-isomorfa al arbol con tres niveles,y un solo vertice en la base. 
+isomorfa al arbol con tres niveles y un solo vertice en la base. El
+arbol tiene seis vertices en el ultimo nivel. Se asignan etiquetas de
+$a$ a $f$ a estos vertices como en la figura~\ref{arbol(3,5)}.
+
 
 Sin perdida de generalidad se pueden establecer aristas entre el vertice $a$, y los
 vertices $c$ y $e$ respectivamente; al igual que entre el vertice $b$
@@ -1946,8 +1949,7 @@ distintas a la rama en la que se encuantran $a$ y $b$, evitando así la formacio
   \caption{} \label{arbol(3,5)}
 \end{figure}
 
-Después de hacer esto, como lo que se quiere es que no se formen
-ciclos de longitud menores a 5, las aristas restantes están
+Después de hacer esto, dado que $G$ tiene cuello 5, las aristas restantes están
 determinadas. El vertice adyacente que falta a $c$, no puede ser $d$
 porque está en la misma rama y tampoco $e$ pues se formaría un triángulo entre $a$, $c$ y
 $e$, por lo tanto la única posibilidad es el vertice $f$. Para
@@ -1975,6 +1977,7 @@ y $e$, y si ésta arista se agrega no acaciona ciclos de longutud menor a
 \end{figure}
 
 \end{proof}
+
 La gráfica es única y alcanza su cota mínima, esta es la
 llamada gráfica de Petersen y la forma más común de dibujarla es como
 en la figura \ref{petersen}.
@@ -1992,17 +1995,37 @@ en la figura \ref{petersen}.
 
 \section{(3,6)-jaula}
 
-
-El árbol con el que se debe empesar a dibujar la jaula $3$-regular de
-cuello seis, tiene como base dos vértices, porque el cuello es par y
+Las graficas $3$-regulares de cuello 6, tienen una subgrafica isomorfa al árbol con que tiene como base dos vértices, porque el cuello es par y
 tres pisos, porque a partir de éste momento es posible unir vertices
 del ultimo piso entre sí, sin que seformen ciclos de longitud menor a
 seis.
 
-Para completar la grafica, sin perdida de generalidad, se pueden
+La cota ingenua de la $(3,6)$-jaula es:
+\begin{equation*}
+\begin{split}
+  &\text{ con } m=\frac{(6)}{2}=3\\
+ &\text{ cota ingenua }=\sum^{m=3}_{i=0} 2^i=2+4+8=14
+\end{split}
+\end{equation*}
+
+\begin{theorem}\textbf{}\\\label{teo(3,6)-jaula}
+El orden de la jaula 3-regular de cuello seis es igual a 14, es decir
+es una jaulita. Más aún es unica.  
+\end{theorem}
+
+\begin{proof}
+Sea $G$ una grafica 3-regular de cuello 6 con 14 vertices. $G$ tiene
+una subgrafica isomorfa al árbol de tres niveles con dos vertices en
+la base. Se etiquetan de $a$ a $h$ los ocho vertices de grado uno como
+en la figura~\ref{arbol(3,6)}.
+
+Para demostrar el teorema~\ref{teo(3,6)-jaula} se construira $G$, a
+partir del árbol.
+
+Para dibujar $G$ a partir del árbol, sin perdida de generalidad, se pueden
 aumentar las adyacencias que faltan a los vertices $a$ y $b$ para que
 su grado sea tres. Las nuevas aristas son $ae$, $ag$, $bf$ y $bh$,
-entonces la nueva gráfica se ve como en la figura~\ref{arbol(3,6)}.
+entonces la nueva subgráfica se ve como en la figura~\ref{arbol(3,6)}.
 
 \begin{figure}
   \centering
@@ -2033,16 +2056,17 @@ otro, del mismo conjunto, mediante un automorfismo. Entonces, sin perdida de gen
 puede aumentar la arista $ce$.
 
 En el caso de la última arista faltante de $c$,
-se puede escoger sólo entre los vértices: $g$ y $h$; pues dos aristas del
-mismo vertice no pueden ir
-a la misma rama, porque se formarían ciclos menores.
+se puede escoger sólo entre los vértices: $g$ y $h$; pues dos aristas
+que compartan el
+mismo vertice, no pueden tener su segundo vertice
+en la misma rama porque se formarían ciclos menores.
 No importa a cual de los dos vertices se elija, pues existe
 un automorfismo de la grafica que manda a uno en el otro, así que sin
 perdida de generalidad se añadirá la arista $cg$. 
 
-Los vertices que aún no tienen grado tres son $d$, $f$ y $h$. Si
-existierá la arista $fh$, para que el grado de $d$ fuerá el correcto
-se necesitaría aumentar al menos otros dos vertices. En cambio, si se
+Los vertices que aún no tienen grado tres son $d$, $f$ y $h$. La
+arista $fh$ no esta en $G$, pues si no fuera así, el grado de $d$
+sería tres lo cual es falso pues $G$ es 3-regular. En cambio, si se
 aumentan las aristas $df$ y $dh$ la grafica de la
 figura~\ref{jaula(3,6)} es $3$-regular.
 
@@ -2065,8 +2089,13 @@ figura~\ref{jaula(3,6)} es $3$-regular.
   \caption{} \label{jaula(3,6)}
 \end{figure}
 
-Con lo anterior, queda demostrado que la jaula es única y que alcanza
-la cota ingenua.
+
+
+Con lo anterior, queda demostrado que existe $G$ 3-regular de cuello 6
+con 14 vertices y que ademas es única. Como la cota injenua es 14,
+entonces $G$ es la $(3,6)$-jaula.
+\end{proof}
+
 La $(3,6)$-jaula es la llamada gráfica de Heawood y su representación más común es la
 figura~\ref{heawood}. La grafica de Heawood es la representación de la gráfica de puntos y líneas del
 plano proyectivo de orden dos, el plano de Fano.
@@ -2093,17 +2122,52 @@ El árbol que es conbeniente utilizar para dibujar la jaula $3$-regular
 de cuello siete, es el que tiene como base un solo vertice, pues el
 cuello es impar, y cuatro pisos porque a partir de este momento es
 posible unir vertices cuyo grado es uno, sin que se formen ciclos de
-longitud menor a la deseada. 
+longitud menor a la deseada.
 
+Es decir, la cota ingenua de la jaula 3-regular de cuello siete es:
+\begin{equation*}
+\begin{split}
+  &\text{ con } m=\frac{(7-3)}{2}=2\\
+ &\text{ cota ingenua }=1+3\sum^{m=2}_{i=0} 2^i=1+3(1+2+4)=22
+\end{split}
+\end{equation*}
 
-Sin perdida de generalidad, primero se asignan las aristas de los
+%La sensación que queda en este momento es que algo estuvo
+%mal. Recapitulando; primero se dibujaron las aristas de $a$ y $b$ y
+%sin perdida de generalidad se pudieron elegir los vértices a los que
+%llegarían, después, para dibujar la arista que faltaba a $e$ se
+%descartando casos, hasta darse cuenta que estaban determinadas dos
+%aristas mas; nuevamente, descartando caso se determino la arista que
+%faltaba a g y finalmente tratando de dibujar la arista restante de $i$
+%se noto que dicha arista ya no pudo ser formada con los vértices ya
+%dibujados, lo que indica que deben existir más vértices de los que
+%forman el árbol.
+
+\begin{theorem}\textbf{}\\
+\label{Noexiste(3,7)de22}
+La jaula $3$-regular de cuello siete, tiene más de 22 vértices.
+\end{theorem}
+
+\begin{proof} La demostración del teorema~\ref{Noexiste(3,7)de22} se
+  hará por contradicción. Se tratara de reconstruir la jaula a partir
+  del árbol isomorfo a la subgrafica que debe tener.
+
+Sea $G$ una grafica 3-regular de cuello siete con 22 vertices. $G$
+tiene una subgrafica isomorfa al árbol con cuatro niveles y un solo
+vertice en la grafica, por que el cuello es impar.
+
+El arbol tiene 12 vertices de grado uno, se etiquetan estos vertices
+de $a$ a $l$, como lo muestra la figura~\ref{arbol(3,7)}. 
+
+Para recostruir la grafica $G$ a partir del árbol, sin perdida de generalidad, primero se asignan las aristas de los
 vértices $a$ y $b$. Como los vertices están en la rama uno, sus dos
 vertices adyacentes deben estar en las ramas dos y tres,
 respectivamente. Sin perdida de generalidad se puede aumentar a la
 grafica las aristas $ae$ y $ai$. 
 
 Los vecinos de $b$ no pueden ser los vertices $f$ y $j$ pues se
-formaría un ciclo de longitud seis, en cada caso. Sin perdida de
+formaría un ciclo de longitud seis, en cada caso, y el cuello de $G$
+es 7. Sin perdida de
 generalidad, se pueden añadir las aristas $bg$ y $bk$, vease figura~\ref{arbol(3,7)}.
 
 \begin{figure}
@@ -2143,34 +2207,6 @@ ciclo de longitud cinco, sólo que ésta vez es el que está representado
 en la figura~\ref{ciclo3(3,7)}. Por lo tanto la única posibilidad es
 que exista arista entre $e$ y $l$. Al hacer esto, la arista faltante de $l$,
 sin perdida de generalidad, es $cl$, vease figura~\ref{arbol2(3,7)}.
-
-
-El vertice adyacente faltante de $g$, tiene que estar en la tercer
-rama, pues existe un camino de longitud uno de él a la primer rama, lo
-que acaciona que sin importal el vertice, en esta rama, que se elija
-se formara un ciclo de longitud menor o igual a cinco.
-
-El grado del vertice $l$ es tres por lo que no puede ser adyacente a
-ningun otro vertice. Si se añade la arista $gk$ se forma el triángulo
-$b,g,k$ y si la arista que se aumenta es $gi$ se forma el ciclo de
-longitud cinco de la
-figura~\ref{ciclo4(3,7)}. Por lo tanto el vertice $g$ es adyacente al
-vertice $j$.
-
-
-Finalmente el vértice $i$ tiene una arista que viene de la primer rama
-y él se encuentra en la tercera, por lo que el vertice faltante tiene
-que estar en la segunda
-rama. El grado de los vertices $e$ y $g$ ys es tres, es decir están
-completos, si existe la arista $hi$ se forma el ciclo de
-longitud seis de la figura~\ref{ciclo5(3,7)}.
-
-
-Con éste razonamiento se concluye que debe existir arista entre los
-vertices $f$ e $i$, lo que lleva a la existencia del ciclo de longitud cinco
-representado en la figura~\ref{ciclo6(3,7)}. Es decir la jaula
-$3$-regular de cuello siete no
-puede ser formada usando unicamente los vertices del árbol inicial.
 
 
 
@@ -2359,32 +2395,45 @@ puede ser formada usando unicamente los vertices del árbol inicial.
   \end{tikzpicture}\caption{} \label{ciclo6(3,7)}
 \end{figure}
 
-%La sensación que queda en este momento es que algo estuvo
-%mal. Recapitulando; primero se dibujaron las aristas de $a$ y $b$ y
-%sin perdida de generalidad se pudieron elegir los vértices a los que
-%llegarían, después, para dibujar la arista que faltaba a $e$ se
-%descartando casos, hasta darse cuenta que estaban determinadas dos
-%aristas mas; nuevamente, descartando caso se determino la arista que
-%faltaba a g y finalmente tratando de dibujar la arista restante de $i$
-%se noto que dicha arista ya no pudo ser formada con los vértices ya
-%dibujados, lo que indica que deben existir más vértices de los que
-%forman el árbol.
 
-\begin{theorem}\textbf{}\\
-\label{Noexiste(3,7)de22}
-No existe grafica $3$-regular de cuello siete, con 22 vértices.
-\end{theorem}
+El vertice adyacente faltante de $g$, tiene que estar en la tercer
+rama, pues existe un camino de longitud uno de él a la primer rama, lo
+que acaciona que sin importal el vertice, en esta rama, que se elija
+se formaría un ciclo de longitud menor o igual a cinco.
 
-\begin{proof} La demostración del teorema~\ref{Noexiste(3,7)de22} es
-  presisamente el argumento que se dio en la primer parte de ésta
-  sección.
-\end{proof} 
+El grado del vertice $l$ es tres por lo que no puede ser adyacente a
+ningun otro vertice. Si se añade la arista $gk$ se forma el triángulo
+$b,g,k$ y si la arista que se aumenta es $gi$ se forma el ciclo de
+longitud cinco de la
+figura~\ref{ciclo4(3,7)}. Por lo tanto el vertice $g$ es adyacente al
+vertice $j$.
 
-\begin{proof} Una segunda demostración al teorema~\ref{Noexiste(3,7)de22},
-  se hace por contradicción. Consiste en suponer que existe una 
-  $(3,7)$-gráfica con 22 vértices. Al contar los ciclos de
-  longitud siete que debe tener, se llega a la contradiccion.
 
+Finalmente el vértice $i$ tiene una arista que viene de la primer rama
+y él se encuentra en la tercera, por lo que el vertice faltante tiene
+que estar en la segunda
+rama. El grado de los vertices $e$ y $g$ ya es tres, es decir están
+completos, si existe la arista $hi$ se forma el ciclo de
+longitud seis de la figura~\ref{ciclo5(3,7)}.
+
+
+Con éste razonamiento se concluye que debe existir arista entre los
+vertices $f$ e $i$, lo que lleva a la existencia del ciclo de longitud cinco
+representado en la figura~\ref{ciclo6(3,7)}. 
+
+Entonces no existe grafica $3$-regular de cuello 7, con 22
+vertices. Por lo tanto la $(3,7)$-jaula no tiene 22 vertices.
+
+
+
+\end{proof}
+
+
+Una segunda demostración al teorema~\ref{Noexiste(3,7)de22},
+se hace por contradicción. Consiste en suponer que existe una $(3,7)$-gráfica con 22 vértices. Al contar los ciclos delongitud siete que debe tener, se llega a la contradiccion.
+
+\begin{proof} Segunda demostracion al teorema~\ref{Noexiste(3,7)de22}.
+ 
 Sea $G$ una $(3,7)$-gráfica. Para todo $x\in V(G)$, se
 puede dibujar el árbol de 22 vertices con cuatro pisos y un solo
 vertice en la base, tal que el
@@ -2466,10 +2515,10 @@ como se representa en la figura~\ref{arbol(3,7)mas2}.
 
 
 
-\begin{theorem}
+\begin{theorem}\textbf{}\\\label{teoexistex}
 Sea $G$ una gráfica $3$-regular de cuello $7$ con 24
 vértices. Entonces existe un vertice $x$ para el cual los dos vértices
-fura del árbol que tiene como base a $x$, son adyacentes.
+fuera del árbol que tiene como base a $x$, son adyacentes.
 \end{theorem}
 
 
@@ -2513,13 +2562,22 @@ imposible. Por lo tanto debe existir un vertice $x$ para el cual $v_1$
 y $v_2$ son adyacentes.
 \end{proof}
 
+\begin{theorem}\textbf{}\\
+La jaula $3$-regular de cuello siete es de orden 24. Más aún es unica. 
+\end{theorem}
 
-por lo tanto
-existe un vértice $x$ para el cual $v_1$ y $v_2$ son vecinos entre
-si. Con esto y sin perdida de generalidad se eligen como vecinos de
-$v_1$ a $a$ y $e$ y de $v_2$ a $c$, figura~\ref{grafica(3,7)mas2}.
+\begin{proof}
+Sea $G$ la $(3,7)$-jaula. Sean $v_1$ y $v_2$ los dos vertices fuera
+del árbal, y sean $a$, $b$,..., $k$ y $l$ los 12 vertices del árbol
+con grado uno, etiquetados de izquierda a derecha.
 
+Para reconstruir la jaula 3-regular de cuello 7, primero se agraga la
+arista $v_1v_2$, la cual se sabe que existe poque por el
+teorema~\ref{teoexistex} se sabe que existe un vertice que se puede
+tomar como base del árbol, para el cual los dos vertices que quedan fuera de él son adyacentes.
 
+Sin perdida de generalidad se eligen como vecinos de
+$v_1$ a $a$ y $e$ y de $v_2$ a $c$, tal como lo representa la figura~\ref{grafica(3,7)mas2}.
 
 \begin{figure}
   \centering
@@ -2725,7 +2783,7 @@ $(3,7)-jaula$ esta formada, figura~\ref{jaula(3,7)}.
   \caption{Jaula encontrada por McGee.} \label{jaula(3,7)}
 \end{figure}
 
-
+\end{proof}
 
 Hasta antes de este momento se hubiera pensado que las cota ingenua
 siempre se alcanzaría, pero resulta ser que la $(3,7)-jaula$ es la
@@ -2777,7 +2835,12 @@ figura~\ref{arbol(3,8)}.
 Para continuar; en esta ocasión, se dibuja primero la arista que falta
 a $i$, pues esta arista solo puede ir a la rama dos, ya que tiene un
 vecino en la rama uno y este a su ves es amigo de $m$ que se encuentra
-en la rama cuatro; entonces, sin perdida de generalidad, se forma la
+en la rama cuatro; entonces, sin perdida d\begin{equation*}
+\begin{split}
+  &\text{ con } m=\frac{(5-3)}{2}=1\\
+ &\text{ cota ingenua }= 1 + 3\sum^{m=1}_{i=0} 2^i=1+3(1+2)=10
+\end{split}
+\end{equation*}e generalidad, se forma la
 arista $ei$, lo que a su vez, determina la arista entre $g$ y $m$. La
 arista que falta a $k$ va a la segunda rama, por la misma razón que
 $i$; puede llegar a $f$ o a $h$, sin perdida de generalidad, se elige
@@ -4055,7 +4118,7 @@ a partir de gráficas de Cayley localmente $3K_2$, para grupos de
 doscientos cincuenta y cinco a cuatrocientos quince elementos,
 exceptuando tal vez los grupos con doscientos cincuenta y seis
 elementos, de los cuales existen cincuenta y seis mil noventa y dos. Y
-tampoco en los grupos de 449 a 503.
+tampoco en los grupos de 448 a 503.
 
 
 
