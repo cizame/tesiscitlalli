@@ -2812,7 +2812,7 @@ niveles y dos vertices en la base porque el cuello es par. Es decir:
 \end{split}
 \end{equation*}
 
-\begin{theorem}\textbf{}\\\label{Teo(3,8)-jaula}
+\begin{theorem}\textbf{}\\\label{teo(3,8)-jaula}
 El orden la jaula 3-regular de cuello ocho es 30. Más aún es unica. 
 \end{theorem}
 
@@ -3151,17 +3151,16 @@ es la $(3,8)$-jaula.
 \end{proof}
 
 
-Con el proceso anterior queda demostrado que la $(3,8)$-jaula es única
-y que alcanza la cota dada, es decir es una jaulita; pues no necesitó
-de vértices adicionales, como ocurrió en la $(3,7)$-jaula. Fue
-descrita por primera ves por Tutte y es una gráfica simétrica; de
+La $(3,8)$-jaula es una jaulit, pues no necesitó
+de vértices adicionales a los que conforman el árbol, como ocurrió en la $(3,7)$-jaula. Fue
+descrita por primera vez por Tutte y es una gráfica simétrica; de
 hecho es $5$-arco-transitiva.
 
 \section{Jaulas 3-regular de cuello 9, 10, 11, 12 y 13 }
 
-Si el análisis prosiguiera como hasta ahora, se complicaría cada ves
-mas, pues el numero de vértices aumenta conforme el cuello se hace mas
-grande; por ello, la forma de construir las jaulas con cuellos
+Si el análisis prosiguiera como hasta ahora, se complicaría cada vez
+más, pues el número de vértices aumenta conforme el cuello se hace mas
+grande. Por ello, la forma de construir las jaulas con cuellos
 mayores, se a dado computacionalmente.
 
 En un principio se hubiera podido suponer que las jaulas siempre
@@ -3171,51 +3170,74 @@ formarse. Después de ver esto y analizar el caso de cuello igual a
 ocho, una nueva hipótesis surge, las jaulas no siempre alcanzan la
 cota inferior pero tal vez sean únicas.
 
-La $(3,9)$-jaula es la primera que resulta no ser única, la primera
-fue encontrada por Biggs y Hoare y no cumplía con la cota ingenua,
-pues dicha gráfica contaba con cincuenta y ocho
-vértices. Posteriormente Brendan McKay probó que en efecto, $58$ era
-el número de vértices que debería tener una $(3,9)$-jaula; y
-finalmente en $1995$, Brinkmann y Saager, de manera computacional
-demostraron que existían dieciocho jaulas de $58$ vértices cada una,
-no isomorfas entre si. En \cite{cuello10} se encuentran dos métodos de
-construcción, para estas dieciocho $(3,9)$-jaulas.
+La $(3,9)$-jaula es la primera que resulta no ser única. La primer
+gráfica 3-regular de cuello nueve con 58 vertices
+fue encontrada por Biggs y Hoare, no cumplía con la cota ingenua pues
+tenia 12 vertices más, así que era posible que no fura jaula. La
+descripcion de esta grafica se encuentra en \cite{primerascuello9}.
 
-Existen tres jaulas, 3-regular de cuello diez, no isomorfas,
+Posteriormente Brendan McKay probó que en efecto, $58$ era
+el número de vértices que debería tener una $(3,9)$-jaula. Finalmente en $1995$, Brinkmann y Saager, de manera computacional
+demostraron que existían dieciocho jaulas de $58$ vértices cada una,
+no isomorfas entre si. En \cite{cuello9} se encuentran dos métodos de
+construcción, para estas dieciocho jaulas 3-regulares de cuallo 9. En
+\cite{cuello9y11} tambien se puede leer algo hacerca de estas jaulas.
+
+Existen tres jaulas, 3-regular de cuello 10, no isomorfas entre sí,
 encontradas por M. O'Keefe y P.K. Wong, con setenta vértices cada una,
-ocho mas que su cota inferior.
+ocho más que su cota inferior. El articulo en el que exponian estas
+tres jaulas fue publicado en 1980, la referencia completa se encuentra
+en \cite{cuello10}.
 
 Brendan McKay y Wendy Myrvold demostraron, que la jaula de cuello
-once, tenia cinto doce vértices; es decir dieciocho vértices m\'as,
-que la cantidad necesaria para construir su árbol. Tiempo antes ya se
+11, tiene 112 vértices, es decir, 18 vértices más
+que la cantidad necesaria para construir el árbol de cinco niveles y
+un solo vertice en la base. Tiempo antes ya se
 había construido una $(3,11)$-gráfica con 112 vértices, pero fue hasta
-$2003$ que se pudo probar que esta gráfica era única.
+$2003$ que se probó que esta gráfica es única. La construccion de la
+jaula 3-regular de cuello 11 se expone en \cite{cuello9y11}
 
 Al parecer, la cantidad de vértices que las jaulas necesitan se va
-separando cada ves mas de la cota inferior arrojada por la
+separando cada ves más de la cota inferior arrojada por la
 construcción del árbol. Para que el cuello de una $(3,g)$-gráfica sea
-doce, es necesario un árbol con ciento veintiséis vértices; la
+doce, es necesario un árbol con ciento veintiséis vértices. La
 $(3,12)$-jaula tiene precisamente 126 vértices, es decir cumple con la
 cota ingenua.
+
 
 La $(3,13)$-jaula aun no es conocida; sin embargo, McKay y Myrvold
 elevaron la cota ingenua en doce vértices, es decir, demostraron que
 dicha jaula necesita al menos doscientos dos vértices para ser
 construida. La $(3,13)$-gráfica mas pequeña conocida tiene $272$
-vértices y fue encontrada por Miles Whitehead.
+vértices, es gráfica de Cayley y fue encontrada por Miles
+Whitehead. La gráfica es descrita en \cite{cgcuellogrande}. 
 
-Si se desea saber mas sobre jaulas se puede consultar
-\cite{cgcuellogrande} y \cite{ASurvey}.
 
-\chapter{Gráficas 3-regular de cuello par $\geq$ 14}
+En los articulos \cite{Asurvey}, \cite{Exoo}, \cite{cgcuellogrande} y
+\cite{cubicasconcuellogrande} se puede ancontrar, si así se desea, un
+panorama más amplio hacerca de las investigaciones y los avances que
+se tienen entorno a este tema.
 
-El método que se sigue para construir gráficas 3-regular, se conforma
-de dos partes; la primera, consiste en construir gráficas de Cayley
-localmente $3K_2$, la segunda, en asociarles sus gráficas bipartitas
-clánicas, para finalmente identificar el cuello. Para lograr lo
-anterior se usara el software libre GAP, pues contiene una amplia
-lista de grupos conocidos, así como de sus propiedades; lo que lo hace
-ser fácil de manejar.
+\chapter{Gráficas 3-regulares de cuello par $\geq$ 14}
+
+El método que se sigue en esta tesis para construir gráficas
+3-regulares, se conforma de dos partes:
+
+\begin{enumerate}
+\item La primera, consiste en
+construir gráficas de Cayley localmente $3K_2$.
+\item La segunda, en asociarles gráficas bipartitas
+clánicas.
+\end{enumerate}
+
+ Para lograr lo anterior se usará el software libre de algebra
+ discreta $GAP$, el cual pone especial énfasis en teoría de grupos. GAP
+ imcluye la fuente y es de codigo abierto, lo que permite poder
+ modificar a combeniencia las funciones, para usos especiales. Tambien
+ imcluye la paquetería $GRAPE$ para trabajar con gráficas y sus
+ propiedades. 
+
+
 
 \begin{proposition}\label{2nciclo}
   Sea $Cay(G,T)$ localmente $3K_2$, si tiene un $C_n$ ciclo, con $n\le
