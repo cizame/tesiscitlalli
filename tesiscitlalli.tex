@@ -3221,38 +3221,40 @@ se tienen entorno a este tema.
 \chapter{Gráficas 3-regulares de cuello par $\geq$ 14}
 
 Las jaulas son gráficas regulares de cuello dado, con la menor cantidad de
-vértices posibles. Si se pretende construir una jaula, es conveniente
+vértices posible. Si se pretende construir una jaula, una buen metodo es
 idear formas de construir gráficas regulares, de entre ellas hacer
 una clasificación de acuerdo al cuello que tengan, después identificar
 la o las gráficas con la menor cantidad de vértices, y
 finalmente, comparar esta cantidad, con la cota superior que hasta el
-momento se tenga.   
+momento se tiene.   
 
 El método que se sigue en esta tesis para construir gráficas
 3-regulares, se conforma de dos partes:
 
 \begin{enumerate}
-\item La primera consiste en
-construir gráficas de Cayley localmente $3K_2$.
-\item La segunda en asociarles gráficas bipartitas
-clánicas.
+\item Construir gráficas de Cayley localmente $3K_2$.
+\item Asociarles su gráfica bipartita clanica.
 \end{enumerate}
 
- Para lograr lo anterior se usará el software libre de álgebra
- discreta $GAP$, el cual pone especial énfasis en teoría de grupos. GAP
- incluye la fuente y es de código abierto, lo que permite poder
- modificar a conveniencia las funciones, para usos especiales. También
- incluye la paquetería $grape$ para trabajar con gráficas y sus
- propiedades. 
+Será necesario programar un algoritmo que se encargue de realizar los
+pasos anteriores. Para construir gráficas de Cayley es nesesario
+trabajar con grupos y a la vez con graficas, por ello se usará el
+software libre de álgebra  discreta $GAP$, el cual pone especial
+énfasis en teoría de grupos. GAP es de código
+abierto, lo que permite poder analizar y modificar a conveniencia las funciones,
+para usos especiales. También  incluye la paquetería $grape$ para
+trabajar con gráficas y sus propiedades, lo que lo hace una excelente
+herramienta para este trabajo.
+ 
 
-GAP se puede descargar de manera gratuita desde la pagina de internet \textbf{http://www.gap-system.org}.
+GAP y sus paqueterias se pueden descargar de manera gratuita desde la pagina de internet \emph{http://www.gap-system.org}.
 
 
 
 \begin{proposition}\label{2nciclo}
-  Sea $Cay(G,T)$ localmente $3K_2$, si tiene un $C_n$ ciclo, con $n\le
-  4$; entonces la gráfica bipartita clánica asociada tiene un $C_{2n}$
-  ciclo.
+  Sea $Cay(G,T)$ una grafica de Cayley localmente $3K_2$. Si
+  $Cay(G,T)$ si tiene un ciclo de longitud $n$ mayor o igual a 4, entonces
+  la gráfica bipartita clánica asociada tiene un ciclo de longitud $2n$.
 \end{proposition}
 
 \begin{proof} Sea $t_1\sim t_2\sim ... \sim t_n \sim t_1$ un $C_n$ en
