@@ -602,7 +602,7 @@ $$V(G\cup H):=V(G)\dot{\cup}V(H)$$ $$E(G\cup H):=E(G)\dot{\cup}E(H)$$
 \end{definition}
 
 La unión de una gráfica $G$ con si misma se denota por $2G$. En general la unión
-disjunta de $G$, $n$ veces, es denotada por $nG$. \index{nG}
+disjunta de $G$, $n$ veces, es denotada por $nG$. \index{$nG$}
 
 El símbolo $\dot{\cup}$ representa la unión de conjuntos, pero de
 forma disjunta; esto es, si $|V(G)|=n$ y $|V(H)|=m$ entonces
@@ -3250,52 +3250,38 @@ herramienta para este trabajo.
 GAP y sus paqueterias se pueden descargar de manera gratuita desde la pagina de internet \emph{http://www.gap-system.org}.
 
 
-
-\begin{proposition}\label{2nciclo}
-  Sea $Cay(G,T)$ una grafica de Cayley localmente $3K_2$. Si
-  $Cay(G,T)$ si tiene un ciclo de longitud $n$ mayor o igual a 4, entonces
-  la gráfica bipartita clánica asociada tiene un ciclo de longitud $2n$.
-\end{proposition}
-
-\begin{proof} Sea $t_1\sim t_2\sim ... \sim t_n \sim t_1$ un $C_n$ en
-$Cay(G,T)$, sea $T_i$ el triangulo en el que se encuentran $t_i$ y
-$t_{i+1}$ con $i=1,2,...,(n-1)$ y finalmente $t_n$ el triangulo que
-contiene a $t_n$ y $t_1$, dichos triángulos son únicos por ser
-localmente $3K_2$.
-
-En la gráfica bipartita clánica se encuentra el ciclo
-$$t_1\sim T_1\sim t_2 \sim T_2 \sim ... \sim t_n \sim T_n \sim t_1$$
-cuya longitud es $2n$.
-\end{proof}
-
 \begin{proposition}\textbf{}\\
-  Sea G una gráfica conexa, localmente $3K_2$, entonces la bipartita
-  clánica es cubica y tiene cuello al menos ocho.\label{cuello8omas}
+  Sea $G$ una gráfica conexa, localmente $3K_2$. Entonces la gráfica bipartita
+  clánica asociada es cubica y tiene cuello al menos ocho.\label{cuello8omas}
 \end{proposition}
 
 
-\begin{demostration}Primero: en las gráficas bipartitas, los ciclos
-  son pares y el más pequeño es el de longitud cuatro; lo que en la
-  gráfica de Cayley, implica que dos vértices están en dos triángulos,
-  figura~\ref{bipcuello4}, lo cual es imposible pues es localmente
-  $3K_2$.
+\begin{proof} Se demostrará por contradiccion que no existen ciclos de
+  longutid menor a seis.
+
+Sea $G$ una grafica conexa, localmente $3K_2$ y sea $BC_G$ la gráfica
+bipartita clanica asociada a $G$. 
+
+
+En las gráficas bipartitas los ciclos son pares y el más pequeño es
+el de longitud cuatro. 
+
+Sean $T_1$, $T_2$, $a$ y $b$ vertices de $BC_G$ tales que forman el
+ciclo de longitud cuatro $T_1\sim a \sim T_2 \sim b$. Entonces, en la
+gráfica $G$, esto implica que los
+vértices $a$ y $b$ están en los triángulos $T_1$ y $T_2$ como lo
+muestra la figura~\ref{bipcuello4}, lo cual es imposible pues $G$ es localmente $3K_2$.
 
 \begin{figure}[htb]
   \centering
   \begin{tikzpicture}
-    \SetUpVertex[MinSize=10pt] \SetVertexNoLabel
+    \SetUpVertex[MinSize=10pt]%
 
-    \grEmptyPath*[x=-1.8,y=0,RA=3.6,prefix=a]{ , }
-
-
-
+    \grEmptyPath*[x=-1.8,y=0,RA=3.6,prefix=a]{a,b}
+ \SetVertexNoLabel{
     \Vertex[x=0,y=1.3]{b} \Vertex[x=0,y=-1.3]{c}
-
+}
     \Edges(a0,b,a1,c,a0)
-
-    % \AssignVertexLabel{b}{b} \Edges(v1,w0,w1,v2)
-
-
 
     \Edge[style={bend right=8}](a0)(a1) \Edge[style={bend
       right=8}](a1)(a0)
@@ -3322,17 +3308,22 @@ cuya longitud es $2n$.
 
 
 
-El siguiente ciclo sería de longitud seis, figura~\ref{bipciclo6}, en
-el cual el vértice $a$ esta en los triángulos $T_1$ y $T_2$, y el $b$
-esta en $T_2$ y $T_3$, figura~\ref{bipartitalong6}. Finalmente el
-vértice $c$ esta en los triángulos $T_1$ y $T_3$, entonces, en
-realidad, es la figura~\ref{triancontriang}.
+El siguiente ciclo posible en una gráfica bipartita tiene longitud
+seis. Sean $T_1$, $T_2$, $T_3$, $a$, $b$ y $c$ vertices de $BC_G$,
+tales que forman el ciclo de longitud seis: $$T_1 \sim a \sim T_2 \sim b \sim T_3 \sim c \sim T_1$$ 
+
+
+representado en la figura~\ref{bipciclo6}, lo que en la grafica $G$ significa que 
+ $a$ esta en los triángulos $T_1$ y $T_2$, y  $b$
+esta en $T_2$ y $T_3$, comolo muestra la
+figura~\ref{bipartitalong6}. Finalmente el vértice $c$ esta en los triángulos $T_1$ y $T_3$, entonces, en
+realidad, la subgrafica de $G$ es la figura~\ref{triancontriang}.
 
 
 \begin{figure}[htb]
   \centering
   \begin{tikzpicture}
-    \SetUpVertex[MinSize=10pt] \SetVertexNoLabel
+    \SetUpVertex[MinSize=12pt] \SetVertexNoLabel
     \grEmptyPath*[x=-2,y=0,RA=2,prefix=a]{,a,}
     \AssignVertexLabel{a}{,a,}
     \grEmptyPath*[x=-1,y=-1.8,RA=2,prefix=b]{,}
@@ -3364,33 +3355,61 @@ realidad, es la figura~\ref{triancontriang}.
   \caption{} \label{triancontriang}
 \end{figure}
 
-Lo que implica que $a$, $b$ y $c$ están en otro triángulo,
-contradiciendo el hecho de que la gráfica original era localmente
-$3K_2$. Por lo tanto el menor ciclo que se puede formar en la
-bipartita clánica a partir de una gráfica localmente $3K_2$, es ocho.
-\end{demostration}
+Lo que implica que $a$, $b$ y $c$ forman otro triángulo,
+contradiciendo el hecho de que la gráfica $G$ es localmente
+$3K_2$. Por lo tanto el menor ciclo que se puede formar en la grafica
+bipartita clánica $BC_G$ a partir de la gráfica $G$ localmente $3K_2$, es ocho.
+\end{proof}
+
+
+\begin{proposition}\label{2nciclo}
+  Sea $G$ una grafica localmente $3K_2$. Si
+  $G$ tiene un ciclo de longitud $n$ mayor o igual a 4, entonces
+  la gráfica bipartita clánica asociada tiene un ciclo de longitud $2n$.
+\end{proposition}
+
+\begin{proof} Para demostrar la proposición~\ref{2nciclo} se exibira
+  el ciclo de longitud $2n$ en la grafica bipartita.
+
+Sea $G$ una grafica localmente $3K_2$.
+Sean $t_1$, $t_2$,...,$t_n$ vertices de $G$, tales que
+ $t_1\sim t_2\sim ... \sim t_n \sim t_1$, es decir forman un ciclo de
+ longitud $n$ en la gráfica $G$. 
+
+Sea $T_i$ el triangulo en el que se encuentran $t_i$ y
+$t_{i+1}$ con $i=1,2,...,(n-1)$ y finalmente $T_n$ el triangulo que
+contiene a $t_n$ y $t_1$, dichos triángulos son únicos porque la
+grafica es localmente $3K_2$.
+
+En la gráfica bipartita clánica asociada a $G$ se encuentra el ciclo de
+longitud $2n$:
+\begin{equation*}
+t_1\sim T_1\sim t_2 \sim T_2 \sim ... \sim t_n \sim T_n \sim t_1
+\end{equation*}
+\end{proof}
+
+
+\section[Gráficas de $Cay(G,T)$ localmente $3K_2$]%
+{Caracterización de gráficas de Cayley  localmente $3K_2$}
 
 
 
-\newpage
-
-\section {Caracterización de Cay(G,T) localmente $3K_2$}
 
 
 
-En principio una gráfica de Cayley no tiene porque ser localmente
-$3K_2$, pero gracias a que estas son vértice-transitivas, y además, a
+En principio una gráfica localmente $3K_2$ no tiene porque ser de Cayley, pero gracias a que estas son vértice-transitivas, y además, a
 que los vértices adyacentes a la identidad son precisamente los
-elementos de $T$, basta dar condiciones sobre el conjunto $T$ para que
-la gráfica lo sea, pues de otro modo, la bipartita clánica no seria
-$3$-regular, hecho necesario para que una gráfica pueda ser una
-$(3,n)$-jaula.
+elementos del conujunto $T$, basta dar condiciones sobre el conjunto para que
+la gráfica lo sea, pues de otro modo, la bipartita clánica no sería
+$3$-regular, hecho necesario para que esta gráfica tenga posibilidad
+de ser una $(3,n)$-jaula.
 
 
 
-Si se supone que la gráfica de Cayley, $Cay(G, T)$, es localmente
-$3K_2$, la primera condición que es evidente, es el echo de que
-$|T|=6$. Continuando con el análisis, sean $a, b \in T$ tal que $a
+
+Si se supone que la gráfica de Cayley, $Cay(G,T)$, es localmente
+$3K_2$, la primera condición que es evidente, es el echo de que la
+cardinalidad del conjunto $T$ debe ser 6. Continuando con el análisis, sean $a, b \in T$ tal que $a
 \sim b$.
 
 Por un lado, se tienen dos posibilidades $b= a^{-1}$ o $b\neq
