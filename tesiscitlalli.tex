@@ -3533,37 +3533,42 @@ localmente $3K_2$.
 \end{enumerate}
 
 
-Con lo anterior se ha visto que si $ b\neq a^{-1}$ entonces $T$ debe
-ser $$T=\{a, a^{-1}, b, b^{-1}, a^{-1}b, b^{-1}a\}$$ donde $a\sim b$,
-$a^{-1}b\sim a^{-1}$ y $b^{-1}a\sim b^{-1}$.
+Con lo anterior se deduce que si $b$ es distinto de $a^{-1}$ entonces
+los elementos del conjunto $T$ son:
+\begin{equation*}
+ T=\{a, a^{-1}, b, b^{-1}, a^{-1}b, b^{-1}a\}
+\end{equation*}
 
-Y que si $a\sim a^{-1}$ entonces $a^3=I$, m\'as a\'un, si $x,y\in T$
-son tales que $x\sim y$ entonces $y=x^{-1}$; pues si ocurriera lo
-contrario los elementos de $T$ serían $x$, $x^{-1}$, $y$, $y^{-1}$,
+ donde $a$ es adyacente a $b$, $a^{-1}b$ es adyacente a $a^{-1}$ y
+ $b^{-1}a$ es adyacente a $b^{-1}$, en la gráfica de Cayley.
+
+Y que si $a$ es adyacente a $a^{-1}$ entonces el orden de $a$ es tres. Más aún, si $x,y\in T$
+son tales que $x$ es adyacente a $y$ entonces $y=x^{-1}$. Si ocurriera lo
+contrario, los elementos de $T$ serían $x$, $x^{-1}$, $y$, $y^{-1}$,
 $x^{-1}y$ y $y^{-1}x$, pero esto trae como consecuencia que $a=
 x^{-1}y$ y $a^{-1}=y^{-1}x$, o que $a=y^{-1}x$ y $a^{-1}= x^{-1}y$, en
-cualquier caso la figura~\ref{b=c,a^3} no es localmente $3K_2$; se
+cualquier caso la figura~\ref{b=c,a^3} no es localmente $3K_2$. Se
 forman muchas otras aristas malas, pero ver que $y^{-1}x \sim y$, es
-suficiente para descartar esta posibilidad. Por lo que
-$$T=\{a,a^{-1},b,b^{-1},c, c^{-1}\}$$ con $b^3=I$ y $c^{3}=I$.
+suficiente para descartar esta posibilidad.
 
+Por lo que, en este caso, $T$ es: 
+\begin{equation*}
+T=\{a,a^{-1},b,b^{-1},c, c^{-1}\}
+\end{equation*}
 
+con los ordenes de $b$ y $c$ igual a tres.
 
 \begin{figure}
   \centering
   \begin{tikzpicture}
+   \SetUpVertex[MinSize=6pt]
     \SetVertexNoLabel { \grEmptyCycle[prefix=v,RA=3]{6}
       \Vertex[x=-0,y=0]{w0} }
-
     \Edges(w0,v1,v2,w0,v0,v5,w0) \Edges(v1,v0)
-
     \Edge[label={$x^{-1}$},style={->}](v1)(v0)
-   %
-
-    % \node[initial,state](a)
-    \draw (w0) node{$I$}; \draw (v2) node{$x^{-1}y$}; \draw (v1)
-    node{$y^{-1}x$}; \draw (v0) node{$y$}; \draw (v5) node {$x$};
- %
+    \draw (w0)[below left] node{$I$}; \draw (v2) node[above
+    left]{$x^{-1}y$}; \draw (v1) node [above right]{$y^{-1}x$};
+    \draw (v0) node[below right]{$y$}; \draw (v5) node [below left]{$x$};
   \end{tikzpicture}
   \caption{}\label{b=c,a^3}
 \end{figure}
@@ -3577,7 +3582,8 @@ comportamiento de $a$ al multiplicarla por los elementos de $T$, ya
 que las vecindades de los vértices, en una gráfica
 vértice-transitiva, son isomorfas.
 
-Primer caso $T=\{a, a^{-1},b,b^{-1},c,c^{-1}\}$,
+\begin{enumerate}
+\item Primer caso $T=\{a, a^{-1},b,b^{-1},c,c^{-1}\}$, véase
 figura~\ref{localmnt3K_2,a^3}.
 
 \begin{figure}[htb]
@@ -3585,9 +3591,7 @@ figura~\ref{localmnt3K_2,a^3}.
   \begin{tikzpicture}
     \SetVertexNoLabel { \grEmptyCycle[prefix=v,RA=3]{6}
       \Vertex[x=0,y=0]{w0} }
-
     \Edges(w0,v1,v2,w0,v0,v5,w0,v3,v4,w0)
-    % \node[initial,state](a)
     \Vertex[x=.5,y=5]{w2} \Vertex[x=-2.5,y=5.5]{w1}
     \Vertex[x=-4.4,y=4]{w3} \Vertex[x=-4.2,y=.9]{w4}
 
@@ -3624,10 +3628,10 @@ figura~\ref{localmnt3K_2,a^3}.
   \begin{enumerate}
   \item $ab=a^{-1}$ $\rightarrow$ $b=a^{-1}a^{-1}=a$. No ocurre porque
     $|T|=6$.
-  \item $ab=b$ $\rightarrow$ $a=I$. Nunca ocurre.
+  \item $ab=b$ $\rightarrow$ $a=e$. Nunca ocurre.
   \item $ab=b^{-1}$ $\rightarrow$ $a=b^{-1}b^{-1}=b$. No ocurre porque
     $|T|=6$.
-  \item $ab=c^{-1}$ $\rightarrow$ $I=abc$. Si esto ocurre, la gráfica
+  \item $ab=c^{-1}$ $\rightarrow$ $e=abc$. Si esto ocurre, la gráfica
     de Cayley no es localmente $3K_2$.
   \item $ab=c$. Si esto ocurre, la gráfica de Cayley no es localmente
     $3K_2$.
@@ -3639,7 +3643,7 @@ figura~\ref{localmnt3K_2,a^3}.
     pasa porque $|T|=6$.
   \item $ab^{-1}=b$ $\rightarrow$ $a=b^2=b^{-1}$. No pasa porque
     $|T|=6$
-  \item $ab^{-1}=b^{-1}$ $\rightarrow$ $a=I$. Nunca ocurre.
+  \item $ab^{-1}=b^{-1}$ $\rightarrow$ $a=e$. Nunca ocurre.
   \item $ab^{-1}=c^{-1}$ $\rightarrow$ $abb=cc$ $\rightarrow$ $a=ccb$
     $\rightarrow$ $ca=b$. Si esto ocurre, la gráfica de Cayley no es
     localmente $3K_2$.
@@ -3657,7 +3661,7 @@ figura~\ref{localmnt3K_2,a^3}.
     localmente $3K_2$.
   \item $ac=c^{-1}$ $\rightarrow$ $a=c^{-1}c^{-1}=c$. No pasa porque
     $|T|=6$
-  \item $ac=c$ $\rightarrow$ $a=I$. Nunca ocurre.
+  \item $ac=c$ $\rightarrow$ $a=e$. Nunca ocurre.
   \end{enumerate}
 
 \item $ac^{-1}=x$ para $x\in T$
@@ -3669,14 +3673,14 @@ figura~\ref{localmnt3K_2,a^3}.
   \item $ac^{-1}=b^{-1}$ $\rightarrow$ $a=b^{-1}c$ $\rightarrow$
     $ba=c$. Si esto ocurre, la gráfica de Cayley no es localmente
     $3K_2$.
-  \item $ac^{-1}=c^{-1}$ $\rightarrow$ $a=I$. Nunca ocurre.
+  \item $ac^{-1}=c^{-1}$ $\rightarrow$ $a=e$. Nunca ocurre.
   \item $ac^{-1}=c$ $\rightarrow$ $a=cc=c^{-1}$. No pasa porque
     $|T|=6$.
   \end{enumerate}
 \end{enumerate}
 
 
-Segundo caso $T=\{a, a^{-1}, b, b^{-1}, a^{-1}b, b^{-1}a\}$,
+\item Segundo caso $T=\{a, a^{-1}, b, b^{-1}, a^{-1}b, b^{-1}a\}$, véase
 figura~\ref{localmnt3K_2,a-b}.
 
 
@@ -3690,24 +3694,16 @@ figura~\ref{localmnt3K_2,a-b}.
     % \node[initial,state](a)
     \Vertex[x=.5,y=5]{w2} \Vertex[x=-2.5,y=5.5]{w1}
     \Vertex[x=-4.4,y=4]{w3} \Vertex[x=-4.2,y=.9]{w4}
-
     \Edges(v2,w2,w1,v2) \Edges(v2,w3,w4,v2)
-
-
-
     \Edge[label={$a$},style={->}](v2)(w2)
     \Edge[label={$b$},style={->}](v2)(w1)
     \Edge[label={$b^{-1}$},style={->}](v2)(w3)
     \Edge[label={$a^{-1}$},style={->}](v2)(w0)
     \Edge[label={$a^{-1}b$},style={->}](v2)(v1)
     \Edge[label={$b^{-1}a$},style={->}](v2)(w4)
-
-
-
     \draw (w0) node{$I$}; \draw (v2) node{$a$}; \draw (v1) node{$b$};
     \draw (v0) node{$a^{-1}b$}; \draw (v5) node {$a^{-1}$}; \draw (v3)
     node{$b^{-1}a$}; \draw (v4) node {$b^{-1}$};
-
     \draw (w1) node{$ab$}; \draw (w2) node{$a^2$}; \draw (w3)
     node{$ab^{-1}$}; \draw (w4) node {$ab^{-1}a$};
 
@@ -3724,18 +3720,17 @@ figura~\ref{localmnt3K_2,a-b}.
     $|T|=6$.
   \item $a^2=a^{-1}b$ $\rightarrow$ $b=a^3$. Si esto ocurre, la
     gráfica de Cayley no es localmente $3K_2$.
-  \item $a^2=a^{-1}$ $\rightarrow$ $a^3=I$. No ocurre, porque $a$
+  \item $a^2=a^{-1}$ $\rightarrow$ $a^3=e$. No ocurre, porque $a$
     sería vecino de $a^{-1}$.
   \item $a^2=b^{-1}$.  Si esto ocurre, la gráfica de Cayley no es
     localmente $3K_2$.
   \item $a^2=b^{-1}a$ $\rightarrow$ $a=b^{-1}$. Nunca ocurre porque
     $|T|=6$.
-
   \end{enumerate}
 
 \item $ab=x$ para $x\in T$
   \begin{enumerate}
-  \item $ab=b$ $\rightarrow$ $a=I$. Nunca ocurre.
+  \item $ab=b$ $\rightarrow$ $a=e$. Nunca ocurre.
   \item $ab=a^{-1}b$ $\rightarrow$ $a=a^{-1}$. Nunca pasa.
   \item $ab=a^{-1}$ $\rightarrow$ $a^2=b^{-1}$. Es el caso 1.4
   \item $ab=b^{-1}$ $\rightarrow$ $b^2=a^{-1}$. Si esto ocurre, la
@@ -3752,7 +3747,7 @@ figura~\ref{localmnt3K_2,a-b}.
     gráfica de Cayley no es localmente $3K_2$.
   \item $ab^{-1}=a^{-1}$ $\rightarrow$ $a=a^{-1}b$. Nunca pasa porque
     $|T|=6$.
-  \item $ab^{-1}=b^{-1}$ $\rightarrow$ $a=I$. Nunca ocurre.
+  \item $ab^{-1}=b^{-1}$ $\rightarrow$ $a=e$. Nunca ocurre.
   \item $ab^{-1}=b^{-1}a$ $\rightarrow$ $ba=ab$. Si esto ocurre, la
     gráfica de Cayley no es localmente $3K_2$.
   \end{enumerate}
@@ -3765,14 +3760,14 @@ figura~\ref{localmnt3K_2,a-b}.
     localmente $3K_2$.
   \item $ab^{-1}a=a^{-1}$ $\rightarrow$ $b^{-1}=a^{-1}a^{-1}a^{-1}$
     $\rightarrow$ $b=a^3$. Es el caso 1.2
-  \item $ab^{-1}a=b^{-1}$ $\rightarrow$ $ab^{-1}ab=I$ $\rightarrow$
+  \item $ab^{-1}a=b^{-1}$ $\rightarrow$ $ab^{-1}ab=e$ $\rightarrow$
     $ab=ba^{-1}$. Si esto ocurre, la gráfica de Cayley no es
     localmente $3K_2$.
-  \item $ab^{-1}a=b^{-1}a$ $\rightarrow$ $a=I$. Nunca ocurre.
+  \item $ab^{-1}a=b^{-1}a$ $\rightarrow$ $a=e$. Nunca ocurre.
 
   \end{enumerate}
 \end{enumerate}
-
+\end{enumerate}
 
 
 Después de identificar y reducir las condiciones necesarias para que
