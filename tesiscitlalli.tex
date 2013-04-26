@@ -3394,51 +3394,89 @@ La jaula 3-regular de cuello $algo$ se puede costruir a partir de la
 grafica localmente $3k_2$,....... 
 
 Esta es la razon por la cual es apropiado pensar que una manera de
-costruir graficas 3-regulares que padrian tener menos vertices, que
+costruir graficas 3-regulares que podrian tener menos vertices, que
 las cotas, es a partir de gráficas localmente $3K_2$. 
 
 
 ---------------------------------
 
 
-\section[Gráficas de $Cay(G,T)$ localmente $3K_2$]%
-{Caracterización de gráficas de Cayley  localmente $3K_2$}
-
-
-
-
-
+El problema que surge es el caracterizar a las graficas localmente
+$3K_2$. La delimitacion a este problema, que la tesis aborda, es el
+caracterizar a las graficas de Cayley localmente $3K_2$.
 
 En principio una gráfica localmente $3K_2$ no tiene porque ser de Cayley, pero gracias a que estas son vértice-transitivas, y además, a
 que los vértices adyacentes a la identidad son precisamente los
-elementos del conujunto $T$, basta dar condiciones sobre el conjunto para que
-la gráfica lo sea, pues de otro modo, la bipartita clánica no sería
-$3$-regular, hecho necesario para que esta gráfica tenga posibilidad
-de ser una $(3,n)$-jaula.
+elementos del conujunto $T$, basta dar condiciones sobre el conjunto
+para caracterisar las gráficas de Cayley localmente $3K_2$.
 
 
 
+\section[Gráficas de $Cay(G,T)$ localmente $3K_2$]%
+{  Caracterización de gráficas de Cayley  localmente $3K_2$}
+
+Para caracterizar las gráficas de Cayley, $Cay(G,T)$, localmente
+$3K_2$ se hará un analisis al conjunto $T$ para determinar las
+condiciones nesesarías que deben cumplir sus elementos.
+
+ 
+% pues de otro modo, la bipartita clánica no sería
+%$3$-regular, hecho necesario para que esta gráfica tenga posibilidad
+%de ser una $(3,n)$-jaula.
+
+Es combeniente recordar que las graficas localmente $3K_2$ lucen al
+rededor de cada uno de sus vertices como la figura~\ref{loc2}. 
+
+
+\begin{figure}
+  \centering
+  \begin{tikzpicture}[scale=0.85]
+    \SetUpVertex[MinSize=10pt] \SetVertexNoLabel {
+      \grEmptyCycle[prefix=v,RA=3]{6} \Vertex[x=-0,y=0]{w0} }
+
+    \Edges(w0,v1,v2,w0,v3,v4,w0,v5,v0,w0)
+    % \Edges(v3,v2) \node[initial,state](a) \draw (w0) node{$I$};
+    % \draw (v2) node{$a$};
+    % \draw (v1) node{$a^{2}$};
+    % \draw (v3) node{$a^{-1}$};
+
+    % \Edge[label={$a^{-1}a^{-1}$},style={->}](v2)(v3)
+    % \Edge[label={$a$},style={->}](v2)(v1)
+
+  \end{tikzpicture}
+  \caption{Así se ve una gráfica localmente $3K_2$ al rededor de cada vertice.}\label{loc2}
+\end{figure}
+
+
+
+Sean $G$ un grupo y $T$ un conjunto tal que la identidad de $G$ no
+esta en $T$ y que si
+$t$ esta en $T$ entonces $t^{-1}$ tambien esta en $T$. Se construye la grafica $Cay(G,T)$
+donde $x$ y $y$ son adyacentes si y solo si $y^{-1}x$ esta en $T$, es
+decir la grafica $Cay(G,T)$ es una grafica de Cayley.
 
 
 Si se supone que la gráfica de Cayley, $Cay(G,T)$, es localmente
-$3K_2$, la primera condición que es evidente, es el echo de que la
-cardinalidad del conjunto $T$ debe ser 6. Continuando con el análisis, sean $a, b \in T$ tal que $a
-\sim b$.
+$3K_2$, la primera condición que es evidente, es el hecho de que la
+cardinalidad del conjunto $T$ debe ser 6.
 
-Por un lado, se tienen dos posibilidades $b= a^{-1}$ o $b\neq
-a^{-1}$. Y por otro, como $a\sim b$ entonces existe $x\in T$ tal que
-$ax=b$ es decir $x=a^{-1}b$, en principio $x$ podría ser igual a $a$,
+
+Sean $a, b \in T$ tal que $a$ es adyacente a $b$ en $Cay(G,T)$. Por un lado, se tienen que $b= a^{-1}$ o $b\neq
+a^{-1}$. Por otro, como $a\sim b$ entonces existe $x\in T$ tal que
+$ax=b$ entonces $x=a^{-1}b$. En principio $x$ podría ser igual a $a$,
 $b$ o a alguno de sus inversos.
 
 % Considerando primero $b\neq a^{-1}$.
 
-Si $x=a$ entonces $a=a^{-1}b$, es decir $b=a^2$. Si $b=a^{-1}$
-entonces $a^{-1}=a^2$, multiplicando por $a$, $a^3= I$. Si $b \neq
-a^{-1}$, entonces $ a, a^{-1}, a^2, a^{-1}a^{-1} \in T$ lo que
+\begin{enumerate}
+\item Si $x=a$, entonces $a=a^{-1}b$, es decir $b=a^2$. 
+
+\begin{enumerate}
+\item Si $b=a^{-1}$, entonces $a^{-1}=a^2$, multiplicando por $a$ ambos
+  lados de la ecuacion, $a^3= I$.
+\item Si $b \neq a^{-1}$, entonces $ a, a^{-1}, aa, a^{-1}a^{-1} \in T$ lo que
 generaría la gráfica~\ref{e=a}, que no es localmente $3K_2$,
 contradiciendo la hipótesis.
-
-
 
 \begin{figure}
   \centering
@@ -3455,21 +3493,25 @@ contradiciendo la hipótesis.
     \Edge[label={$a$},style={->}](v2)(v1)
 
   \end{tikzpicture}
-  \caption{Esta gráfica no es localmente $3K_2$.}\label{e=a}
+  \caption{Esta subgráfica no pertenece a una gráfica localmente $3K_2$.}\label{e=a}
 \end{figure}
+\end{enumerate}
 
+\item Si $x=a^{-1}$, entonces $a^{-1}=a^{-1}b$, lo que lleva a que $b=e$, algo
+imposible, porque al ser grafica de Cayley, $e$ no esta en $T$.
 
-Si $x=a^{-1}$ entonces $a^{-1}=a^{-1}b$ lo que lleva a que $b=I$, algo
-imposible.
-
-
-Si $x=b$ entonces $b=a^{-1}b$ y en este caso $a^{-1}$ tendría que ser
+\item Si $x=b$, entonces $b=a^{-1}b$ y en este caso $a^{-1}$ tendría que ser
 la identidad, lo cual es falso.
 
 
-Si $x=b^{-1}$ entonces $b^{-1}=a^{-1}b$ es decir
-$a^{-1}=b^{-1}b^{-1}$. Si $b=a^{-1}$ entonces, $a=a^{-1}a^{-1}$ y se
-vuelve a llegar a $a^3=I$. Si $ b\neq a^{-1}$ entonces $b, b^{-1},
+\item Si $x=b^{-1}$, entonces $b^{-1}=a^{-1}b$ es decir
+$a^{-1}=b^{-1}b^{-1}$. 
+\begin{enumerate}
+\item
+Si $b=a^{-1}$ entonces, $a=a^{-1}a^{-1}$ y se
+vuelve a llegar a $a^3=I$.
+
+\item Si $ b\neq a^{-1}$ entonces $b, b^{-1},
 b^2, b^{-1}b^{-1}\in T$, pero en este caso la grafía~\ref{e=b-1} no es
 localmente $3K_2$.
 
@@ -3478,20 +3520,17 @@ localmente $3K_2$.
   \begin{tikzpicture}
     \SetVertexNoLabel { \grEmptyCycle[prefix=v,RA=3]{6}
       \Vertex[x=-0,y=0]{w0} }
-
     \Edges(w0,v1,v2,w0,v3,v4,w0,v5,v0,w0) \Edges(v0,v1)
     \Edge[label={$b$},style={->}](v1)(v2)
     \Edge[label={$b^{-1}b^{-1}$},style={->}](v1)(v0)
-    % \node[initial,state](a)
     \draw (w0) node{$I$}; \draw (v2) node{$b^2$}; \draw (v1)
     node{$b$}; \draw (v0) node{$b^{-1}$};
-
- %
   \end{tikzpicture}
-  \caption{}\label{e=b-1}
+  \caption{Esta subgráfica no pertenece a una gráfica localmente $3K_2$.}\label{e=b-1}
 \end{figure}
+\end{enumerate}
 
-
+\end{enumerate}
 
 
 Con lo anterior se ha visto que si $ b\neq a^{-1}$ entonces $T$ debe
