@@ -3287,22 +3287,22 @@ clanica de una grafica $G$ localmente $3K_2$.
   $B$.
 
  Por la proposicion~\ref{biparticioncardinalidades}, las cardinalidades
- de los conjuntos $X$ y $Y$ son iguales, sea $n$ la cardinalidad de $X$.
-
-Sea $G$ la gráfica tal que $V(G)=X$ donde $x_1,x_2\in V(G)$ son adyacentes
-si y solo si existe $T\in Y$ tal que $x_1 \sim T \sim x_2$.
-
-\begin{enumerate}
-\item $T$ es unica. Sean $T_1,T_2 \in Y$ tales que $x_1 \sim T_1 \sim
+ de los conjuntos $X$ y $Y$ son iguales. Entonces, sin perdida de
+ generalidad, sea $G$ la gráfica tal que $V(G)=X$ donde $x_1,x_2\in
+ V(G)$ son adyacentes si y solo si existe $T\in Y$ tal que $x_1 \sim T
+ \sim x_2$.  $T$ es unica pues si no lo fuera, suponga que existen $T_1,T_2 \in Y$ tales que $x_1 \sim T_1 \sim
 x_2$ y $x_1 \sim T_2 \sim x_2$, entonces $x_1 \sim T_1 \sim x_2 \sim
 T_2 \sim x_1$, es decir existe un ciclo de longitud cuatro en la
 gráfica $G$, lo cual es imposible porque el cuello de $G$ es al menos 8.
 
-\item $G$ es localmente $3K_2$. 
-Sea $x\in V(G)$, sean $T_1$, $T_2$ y $T_3$ los elementos de $Y$ que
-son adyacentes a $x$ en $B$. 
+
 \begin{enumerate}
 
+\item $G$ es localmente $3K_2$. 
+Sea $x\in V(G)$, sean $T_1$, $T_2$ y $T_3$ los elementos de $Y$ que
+son adyacentes a $x$ en $B$.
+ 
+\begin{enumerate}
 \item Sean $a$ y $b$ los otros dos vertices adyacentes a $T_1$ en
 $B$. Entonces $a \sim b$ en la grafica $G$, porque $a\sim T_1 \sim b$
 en $B$.
@@ -3315,16 +3315,25 @@ en $B$.
 en $B$.
 \end{enumerate}
 
-Ademas, sea $T=\{a,b,c,d,e,f\}$, sea $z\in T$ tal que $z\in T_i$ con
-$i=1,2,3$ y sea $w\in T$ tal que $w \notin T_i$. Entonces, $z$ no es
+Ademas, sea $T=\{a,b,c,d,e,f\}$, sea $z\in T$ tal que $z\sim T_i$ con
+$i=1,2,3$ y sea $w\in T$ tal que $w \nsim T_i$, suponga que $w\sim
+T_j$ con $j\neq i$. Entonces, $z$ no es
 adyacente a $w$ en $G$. Para demostrarlo, suponga lo contrario, $z\sim
 w$ en $G$, entonces existe $T_4\in Y$ tal que $z\sim T_4 \sim w$ en
-$B$. Lo que implica $$   
+$B$. Lo que implica $z \sim T_4 \sim w \sim T_j \sim x \sim T_i \sim
+z$ en la grafica bipartita, es decir hay un ciclo de longitud 6, lo
+cual es falso pues el cuello de $B$ es 8. 
 
+Por lo tanto $G$ es localmente $3K_2$.
+
+\item La bipartita clanica de $G$ es isomorfa a $B$.
+
+Sea $BC_G$ la grafica bipartita clanica de $G$ 
  
  \end{enumerate}
 
-
+Por lo que $B$ es isomorfa a la grafica bipartita clanica de una
+grafica localmente $3K_2$, a saber $G$.
 
 
 \item $<-)$
@@ -3957,6 +3966,8 @@ localmente $3K_2$.
 \end{proof}
 
 
+
+\chapter{Algoritmo}
 
 \section{Condiciones para que $Cay(G,T_1)\simeq Cay(G,T_2)$}
 Hasta 340 no hay///////////////
