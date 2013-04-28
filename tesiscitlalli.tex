@@ -11,7 +11,6 @@
 \usepackage{color}
 \usepackage{tikz}
 \usepackage{tkz-berge}
-
 \usepackage{makeidx}
 
 \newtheorem{theorem}{Teorema}
@@ -1879,7 +1878,7 @@ jaulita.
 \end{proof}
 
 Queda demostrado que la jaulita es única. Esta jaula es isomorfa a la
-gráfica bipartita clánica  $K_{3,3}$,
+gráfica bipartita completa $K_{3,3}$,
 dibujada en la figura~\ref{K_3,3}, es 1-arco transitiva, vértice
 transitiva y arista transitiva.
 
@@ -2096,8 +2095,13 @@ con 14 vértices y que además es única. Como la cota ingenua es 14,
 entonces $G$ es la $(3,6)$-jaula.
 \end{proof}
 
-La $(3,6)$-jaula es la llamada gráfica de Heawood y su representación más común es la
-figura~\ref{heawood}. La gráfica de Heawood es la representación de la gráfica de puntos y líneas del
+La $(3,6)$-jaula es la llamada gráfica de Heawood y su representación
+más común es la figura~\ref{heawood}, ademas tambien resulta ser
+bipartia, es decir sus vertices se pueden agrupar en dos conjuntos
+disjuntos, no vacios, tales que no haya aristas entre vertices del mismo congunto.
+
+
+ La gráfica de Heawood es la representación de la gráfica de puntos y líneas del
 plano proyectivo de orden dos, el plano de Fano.
 
 \begin{figure}%[htb]
@@ -2956,7 +2960,7 @@ ocho,  entonces la arista $ep$ esta en $G$.
   \caption{} \label{ciclo(3,8)1}
 \end{figure}
 
-Los caminos de longitud dos del vértice $g$, llegan a las ramas uno,
+Los caminos de longitud dos que parten del vértice $g$, llegan a las ramas uno,
 dos y cuatro, entonces la arista faltante a $g$  tiene un vértice en la rama
 tres. Si $g$ es adyacente a $j$, se forma el ciclo de longitud seis de
 la figura~\ref{ciclo(3,8)2}, entonces $g$ es adyacente a $l$. La
@@ -3147,14 +3151,14 @@ es la $(3,8)$-jaula.
   \end{tikzpicture}
   \caption{(3,8)-jaula, encontrada por Tutte.} \label{jaula(3,8)}
 \end{figure}
-
 \end{proof}
 
-
-La $(3,8)$-jaula es una jaulita, pues no necesitó
-de vértices adicionales a los que conforman el árbol, como ocurrió en la $(3,7)$-jaula. Fue
-descrita por primera vez por Tutte y es una gráfica simétrica; de
-hecho es $5$-arco-transitiva.
+La $(3,8)$-jaula fue descrita por primera vez por Tuttees. La grafica es una
+jaulita, pues no necesitó de vértices adicionales a los que conforman
+el árbol para ser formada, como ocurrió en la $(3,7)$-jaula. Esta jaula tambien
+es bipartita, es decir sus vertices pueden agruparse en dos conjuntos
+disjuntos, no vacios, tales que no existen aristas entre vertices del
+mismo conjunto.
 
 \section{Jaulas 3-regulares de cuello 9, 10, 11, 12 y 13 }
 
@@ -3183,9 +3187,11 @@ no isomorfas entre si. En \cite{cuello9} se encuentran dos métodos de
 construcción, para estas dieciocho jaulas 3-regulares de cuello 9. En
 \cite{cuello9y11} también se puede leer algo acerca de estas jaulas.
 
-Existen tres jaulas, 3-regular de cuello 10, no isomorfas entre sí,
+Existen tres jaulas, $3$-regular de cuello 10, no isomorfas entre sí,
 encontradas por M. O'Keefe y P.K. Wong, con setenta vértices cada una,
-ocho más que su cota inferior. El articulo en el que se exponen estas
+ocho más que su cota inferior. Las tres gráficas son bipartitas, es
+decir sus vertices se pueden agrupar en dos conjuntos disjuntos y no
+vacios talesque no existen aristas entre vertices del mismo conjunto. El artículo en el que se exponen estas
 tres jaulas fue publicado en 1980, la referencia completa se encuentra
 en \cite{cuello10}.
 
@@ -3202,7 +3208,7 @@ separando cada ves más de la cota inferior arrojada por la
 construcción del árbol. Para que el cuello de una $(3,g)$-gráfica sea
 doce, es necesario un árbol con ciento veintiséis vértices. La
 $(3,12)$-jaula tiene precisamente 126 vértices, es decir cumple con la
-cota ingenua.
+cota ingenua. Esta jaula tambien resulto ser bipartita.
 
 
 La $(3,13)$-jaula aun no es conocida; sin embargo, McKay y Myrvold
@@ -3228,8 +3234,111 @@ la o las gráficas con la menor cantidad de vértices, y
 finalmente, comparar esta cantidad, con la cota superior que hasta el
 momento se tiene.   
 
+Todas las jaulas $3$-regulares de cuello par menor o igual a 12
+resultaron ser bipartitas, un hecho tal vez irelevante, pero que hace
+suponer que entre las graficas bipartitas $3$-regulares se encuentran
+gráficas que si bien no son jaulas, si podrían tener una cantidad
+de vertices no tan alejada a la de una jaula.
+
+
+------------no se bien los datos -------------------
+
+La jaula 3-regular de cuello $algo$ se puede costruir a partir de la
+grafica localmente $3k_2$,....... 
+
+Esta es la razon por la cual es apropiado pensar que una manera de
+costruir graficas 3-regulares que podrían tener menos vertices, que
+las cotas, es a partir de gráficas localmente $3K_2$. 
+
+
+---------------------------------
+\begin{proposition}\textbf{}\\\label{biparticioncardinalidades}
+Sea $B$ una grafica bipartita $n$-regular. Sean $X$ y $Y$ conjuntos
+tales que forman una biparticion de $B$. Entonces, las cardinalidades
+de $X$ y $Y$ coinsiden. Más aún el orden de $B$ es par.
+\end{proposition}
+
+\begin{proof}
+El número total de aristas en la grafica, es igual 
+al número de aristas que tienen un vertice en el conjunto $X$, que son
+$n|X|$, y tambien es igual al número de aristas que tienen un vertice
+en el conjunto $Y$, que son $n|Y|$.
+\begin{equation*}
+n|X| = n|Y| \text{ entonces } |X|=|Y|
+\end{equation*}
+
+El orden de $B$ es igual a la suma de las cardinalidades de los
+conjuntos que forman una biparticion, a saber $|B|=|X|+|Y|=2|X|=2|Y|$,
+por lo que el orden de $B$ es par.
+\end{proof}
+
+
+\begin{theorem}\textbf{}\\
+Una gráfica $B$,  $3$-regular de cuello mayor o igual a
+ocho es bipartita si y solo si  $B$ es isomorfa a la gráfica bipartita
+clanica de una grafica $G$ localmente $3K_2$.  
+\end{theorem}
+
+\begin{proof}
+\begin{enumerate}
+\item $->)$ Sea $B$ una gráfica bipartita $3$-regular de cuello mayor
+  o igual a ocho. Sea $X$
+  y $Y$ conjuntos de vertices tales que forman una biparticion de
+  $B$.
+
+ Por la proposicion~\ref{biparticioncardinalidades}, las cardinalidades
+ de los conjuntos $X$ y $Y$ son iguales, sea $n$ la cardinalidad de $X$.
+
+Sea $G$ la gráfica tal que $V(G)=X$ donde $x_1,x_2\in V(G)$ son adyacentes
+si y solo si existe $T\in Y$ tal que $x_1 \sim T \sim x_2$.
+
+\begin{enumerate}
+\item $T$ es unica. Sean $T_1,T_2 \in Y$ tales que $x_1 \sim T_1 \sim
+x_2$ y $x_1 \sim T_2 \sim x_2$, entonces $x_1 \sim T_1 \sim x_2 \sim
+T_2 \sim x_1$, es decir existe un ciclo de longitud cuatro en la
+gráfica $G$, lo cual es imposible porque el cuello de $G$ es al menos 8.
+
+\item $G$ es localmente $3K_2$. 
+Sea $x\in V(G)$, sean $T_1$, $T_2$ y $T_3$ los elementos de $Y$ que
+son adyacentes a $x$ en $B$. 
+\begin{enumerate}
+
+\item Sean $a$ y $b$ los otros dos vertices adyacentes a $T_1$ en
+$B$. Entonces $a \sim b$ en la grafica $G$, porque $a\sim T_1 \sim b$
+en $B$.
+
+\item Sean $c$ y $d$ los otros dos vertices adyacentes a $T_2$ en $B$. Entonces $c \sim d$ en la grafica $G$, porque $c\sim T_2 \sim d$
+en $B$.
+
+\item Sean $e$ y $f$ los otros dos vertices adyacentes a $T_3$ en
+  $B$. Entonces $e \sim f$ en la grafica $G$, porque $e\sim T_3 \sim f$
+en $B$.
+\end{enumerate}
+
+Ademas, sea $T=\{a,b,c,d,e,f\}$, sea $z\in T$ tal que $z\in T_i$ con
+$i=1,2,3$ y sea $w\in T$ tal que $w \notin T_i$. Entonces, $z$ no es
+adyacente a $w$ en $G$. Para demostrarlo, suponga lo contrario, $z\sim
+w$ en $G$, entonces existe $T_4\in Y$ tal que $z\sim T_4 \sim w$ en
+$B$. Lo que implica $$   
+
+ 
+ \end{enumerate}
+
+
+
+
+\item $<-)$
+\end{enumerate}
+\end{proof}
+
+El problema que surge es el caracterizar a las graficas localmente
+$3K_2$. La delimitacion a este problema, que la tesis aborda, es el
+caracterizar a las graficas de Cayley localmente $3K_2$.
+
+
+
 El método que se sigue en esta tesis para construir gráficas
-3-regulares, se conforma de dos partes:
+$3$-regulares, se conforma de dos partes:
 
 \begin{enumerate}
 \item Construir gráficas de Cayley localmente $3K_2$.
@@ -3388,22 +3497,6 @@ t_1\sim T_1\sim t_2 \sim T_2 \sim ... \sim t_n \sim T_n \sim t_1
 \end{equation*}
 \end{proof}
 
-------------no se bien los datos -------------------
-
-La jaula 3-regular de cuello $algo$ se puede costruir a partir de la
-grafica localmente $3k_2$,....... 
-
-Esta es la razon por la cual es apropiado pensar que una manera de
-costruir graficas 3-regulares que podrian tener menos vertices, que
-las cotas, es a partir de gráficas localmente $3K_2$. 
-
-
----------------------------------
-
-
-El problema que surge es el caracterizar a las graficas localmente
-$3K_2$. La delimitacion a este problema, que la tesis aborda, es el
-caracterizar a las graficas de Cayley localmente $3K_2$.
 
 En principio una gráfica localmente $3K_2$ no tiene porque ser de Cayley, pero gracias a que estas son vértice-transitivas, y además, a
 que los vértices adyacentes a la identidad son precisamente los
@@ -3770,21 +3863,27 @@ figura~\ref{localmnt3K_2,a-b}.
 \end{enumerate}
 
 
+
+
+
 Después de identificar y reducir las condiciones necesarias para que
 la gráfica de Cayley sea localmente $3K_2$, es prudente enunciar el
-teorema~\ref{3k2}, el cual es cierto pues en el se expresan las
+teorema~\ref{3k2}, en el que se expresan las
 condiciones encontradas.
  
 
-\begin{theorem}
-  Sea $G$ un grupo, y sea $T\subset G$ tal que $I\notin T$, $|T|=6$ y
-  además
-
+\begin{theorem}\textbf{Caracterizacion de graficas de Cayley
+    localmente $3K_2$}\index{Caracterizacion de graficas de Cayley
+    localmente $3K_2$}
+Sea $G$ un grupo y $T$ un conjunto. Entonces, la grafica de Cayley, $Cay(G,T)$,
+es localmente $3K_2$ si y solo si $T$ es tal que $e\notin T$, $|T|=6$ y además
+los elementos de $T$ cumplen con las condiciones~\ref{condicion1}
+o~\ref{condicion2}.  
   \begin{enumerate}
   \item $T=\{a, a^{-1},b , b^{-1}, c, c^{-1}\}$ tal que
-
+   \label{condicion1}
     \begin{enumerate}
-    \item $x^3=I$ para todo $x\in T$
+    \item $x^3=e$ para todo $x\in T$
     \item $ab\neq c^{-1}$
     \item $ab\neq c$
     \item $ab^{-1}\neq c^{-1}$
@@ -3795,14 +3894,10 @@ condiciones encontradas.
     \item $ac^{-1}\neq b^{-1}$
     \end{enumerate}
 
-
-    o
-
-
-  \item $T=\{a, a^{-1}, b, b^{-1}, a^{-1}b, b^{-1}a\}$ tal que
+  \item \label{condicion2}$T=\{a, a^{-1}, b, b^{-1}, a^{-1}b, b^{-1}a\}$ tal que
 
     \begin{enumerate}
-    \item $x^3\neq I$ para todo $x\in T$
+    \item $x^3\neq e$ para todo $x\in T$
     \item $b\neq a^3$
     \item $a^2\neq b^{-1}$
     \item $b^2\neq a^{-1}$
@@ -3814,38 +3909,41 @@ condiciones encontradas.
     \end{enumerate}
   \end{enumerate}
 
-  entonces la gráfica de Cayley $Cay(G,T)$ es localmente $3K_2$ si y
-  solo si $T$ cumple la condición uno o dos.
-
 \end{theorem}\label{3k2}
 
-
+\begin{proof}La demostracion del teorema~\ref{3k2} es presisamente el argumento
+  presentado al inicio de esta seccion.
+\end{proof}
 El teorema~\ref{3k2} caracteriza las gráficas de Cayley localmente
 $3K_2$, después de esto se puede estar seguro que solo basta verificar
-algunas condiciones, sobre el conjunto $T$ que genera a la gráfica,
-para decidir si es o no localmente $3K_2$.
+algunas condiciones, sobre los elementos del conjunto $T$ que genera a
+la gráfica, para decidir si es o no localmente $3K_2$.
 
 
 \begin{definition}\textbf{Cay(G,T) tipo uno o dos}\\\index{Cay(G,T), tipo uno}\index{Cay(G,T), tipo dos}
-  Se dirá que la gráfica de Cayley localmente $3K_2$ es del tipo uno,
-  si $$T=\{a,a^{-1},b,b^{-1},c,c^{-1} \}$$ cumple la condición uno del
-  teorema~\ref{3k2}; y que es tipo dos,
-  si $$T=\{a,a^{-1},b,b^{-1},a^{-1}b,b^{-1}a\}$$ cumple la condición
-  dos.
+  La gráfica de Cayley, $Cay(G,T)$, localmente $3K_2$ es del tipo uno,
+  si los elementos de $T$,
+ $$T=\{a,a^{-1},b,b^{-1},c,c^{-1} \}$$
+ cumple la condición~\ref{condicion1} del
+  teorema~\ref{3k2}. O la grafica $Cay(G,T)$ es del tipo dos,
+  si los elementos de $T$, 
+$$T=\{a,a^{-1},b,b^{-1},a^{-1}b,b^{-1}a\}$$
+ cumple la condición~\ref{condicion2}.
 \end{definition}
 
 
 
 \begin{lemma}\label{bamnocayley}
-  Sean $a,b\in T$ tales que $a\sim b$ en la gráfica $Cay(G,T)$;
-  si \begin{equation*}b\in <a>\backslash \{a^{-1}\}\end{equation*}
+  Sean $G$ un grupo y $T$ un conjunto tales que la gráfica $Cay(G,T)$
+  es una gráfica de Cayley. Sean $a,b\in T$ tales que $a$ es adyacente
+  a $b$ en $Cay(G,T)$.
+  Si $b$ esta en el subgrupo generado por $a$ y es distinto de $a^{-1}$,
   entonces $Cay(G,T)$ no es localmente $3K_2$.
 \end{lemma}
 
-Demostración: Primero, como $b\nsim a^{-1}$ entonces Cayley no puede
-ser del tipo uno. Después, $b$ se puede escribir de la forma $b=a^n$
-para algún $n$, entonces
-
+\begin{proof} Primero, como $b\neq a^{-1}$ entonces la gráfica de Cayley no puede
+ser localmente $3K_2$ del tipo uno. Después, $b$ se puede escribir de
+la forma $b=a^n$ para algún $n$, entonces:
 \begin{equation*}
   \begin{split}
     ab&=aa^n\\
@@ -3853,19 +3951,19 @@ para algún $n$, entonces
     &=a^na=ba
   \end{split}
 \end{equation*}
-
-y por el teorema~\ref{3k2} esto no debe ocurrir. Por lo tanto no es
+y por el teorema~\ref{3k2} esto no debe ocurrir. Por lo tanto la
+grafica de Cayley, $Cay(G,T)$, no es
 localmente $3K_2$.
-
+\end{proof}
 
 
 
 \section{Condiciones para que $Cay(G,T_1)\simeq Cay(G,T_2)$}
-
+Hasta 340 no hay///////////////
 
 Si a GAP solamente se le pide verificar las condiciones que no deben
 de cumplir los elementos de $T$, para que la gráfica de Cayley sea
-localmente $3K_2$, el programa ser\'ia poco eficiente pues existen
+localmente $3K_2$, el programa sería poco eficiente pues existen
 varios conjuntos que dan lugar a la misma gráfica, por ello se tienen
 que dar condiciones sobre conjuntos $T_1$ y $T_2$, para que GAP pueda
 eliminar estas posibles repeticiones antes de que construya la misma
